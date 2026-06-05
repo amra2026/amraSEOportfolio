@@ -1,1016 +1,658 @@
+cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Amrahata Paalisbo | SEO & GEO Strategist</title>
-  <meta name="description" content="SEO & GEO Strategist | Local SEO Specialist | Digital Marketing Professional with 14+ years of experience." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <meta name="description" content="SEO & GEO Strategist | Local SEO Specialist | Digital Marketing Professional with 14+ years of experience."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --espresso:#3b2410;--brown:#6b4226;--caramel:#a07248;--sand:#c9a882;
+      --sand-pale:#e8d5be;--cream:#f7f1e8;--warm-white:#fdf9f4;
+      --border:rgba(59,36,16,0.1);--border-c:rgba(160,114,72,0.28);
+      --max:1100px;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased}
 
-    :root {
-      --ink: #0c0e13;
-      --ink-soft: #3a3d47;
-      --ink-muted: #6b6f7c;
-      --gold: #c8973a;
-      --gold-light: #e8b75a;
-      --gold-pale: #f5e8c8;
-      --surface: #faf9f6;
-      --white: #ffffff;
-      --border: rgba(12,14,19,0.12);
-      --border-gold: rgba(200,151,58,0.3);
-      --max: 1100px;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:62px;display:flex;align-items:center;justify-content:space-between}
+    .nav-brand{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:.02em}
+    .nav-links{display:flex;gap:1.6rem;list-style:none}
+    .nav-links a{font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color .2s}
+    .nav-links a:hover{color:var(--caramel)}
+    .nav-cta{font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-white);background:var(--espresso);padding:.45rem 1.15rem;border-radius:3px;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:var(--caramel)}
 
-    html { scroll-behavior: smooth; }
+    /* HERO */
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:62px}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 6rem;background:var(--espresso);color:var(--warm-white);position:relative;overflow:hidden}
+    .hero-left::before{content:'';position:absolute;top:-50px;left:-50px;width:320px;height:320px;border:1px solid rgba(201,168,130,.12);border-radius:50%}
+    .hero-left::after{content:'';position:absolute;bottom:40px;right:-90px;width:220px;height:220px;border:1px solid rgba(201,168,130,.08);border-radius:50%}
+    .hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:1.2rem}
+    .hero-name{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.4rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:var(--warm-white)}
+    .hero-name span{display:block}
+    .hero-name .last{font-weight:700;color:var(--sand)}
+    .hero-tagline{font-size:.97rem;font-weight:300;color:rgba(253,249,244,.62);max-width:380px;line-height:1.75;margin-bottom:2.5rem}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:3rem}
+    .hero-tag{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;border:1px solid rgba(201,168,130,.35);color:var(--sand-pale);padding:.28rem .75rem;border-radius:2px}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn-primary{display:inline-block;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--caramel);color:var(--warm-white);padding:.75rem 1.8rem;border-radius:3px;text-decoration:none;transition:background .2s}
+    .btn-primary:hover{background:var(--sand);color:var(--espresso)}
+    .btn-outline{display:inline-block;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(253,249,244,.28);color:rgba(253,249,244,.8);padding:.75rem 1.8rem;border-radius:3px;text-decoration:none;transition:all .2s}
+    .btn-outline:hover{border-color:var(--sand);color:var(--sand)}
+    .hero-right{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;padding:6rem 5rem 6rem 4rem}
+    .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-bottom:2.5rem}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 3rem}
+    .stat-num{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--espresso);line-height:1}
+    .stat-unit{color:var(--caramel);font-weight:400}
+    .stat-desc{font-size:.78rem;color:var(--brown);margin-top:.35rem;line-height:1.4}
 
-    body {
-      font-family: var(--sans);
-      background: var(--surface);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* SECTIONS */
+    section{padding:5rem 0}
+    .container{max-width:var(--max);margin:0 auto;padding:0 3rem}
+    .section-header{margin-bottom:3.5rem}
+    .section-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);display:block;margin-bottom:.6rem}
+    .section-title{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:600;color:var(--espresso);line-height:1.15}
+    .section-rule{width:36px;height:2px;background:var(--caramel);margin-top:1rem}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(250,249,246,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      height: 60px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-brand {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: var(--ink);
-      padding: 0.45rem 1.1rem;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--gold); }
+    /* ABOUT */
+    #about{background:var(--warm-white)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .about-text p{font-size:.97rem;color:var(--brown);line-height:1.85;margin-bottom:1.2rem}
+    .about-highlights{display:flex;flex-direction:column;gap:1.5rem}
+    .highlight-card{border-left:2px solid var(--caramel);padding-left:1.2rem}
+    .highlight-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--espresso);margin-bottom:.3rem}
+    .highlight-card p{font-size:.82rem;color:var(--brown);line-height:1.55}
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 60px;
-    }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 4rem 6rem 6rem;
-      background: var(--ink);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-left::before {
-      content: '';
-      position: absolute;
-      top: -40px; left: -40px;
-      width: 300px; height: 300px;
-      border: 1px solid rgba(200,151,58,0.15);
-      border-radius: 50%;
-    }
-    .hero-left::after {
-      content: '';
-      position: absolute;
-      bottom: 60px; right: -80px;
-      width: 200px; height: 200px;
-      border: 1px solid rgba(200,151,58,0.1);
-      border-radius: 50%;
-    }
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-    .hero-name {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 1.5rem;
-      color: var(--white);
-    }
-    .hero-name span { display: block; }
-    .hero-name .last { font-weight: 700; color: var(--gold-light); }
-    .hero-tagline {
-      font-size: 1rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.65);
-      max-width: 380px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-    .hero-tags {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      margin-bottom: 3rem;
-    }
-    .hero-tag {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(200,151,58,0.4);
-      color: var(--gold-light);
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-    }
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      background: var(--gold);
-      color: var(--ink);
-      padding: 0.75rem 1.8rem;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-primary:hover { background: var(--gold-light); }
-    .btn-outline {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: rgba(255,255,255,0.8);
-      padding: 0.75rem 1.8rem;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+    /* SKILLS */
+    #skills{background:var(--cream)}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.55rem}
+    .skill-chip{background:var(--warm-white);border:1px solid var(--border);padding:.62rem 1rem;border-radius:3px;font-size:.8rem;color:var(--brown);transition:all .2s}
+    .skill-chip:hover{border-color:var(--caramel);color:var(--espresso);background:var(--sand-pale)}
 
-    .hero-right {
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 5rem 6rem 4rem;
+    /* EXPERIENCE */
+    #experience{background:var(--warm-white)}
+    .resume-cta-box{
+      display:flex;align-items:center;justify-content:center;flex-direction:column;
+      gap:1.5rem;padding:3.5rem 2rem;
+      background:var(--cream);border:1px solid var(--border-c);border-radius:8px;
+      text-align:center;
     }
-    .hero-stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 2.5rem;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem 3rem;
-      margin-bottom: 3rem;
-    }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 3.2rem;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .stat-unit { color: var(--gold); font-weight: 400; }
-    .stat-desc {
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      margin-top: 0.35rem;
-      line-height: 1.4;
-    }
-    .hero-divider {
-      width: 40px; height: 2px;
-      background: var(--gold);
-      margin-bottom: 2rem;
-    }
-    .hero-contact-info { display: flex; flex-direction: column; gap: 0.6rem; }
-    .contact-row {
-      display: flex; align-items: center; gap: 0.7rem;
-      font-size: 0.85rem; color: var(--ink-soft);
-    }
-    .contact-row svg { color: var(--gold); flex-shrink: 0; }
-    .contact-row a { color: var(--ink-soft); text-decoration: none; }
-    .contact-row a:hover { color: var(--gold); }
+    .resume-cta-box p{font-size:1rem;color:var(--brown);max-width:480px;line-height:1.7}
+    .resume-cta-box p strong{color:var(--espresso)}
+    .btn-resume{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--warm-white);padding:.85rem 2rem;border-radius:3px;text-decoration:none;transition:background .2s}
+    .btn-resume:hover{background:var(--caramel)}
 
-    /* ── SECTIONS ── */
-    section { padding: 5rem 0; }
-    .container { max-width: var(--max); margin: 0 auto; padding: 0 3rem; }
+    /* TOOLS MARQUEE */
+    #tools{background:var(--espresso);overflow:hidden}
+    #tools .section-title{color:var(--warm-white)}
+    #tools .section-rule{background:var(--caramel)}
+    #tools .section-eyebrow{color:var(--sand)}
+    .marquee-outer{overflow:hidden;padding:1rem 0 2.5rem;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+    .marquee-track{display:flex;gap:1.2rem;width:max-content;animation:ticker 35s linear infinite}
+    .marquee-track:hover{animation-play-state:paused}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .tool-tile{
+      display:flex;flex-direction:column;align-items:center;gap:10px;
+      padding:18px 20px;min-width:115px;border-radius:16px;flex-shrink:0;
+      cursor:default;transition:transform .2s;
+    }
+    .tool-tile:hover{transform:translateY(-4px) scale(1.04)}
+    .tool-emoji{font-size:2rem;line-height:1}
+    .tool-name{font-size:.68rem;color:rgba(255,255,255,.9);text-align:center;font-weight:500;line-height:1.3;letter-spacing:.02em}
 
-    .section-header { margin-bottom: 3.5rem; }
-    .section-eyebrow {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-    .section-rule {
-      width: 36px; height: 2px;
-      background: var(--gold);
-      margin-top: 1rem;
-    }
+    /* EDUCATION */
+    #education{background:var(--cream)}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+    .edu-card{background:var(--warm-white);border:1px solid var(--border);border-radius:6px;padding:2rem}
+    .edu-icon{width:44px;height:44px;background:var(--sand-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
+    .edu-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.3rem}
+    .edu-school{font-size:.82rem;color:var(--caramel);font-weight:500;margin-bottom:.15rem}
+    .edu-year{font-size:.78rem;color:var(--brown)}
+    .quals-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
+    .quals-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.84rem;color:var(--brown);line-height:1.5}
+    .qual-dot{width:6px;height:6px;background:var(--caramel);border-radius:50%;margin-top:7px;flex-shrink:0}
 
-    /* ── ABOUT ── */
-    #about { background: var(--white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
+    /* CERTIFICATIONS */
+    #certifications{background:var(--warm-white)}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
+    .cert-card{
+      background:var(--cream);border:1px solid var(--border-c);border-radius:8px;
+      overflow:hidden;display:flex;flex-direction:column;
     }
-    .about-text p {
-      font-size: 1rem;
-      color: var(--ink-soft);
-      line-height: 1.85;
-      margin-bottom: 1.2rem;
-    }
-    .about-text p:last-child { margin-bottom: 0; }
-    .about-highlights {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .highlight-card {
-      border-left: 2px solid var(--gold);
-      padding-left: 1.2rem;
-    }
-    .highlight-card h4 {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-    .highlight-card p {
-      font-size: 0.83rem;
-      color: var(--ink-muted);
-      line-height: 1.5;
-    }
+    .cert-card-top{padding:1.6rem 2rem 1.4rem;background:var(--espresso);position:relative;overflow:hidden}
+    .cert-card-top::before{content:'';position:absolute;right:-40px;top:-40px;width:130px;height:130px;border:1px solid rgba(201,168,130,.1);border-radius:50%}
+    .cert-badge-row{display:flex;align-items:center;gap:.9rem}
+    .cert-logo{width:42px;height:42px;border-radius:8px;background:var(--warm-white);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .cert-issuer-name{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sand);margin-bottom:.2rem}
+    .cert-type-badge{font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(201,168,130,.18);color:var(--sand-pale);padding:.2rem .55rem;border-radius:2px;display:inline-block}
+    .cert-card-body{padding:1.4rem 2rem 1.8rem}
+    .cert-name{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.6rem;line-height:1.3}
+    .cert-meta{display:flex;flex-wrap:wrap;gap:.8rem}
+    .cert-meta-item{font-size:.76rem;color:var(--brown);display:flex;align-items:center;gap:.35rem}
+    .cert-meta-item svg{color:var(--caramel)}
 
-    /* ── SKILLS ── */
-    #skills { background: var(--surface); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.6rem;
+    /* SAMPLE WORKS */
+    #sample-works{background:var(--cream)}
+    .works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem}
+    .work-card{
+      background:var(--warm-white);border:1px solid var(--border);border-radius:8px;
+      overflow:hidden;display:flex;flex-direction:column;
+      text-decoration:none;color:inherit;
+      transition:border-color .2s,transform .2s;
     }
-    .skill-chip {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 0.65rem 1rem;
-      border-radius: 2px;
-      font-size: 0.8rem;
-      color: var(--ink-soft);
-      transition: all 0.2s;
-    }
-    .skill-chip:hover {
-      border-color: var(--gold);
-      color: var(--ink);
-      background: var(--gold-pale);
-    }
+    .work-card:hover{border-color:var(--caramel);transform:translateY(-3px)}
+    .work-img{width:100%;height:160px;overflow:hidden;background:var(--espresso);display:flex;align-items:center;justify-content:center;position:relative}
+    .work-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s}
+    .work-card:hover .work-img img{transform:scale(1.04)}
+    .work-img-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:2.4rem;gap:.5rem}
+    .work-img-fallback span{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .work-body{padding:1.3rem 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column}
+    .work-tag-label{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.5rem;display:block}
+    .work-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--espresso);line-height:1.3;margin-bottom:.6rem}
+    .work-desc{font-size:.82rem;color:var(--brown);line-height:1.6;flex:1;margin-bottom:1rem}
+    .work-visit{font-size:.73rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto}
 
-    /* ── EXPERIENCE ── */
-    #experience { background: var(--white); }
-    .timeline { display: flex; flex-direction: column; gap: 0; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 0 3rem;
-      padding-bottom: 3rem;
-      position: relative;
-    }
-    .timeline-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: 200px;
-      top: 0; bottom: 0;
-      width: 1px;
-      background: var(--border);
-      margin-left: 1.5rem;
-    }
-    .timeline-meta { padding-top: 0.1rem; }
-    .timeline-period {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.4rem;
-    }
-    .timeline-company {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-    }
-    .timeline-content { position: relative; padding-left: 3rem; }
-    .timeline-content::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 8px;
-      width: 9px; height: 9px;
-      border-radius: 50%;
-      background: var(--gold);
-      border: 2px solid var(--white);
-      outline: 1px solid var(--gold);
-    }
-    .timeline-role {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .timeline-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
-    }
-    .timeline-list li {
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      padding-left: 1rem;
-      position: relative;
-      line-height: 1.6;
-    }
-    .timeline-list li::before {
-      content: '—';
-      position: absolute; left: 0;
-      color: var(--gold);
-      font-size: 0.75rem;
-    }
-    .achievements-box {
-      margin-top: 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border-gold);
-      border-radius: 4px;
-      padding: 1.2rem 1.4rem;
-    }
-    .achievements-box h5 {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-    .achievements-box ul {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0.4rem;
-    }
-    .achievements-box ul li {
-      font-size: 0.82rem;
-      color: var(--ink-soft);
-      padding-left: 1rem;
-      position: relative;
-    }
-    .achievements-box ul li::before {
-      content: '✦';
-      position: absolute; left: 0;
-      color: var(--gold);
-      font-size: 0.5rem;
-      top: 5px;
-    }
+    /* CONTACT */
+    #contact{background:var(--warm-white)}
+    .contact-centered{max-width:620px;margin:0 auto;text-align:center}
+    .contact-intro{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--espresso);line-height:1.3;margin-bottom:1.5rem}
+    .contact-intro span{color:var(--caramel);font-weight:600}
+    .contact-sub{font-size:.92rem;color:var(--brown);line-height:1.8;margin-bottom:2rem}
+    .contact-cta-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+    .btn-contact{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--warm-white);padding:.75rem 1.7rem;border-radius:3px;text-decoration:none;transition:background .2s}
+    .btn-contact:hover{background:var(--caramel)}
+    .btn-contact-alt{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border-c);color:var(--brown);padding:.75rem 1.7rem;border-radius:3px;text-decoration:none;transition:all .2s}
+    .btn-contact-alt:hover{border-color:var(--caramel);color:var(--caramel)}
 
-    /* ── TOOLS ── */
-    #tools { background: var(--ink); color: var(--white); }
-    #tools .section-title { color: var(--white); }
-    #tools .section-rule { background: var(--gold); }
-    .tools-categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .tool-cat h4 {
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid rgba(200,151,58,0.25);
-    }
-    .tool-cat ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .tool-cat ul li {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.65);
-      padding-left: 0.8rem;
-      position: relative;
-    }
-    .tool-cat ul li::before {
-      content: '';
-      position: absolute; left: 0; top: 50%;
-      width: 4px; height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-      transform: translateY(-50%);
-    }
+    /* FOOTER */
+    footer{background:var(--espresso);padding:1.6rem 2.5rem}
+    .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+    .footer-copy{font-size:.78rem;color:rgba(253,249,244,.4);letter-spacing:.04em}
+    .footer-copy span{color:var(--sand)}
+    .footer-links{display:flex;align-items:center;gap:1.8rem}
+    .footer-links a{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(253,249,244,.4);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s}
+    .footer-links a:hover{color:var(--sand)}
+    .footer-sep{color:rgba(253,249,244,.2);font-size:.7rem}
 
-    /* ── EDUCATION ── */
-    #education { background: var(--white); }
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .edu-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2rem;
-    }
-    .edu-card .edu-icon {
-      width: 44px; height: 44px;
-      background: var(--gold-pale);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.2rem;
-      font-size: 1.2rem;
-    }
-    .edu-card h3 {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-    .edu-card .edu-school {
-      font-size: 0.82rem;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 0.15rem;
-    }
-    .edu-card .edu-year {
-      font-size: 0.78rem;
-      color: var(--ink-muted);
-    }
-    .quals-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-    .quals-list li {
-      display: flex; align-items: flex-start; gap: 0.7rem;
-      font-size: 0.85rem; color: var(--ink-soft);
-      line-height: 1.5;
-    }
-    .qual-dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      margin-top: 7px;
-      flex-shrink: 0;
-    }
+    /* ANIMATIONS */
+    .fade-up{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
 
-    /* ── CONTACT ── */
-    #contact { background: var(--surface); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      #hero{grid-template-columns:1fr;min-height:auto}
+      .hero-left{padding:5rem 2.5rem 4rem}
+      .hero-right{padding:3rem 2.5rem 4rem}
+      .about-grid,.edu-grid{grid-template-columns:1fr;gap:2.5rem}
+      .container{padding:0 1.5rem}
+      .nav-links{display:none}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+      .cert-grid{grid-template-columns:1fr}
     }
-    .contact-intro {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 300;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 1.5rem;
-    }
-    .contact-intro span { color: var(--gold); font-weight: 600; }
-    .contact-sub {
-      font-size: 0.9rem;
-      color: var(--ink-muted);
-      line-height: 1.7;
-    }
-    .contact-details { display: flex; flex-direction: column; gap: 1.2rem; }
-    .contact-item {
-      display: flex; align-items: center; gap: 1rem;
-      padding: 1.1rem 1.4rem;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      transition: border-color 0.2s;
-    }
-    .contact-item:hover { border-color: var(--gold); }
-    .contact-item-icon {
-      width: 36px; height: 36px;
-      background: var(--gold-pale);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-item-icon svg { color: var(--gold); }
-    .contact-item-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 0.15rem;
-    }
-    .contact-item-value {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .contact-item-value a { color: var(--ink); text-decoration: none; }
-    .contact-item-value a:hover { color: var(--gold); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.05em;
-    }
-    footer span { color: var(--gold); }
-
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-left { padding: 5rem 2.5rem 4rem; }
-      .hero-right { padding: 3rem 2.5rem 5rem; }
-      .hero-stats { grid-template-columns: 1fr 1fr; }
-      .about-grid, .edu-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .timeline-item { grid-template-columns: 1fr; }
-      .timeline-item::after { display: none; }
-      .timeline-meta { margin-bottom: 0.6rem; }
-      .timeline-content { padding-left: 1.2rem; }
-      .tools-categories { grid-template-columns: 1fr 1fr; }
-      .container { padding: 0 1.5rem; }
-      .nav-links { display: none; }
-      nav { padding: 0 1.5rem; }
-    }
-
-    @media (max-width: 600px) {
-      .hero-stats { grid-template-columns: 1fr; }
-      .tools-categories { grid-template-columns: 1fr; }
+    @media(max-width:600px){
+      .hero-stats{grid-template-columns:1fr 1fr}
+      .works-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#hero" class="nav-brand">A. Paalisbo</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="mailto:amra.camid@gmail.com" class="nav-cta">Hire Me</a>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-brand">A. Paalisbo</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Resume</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#sample-works">Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:amra.camid@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Available for New Opportunities</p>
-      <h1 class="hero-name">
-        <span>Amrahata</span>
-        <span>Camid</span>
-        <span class="last">Paalisbo</span>
-      </h1>
-      <p class="hero-tagline">
-        SEO &amp; GEO Strategist specializing in local search optimization, AI-powered visibility, and digital marketing—helping businesses rank, be found, and convert.
-      </p>
-      <div class="hero-tags">
-        <span class="hero-tag">Local SEO</span>
-        <span class="hero-tag">GEO / AI Search</span>
-        <span class="hero-tag">Technical SEO</span>
-        <span class="hero-tag">Google Business Profile</span>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Available for New Opportunities</p>
+    <h1 class="hero-name">
+      <span>Amrahata</span>
+      <span>Camid</span>
+      <span class="last">Paalisbo</span>
+    </h1>
+    <p class="hero-tagline">SEO &amp; GEO Strategist specializing in local search optimization, AI-powered visibility, and digital marketing—helping businesses rank, be found, and convert.</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Local SEO</span>
+      <span class="hero-tag">GEO / AI Search</span>
+      <span class="hero-tag">Technical SEO</span>
+      <span class="hero-tag">Google Business Profile</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-primary">View Resume</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-stat-label">Career at a glance</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">14<span class="stat-unit">+</span></div>
+        <div class="stat-desc">Years supporting international &amp; offshore clients</div>
       </div>
-      <div class="hero-actions">
-        <a href="#experience" class="btn-primary">View My Work</a>
-        <a href="#contact" class="btn-outline">Get In Touch</a>
+      <div>
+        <div class="stat-num">8<span class="stat-unit">+</span></div>
+        <div class="stat-desc">Years of remote work experience</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span class="stat-unit">+</span></div>
+        <div class="stat-desc">Years dedicated SEO specialist experience</div>
+      </div>
+      <div>
+        <div class="stat-num">50<span class="stat-unit">/wk</span></div>
+        <div class="stat-desc">SEO content pieces managed weekly</div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="hero-right">
-      <p class="hero-stat-label">Career at a glance</p>
-      <div class="hero-stats">
-        <div>
-          <div class="stat-num">14<span class="stat-unit">+</span></div>
-          <div class="stat-desc">Years supporting international &amp; offshore clients</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Professional Summary</span>
+      <h2 class="section-title">Who I Am &amp; What I Do</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>I'm an SEO and Digital Marketing Professional with over 14 years of experience supporting international and offshore clients across SEO, content marketing, local SEO, technical website optimization, customer support, recruiting, and digital operations.</p>
+        <p>With over 3 years of dedicated SEO experience at a national HVAC and air filtration company, I've built deep expertise in local SEO strategy, Google Business Profile optimization, schema markup implementation, structured data, and AI-powered search visibility initiatives.</p>
+        <p>I'm passionate about staying ahead of the curve—particularly in Generative Engine Optimization (GEO) and AI search platforms—helping businesses not just rank on Google, but be discovered across emerging AI-driven discovery surfaces.</p>
+      </div>
+      <div class="about-highlights fade-up">
+        <div class="highlight-card">
+          <h4>Local SEO &amp; Google Maps</h4>
+          <p>Deep expertise in Google Business Profile optimization, near-me search, citation building, and local search strategies tailored to U.S. home services markets.</p>
         </div>
-        <div>
-          <div class="stat-num">8<span class="stat-unit">+</span></div>
-          <div class="stat-desc">Years of remote work experience</div>
+        <div class="highlight-card">
+          <h4>Generative Engine Optimization</h4>
+          <p>Early adopter of GEO strategies—optimizing content and structured data for AI-driven platforms like ChatGPT, Perplexity, and Google AI Overviews.</p>
         </div>
-        <div>
-          <div class="stat-num">3<span class="stat-unit">+</span></div>
-          <div class="stat-desc">Years dedicated SEO specialist experience</div>
+        <div class="highlight-card">
+          <h4>Technical SEO &amp; Schema</h4>
+          <p>Hands-on experience with schema markup, structured data, website audits, crawlability, page speed, and metadata optimization.</p>
         </div>
-        <div>
-          <div class="stat-num">50<span class="stat-unit">/wk</span></div>
-          <div class="stat-desc">SEO content pieces managed weekly</div>
+        <div class="highlight-card">
+          <h4>Remote-Ready &amp; EST Hours</h4>
+          <p>8+ years working remotely with international clients, comfortable with night shift and EST hours, self-directed with strong English communication skills.</p>
         </div>
       </div>
-      <div class="hero-divider"></div>
-      <div class="hero-contact-info">
-        <div class="contact-row">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Davao City, Philippines
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Core Competencies</span>
+      <h2 class="section-title">What I Bring to the Table</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="skills-grid fade-up">
+      <div class="skill-chip">Local SEO Strategy</div>
+      <div class="skill-chip">Google Business Profile Optimization</div>
+      <div class="skill-chip">Google Maps Optimization</div>
+      <div class="skill-chip">Generative Engine Optimization (GEO)</div>
+      <div class="skill-chip">AI Search Visibility</div>
+      <div class="skill-chip">Technical SEO</div>
+      <div class="skill-chip">Schema Markup &amp; Structured Data</div>
+      <div class="skill-chip">Keyword Research</div>
+      <div class="skill-chip">Competitor Analysis</div>
+      <div class="skill-chip">Content Optimization</div>
+      <div class="skill-chip">On-Page SEO</div>
+      <div class="skill-chip">Authority Building</div>
+      <div class="skill-chip">Citation Building</div>
+      <div class="skill-chip">Google Search Console</div>
+      <div class="skill-chip">Search Intent Optimization</div>
+      <div class="skill-chip">Near Me Search Optimization</div>
+      <div class="skill-chip">Lead Generation SEO</div>
+      <div class="skill-chip">Content Strategy</div>
+      <div class="skill-chip">Website Audits</div>
+      <div class="skill-chip">SOP &amp; Workflow Documentation</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Professional Experience</span>
+      <h2 class="section-title">View My Full Resume</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="resume-cta-box fade-up">
+      <p><strong>14+ years of experience</strong> in SEO, digital marketing, local search, and remote operations — all in one document. Click below to view or download my complete resume.</p>
+      <a href="https://drive.google.com/file/d/1LVJXFOO4pat6PA8oJbwGDl1VnBrHlCmR/view?usp=drive_link" target="_blank" rel="noopener" class="btn-resume">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        View My Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Tools &amp; Platforms</span>
+      <h2 class="section-title">My Tech Stack</h2>
+      <div class="section-rule"></div>
+    </div>
+  </div>
+  <div class="marquee-outer fade-up">
+    <div class="marquee-track">
+      <!-- SET 1 -->
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">SEMrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">CTRify</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Keywords Everywhere</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Topical Relevance</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Builder</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">Shopify</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Google Workspace</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Claude AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Gemini AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">AI Studios</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">CapCut</span></div>
+      <!-- SET 2 (duplicate for seamless loop) -->
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">SEMrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">CTRify</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Keywords Everywhere</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Topical Relevance</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Builder</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">Shopify</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Google Workspace</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Claude AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Gemini AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">AI Studios</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">CapCut</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Background</span>
+      <h2 class="section-title">Education &amp; Qualifications</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="edu-grid fade-up">
+      <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <h3>BS in Accounting &amp; Financial Management</h3>
+        <div class="edu-school">Notre Dame University</div>
+        <div class="edu-year">Class of 2009</div>
+      </div>
+      <div>
+        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);margin-bottom:1.2rem;">Additional Qualifications</h4>
+        <ul class="quals-list">
+          <li><span class="qual-dot"></span>14+ years supporting international and offshore clients</li>
+          <li><span class="qual-dot"></span>8+ years of remote work experience</li>
+          <li><span class="qual-dot"></span>Extensive experience supporting U.S. local search and home services industries</li>
+          <li><span class="qual-dot"></span>Comfortable working night shift / EST hours</li>
+          <li><span class="qual-dot"></span>Strong written and verbal English communication skills</li>
+          <li><span class="qual-dot"></span>Self-directed, results-oriented, and process-driven professional</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Credentials</span>
+      <h2 class="section-title">Professional Certifications</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="cert-grid fade-up">
+
+      <!-- Cert 1: Semrush -->
+      <div class="cert-card">
+        <div class="cert-card-top">
+          <div class="cert-badge-row">
+            <div class="cert-logo">📈</div>
+            <div>
+              <div class="cert-issuer-name">Semrush Academy</div>
+              <span class="cert-type-badge">Certificate of Achievement</span>
+            </div>
+          </div>
         </div>
-        <div class="contact-row">
+        <div class="cert-card-body">
+          <h3 class="cert-name">Keyword Research with Semrush: A Step-by-Step Guide</h3>
+          <div class="cert-meta">
+            <div class="cert-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Expires: 21 August 2025
+            </div>
+            <div class="cert-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              ID: ef1197fab7
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cert 2: Excelerate -->
+      <div class="cert-card">
+        <div class="cert-card-top">
+          <div class="cert-badge-row">
+            <div class="cert-logo">📣</div>
+            <div>
+              <div class="cert-issuer-name">Excelerate Digital Marketing</div>
+              <span class="cert-type-badge">Certificate of Participation</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <h3 class="cert-name">3-Hour Live Facebook Ads Workshop</h3>
+          <div class="cert-meta">
+            <div class="cert-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Live Workshop — 3 Hours
+            </div>
+            <div class="cert-meta-item">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Issued by Eula Hernandez &amp; Mijs Johan Iglesia
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE WORKS -->
+<section id="sample-works">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Sample Works</span>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="works-grid fade-up">
+
+      <!-- Card 1: Google AI Mode -->
+      <a href="https://share.google/aimode/24NhGKjXv3A3MK5dw" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img" style="background:linear-gradient(135deg,#1a73e8,#0d47a1)">
+          <div class="work-img-fallback">
+            <span style="font-size:2.5rem">🤖</span>
+            <span>Google AI Mode</span>
+          </div>
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">GEO / AI Search Visibility</span>
+          <h3 class="work-title">Content Appearing in Google AI Mode</h3>
+          <p class="work-desc">SEO-optimized content surfacing in Google's AI Mode search results — a demonstration of Generative Engine Optimization (GEO) strategy applied to real-world search visibility.</p>
+          <span class="work-visit">Visit Page ↗</span>
+        </div>
+      </a>
+
+      <!-- Card 2: IndoorAirHub -->
+      <a href="https://indoorairhub.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img">
+          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌿</span><span>IndoorAirHub</span></div>'" />
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">SEO Content — Author Profile</span>
+          <h3 class="work-title">Author Profile — IndoorAirHub.com</h3>
+          <p class="work-desc">Featured SEO Specialist and content author delivering well-researched, search-optimized articles on indoor air quality for a growing editorial site.</p>
+          <span class="work-visit">Visit Page ↗</span>
+        </div>
+      </a>
+
+      <!-- Card 3: HVACLoop -->
+      <a href="https://hvacloop.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img" style="background:linear-gradient(135deg,#0277bd,#01579b)">
+          <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌀</span><span>HVACLoop</span></div>'" />
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">SEO Content — Author Profile</span>
+          <h3 class="work-title">Author Profile — HVACLoop.com</h3>
+          <p class="work-desc">Contributing SEO content strategist and author producing trusted HVAC insights, search-optimized blog content, and reader-first guides for the home services market.</p>
+          <span class="work-visit">Visit Page ↗</span>
+        </div>
+      </a>
+
+      <!-- Card 4: Pinterest FilterbuyUS -->
+      <a href="https://www.pinterest.com/FilterbuyUS/" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img" style="background:linear-gradient(135deg,#e60023,#ad0321)">
+          <div class="work-img-fallback">
+            <span style="font-size:2.5rem">📌</span>
+            <span>Pinterest — FilterbuyUS</span>
+          </div>
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">Social Media SEO</span>
+          <h3 class="work-title">FilterbuyUS — Pinterest Brand Presence</h3>
+          <p class="work-desc">Contributed to building and managing Filterbuy's branded Pinterest presence, supporting visual SEO, product discovery, and brand authority through strategic social content.</p>
+          <span class="work-visit">Visit Page ↗</span>
+        </div>
+      </a>
+
+      <!-- Card 5: merv-13-filters article -->
+      <a href="https://www.merv-13-filters.com/how-to-check-if-your-12x26-5x4-air-filters-need-replacement" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img">
+          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌬️</span><span>MERV-13 Filters</span></div>'" />
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">On-Page SEO — Blog Article</span>
+          <h3 class="work-title">How to Check If Your Air Filters Need Replacement</h3>
+          <p class="work-desc">A fully search-optimized article targeting high-intent HVAC queries, demonstrating on-page SEO, structured content, and search intent alignment for the home services niche.</p>
+          <span class="work-visit">Read Article ↗</span>
+        </div>
+      </a>
+
+      <!-- Card 6: 16x25x4furnacefilter article -->
+      <a href="https://www.16x25x4furnacefilter.com/do-furnace-systems-require-12x26-5x4-air-filters-" target="_blank" rel="noopener" class="work-card">
+        <div class="work-img">
+          <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🔥</span><span>Furnace Filter Blog</span></div>'" />
+        </div>
+        <div class="work-body">
+          <span class="work-tag-label">On-Page SEO — Blog Article</span>
+          <h3 class="work-title">Do Furnace Systems Require 12x26.5x4 Air Filters?</h3>
+          <p class="work-desc">Keyword-targeted HVAC blog content demonstrating niche SEO expertise in the home services industry — from keyword research through to published, ranking content.</p>
+          <span class="work-visit">Read Article ↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-centered fade-up">
+      <span class="section-eyebrow">Get In Touch</span>
+      <p class="contact-intro">Let's work together to <span>grow your search visibility</span> and capture more leads.</p>
+      <p class="contact-sub">I'm currently open to new opportunities in SEO, local search strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to connect.</p>
+      <div class="contact-cta-row">
+        <a href="mailto:amra.camid@gmail.com" class="btn-contact">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:amra.camid@gmail.com">amra.camid@gmail.com</a>
-        </div>
-        <div class="contact-row">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-          +63 935 110 9339
-        </div>
-        <div class="contact-row">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <a href="https://amrahata.my.canva.site/my-portfolio" target="_blank" rel="noopener">amrahata.my.canva.site/my-portfolio</a>
-        </div>
+          Send an Email
+        </a>
+        <a href="https://www.linkedin.com/in/amrahata-paalisbo-399144167/" target="_blank" rel="noopener" class="btn-contact-alt">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Connect on LinkedIn
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-eyebrow">Professional Summary</span>
-        <h2 class="section-title">Who I Am &amp; What I Do</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-text fade-up">
-          <p>
-            I'm an SEO and Digital Marketing Professional with over 14 years of experience supporting international and offshore clients across SEO, content marketing, local SEO, technical website optimization, customer support, recruiting, and digital operations.
-          </p>
-          <p>
-            With over 3 years of dedicated SEO experience at a national HVAC and air filtration company, I've built deep expertise in local SEO strategy, Google Business Profile optimization, schema markup implementation, structured data, and AI-powered search visibility initiatives.
-          </p>
-          <p>
-            I'm passionate about staying ahead of the curve—particularly in Generative Engine Optimization (GEO) and AI search platforms—helping businesses not just rank on Google, but be discovered across emerging AI-driven discovery surfaces.
-          </p>
-        </div>
-        <div class="about-highlights fade-up">
-          <div class="highlight-card">
-            <h4>Local SEO &amp; Google Maps</h4>
-            <p>Deep expertise in Google Business Profile optimization, near-me search, citation building, and local search strategies tailored to U.S. home services markets.</p>
-          </div>
-          <div class="highlight-card">
-            <h4>Generative Engine Optimization</h4>
-            <p>Early adopter of GEO strategies—optimizing content and structured data for AI-driven search platforms like ChatGPT, Perplexity, and Google AI Overviews.</p>
-          </div>
-          <div class="highlight-card">
-            <h4>Technical SEO &amp; Schema</h4>
-            <p>Hands-on experience with schema markup, structured data implementation, website audits, crawlability, page speed, and metadata optimization.</p>
-          </div>
-          <div class="highlight-card">
-            <h4>Remote-Ready &amp; EST Hours</h4>
-            <p>8+ years working remotely with international clients, comfortable with night shift and EST hours, self-directed with strong written and verbal English communication.</p>
-          </div>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> · SEO &amp; GEO Strategist · Davao City, Philippines</p>
+    <div class="footer-links">
+      <a href="mailto:amra.camid@gmail.com">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="https://www.linkedin.com/in/amrahata-paalisbo-399144167/" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="https://drive.google.com/file/d/1LVJXFOO4pat6PA8oJbwGDl1VnBrHlCmR/view?usp=drive_link" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resume
+      </a>
+      <span class="footer-sep">·</span>
+      <a href="tel:+639351109339">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        +63 935 110 9339
+      </a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-eyebrow">Core Competencies</span>
-        <h2 class="section-title">What I Bring to the Table</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="skills-grid fade-up">
-        <div class="skill-chip">Local SEO Strategy</div>
-        <div class="skill-chip">Google Business Profile Optimization</div>
-        <div class="skill-chip">Google Maps Optimization</div>
-        <div class="skill-chip">Generative Engine Optimization (GEO)</div>
-        <div class="skill-chip">AI Search Visibility</div>
-        <div class="skill-chip">Technical SEO</div>
-        <div class="skill-chip">Schema Markup &amp; Structured Data</div>
-        <div class="skill-chip">Keyword Research</div>
-        <div class="skill-chip">Competitor Analysis</div>
-        <div class="skill-chip">Content Optimization</div>
-        <div class="skill-chip">On-Page SEO</div>
-        <div class="skill-chip">Authority Building</div>
-        <div class="skill-chip">Citation Building</div>
-        <div class="skill-chip">Google Search Console</div>
-        <div class="skill-chip">Search Intent Optimization</div>
-        <div class="skill-chip">Near Me Search Optimization</div>
-        <div class="skill-chip">Lead Generation SEO</div>
-        <div class="skill-chip">Content Strategy</div>
-        <div class="skill-chip">Website Audits</div>
-        <div class="skill-chip">SOP &amp; Workflow Documentation</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-eyebrow">Professional Experience</span>
-        <h2 class="section-title">Career Timeline</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="timeline">
-
-        <!-- Job 1 -->
-        <div class="timeline-item fade-up">
-          <div class="timeline-meta">
-            <div class="timeline-period">Aug 2023 – Apr 2026</div>
-            <div class="timeline-company">Filterbuy Inc.</div>
-          </div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">SEO Specialist</h3>
-            <ul class="timeline-list">
-              <li>Managed SEO operations for a national HVAC &amp; air filtration company serving local markets across the United States.</li>
-              <li>Supported publishing, optimization, and QA workflows for approximately 50 SEO content pieces weekly.</li>
-              <li>Conducted keyword research, competitor analysis, and local search optimization using SEMrush, Ahrefs, and Google Search Console.</li>
-              <li>Managed Google Business Profile optimization and local SEO activities to improve local search visibility.</li>
-              <li>Implemented schema markup and structured data across blog content and website pages.</li>
-              <li>Conducted website audits focused on indexing, crawlability, page speed, internal linking, and metadata optimization.</li>
-              <li>Identified pages requiring re-optimization based on keyword opportunities and search intent alignment.</li>
-              <li>Created SOPs and workflow documentation to improve operational consistency and publishing efficiency.</li>
-              <li>Generated weekly SEO performance reports and collaborated with content creators, developers, and stakeholders.</li>
-            </ul>
-            <div class="achievements-box">
-              <h5>Key Achievements</h5>
-              <ul>
-                <li>Optimized and published ~50 SEO content pieces weekly while maintaining quality standards.</li>
-                <li>Implemented schema markup and structured data to improve content discoverability.</li>
-                <li>Leveraged AI-powered tools to streamline content production and SEO workflows.</li>
-                <li>Created SOPs and workflow documentation improving operational efficiency across teams.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="timeline-item fade-up">
-          <div class="timeline-meta">
-            <div class="timeline-period">2022 – 2023</div>
-            <div class="timeline-company">Various Clients</div>
-          </div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">Freelance Digital Marketing &amp; SEO</h3>
-            <ul class="timeline-list">
-              <li>Managed website content, blog publishing, and SEO optimization for healthcare, HVAC, technology, and local business clients.</li>
-              <li>Updated and optimized Google Business Profiles and local business listings.</li>
-              <li>Built citations, backlinks, and authority signals through directory submissions and content promotion.</li>
-              <li>Implemented schema markup recommendations and structured content improvements.</li>
-              <li>Managed social media content and supported organic growth campaigns.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Job 3 -->
-        <div class="timeline-item fade-up">
-          <div class="timeline-meta">
-            <div class="timeline-period">2021</div>
-            <div class="timeline-company">Texas Healthcare Staffing Agency</div>
-          </div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">HR Recruiter</h3>
-            <ul class="timeline-list">
-              <li>Sourced and screened healthcare candidates using multiple online platforms.</li>
-              <li>Coordinated interviews and managed end-to-end recruitment workflows.</li>
-              <li>Maintained applicant tracking systems and candidate communications.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Job 4 -->
-        <div class="timeline-item fade-up">
-          <div class="timeline-meta">
-            <div class="timeline-period">2015 – 2021</div>
-            <div class="timeline-company">U.S.-Based Businesses</div>
-          </div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">Customer Service Representative</h3>
-            <ul class="timeline-list">
-              <li>Delivered customer support through phone, email, and chat channels for U.S.-based businesses.</li>
-              <li>Resolved customer concerns while maintaining service quality standards.</li>
-              <li>Processed transactions and coordinated issue resolution across departments.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Job 5 -->
-        <div class="timeline-item fade-up">
-          <div class="timeline-meta">
-            <div class="timeline-period">2012 – 2014</div>
-            <div class="timeline-company">Various Clients</div>
-          </div>
-          <div class="timeline-content">
-            <h3 class="timeline-role">Freelance Digital Marketing &amp; SEO</h3>
-            <ul class="timeline-list">
-              <li>Delivered SEO and digital marketing services for diverse clients across healthcare, technology, and local businesses.</li>
-              <li>Conducted keyword research, content optimization, and local SEO initiatives.</li>
-              <li>Provided lead generation, administrative support, and digital marketing assistance.</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TOOLS -->
-  <section id="tools">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-eyebrow">Tools &amp; Platforms</span>
-        <h2 class="section-title">My Tech Stack</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="tools-categories fade-up">
-        <div class="tool-cat">
-          <h4>SEO &amp; Analytics</h4>
-          <ul>
-            <li>Google Search Console</li>
-            <li>Google Analytics</li>
-            <li>SEMrush</li>
-            <li>Ahrefs</li>
-            <li>CTRify</li>
-            <li>Keywords Everywhere</li>
-            <li>Topical Relevance</li>
-            <li>Schema Builder</li>
-          </ul>
-        </div>
-        <div class="tool-cat">
-          <h4>CMS &amp; Project Management</h4>
-          <ul>
-            <li>WordPress</li>
-            <li>Shopify</li>
-            <li>Google Workspace</li>
-            <li>Asana</li>
-            <li>Trello</li>
-          </ul>
-        </div>
-        <div class="tool-cat">
-          <h4>AI &amp; Creative Tools</h4>
-          <ul>
-            <li>ChatGPT</li>
-            <li>Claude AI</li>
-            <li>Gemini AI</li>
-            <li>AI Studios</li>
-            <li>Canva</li>
-            <li>CapCut</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-eyebrow">Background</span>
-        <h2 class="section-title">Education &amp; Qualifications</h2>
-        <div class="section-rule"></div>
-      </div>
-      <div class="edu-grid fade-up">
-        <div class="edu-card">
-          <div class="edu-icon">🎓</div>
-          <h3>BS in Accounting &amp; Financial Management</h3>
-          <div class="edu-school">Notre Dame University</div>
-          <div class="edu-year">Class of 2009</div>
-        </div>
-        <div>
-          <h4 style="font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 1.2rem;">Additional Qualifications</h4>
-          <ul class="quals-list">
-            <li><span class="qual-dot"></span>14+ years supporting international and offshore clients</li>
-            <li><span class="qual-dot"></span>8+ years of remote work experience</li>
-            <li><span class="qual-dot"></span>Extensive experience supporting U.S. local search and home services industries</li>
-            <li><span class="qual-dot"></span>Comfortable working night shift / EST hours</li>
-            <li><span class="qual-dot"></span>Strong written and verbal English communication skills</li>
-            <li><span class="qual-dot"></span>Self-directed, results-oriented, and process-driven professional</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="fade-up">
-          <span class="section-eyebrow">Get In Touch</span>
-          <p class="contact-intro">
-            Let's work together to <span>grow your search visibility</span> and capture more leads.
-          </p>
-          <p class="contact-sub">
-            I'm currently open to new opportunities in SEO, local search strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to connect.
-          </p>
-        </div>
-        <div class="contact-details fade-up">
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">Email</div>
-              <div class="contact-item-value"><a href="mailto:amra.camid@gmail.com">amra.camid@gmail.com</a></div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">Phone</div>
-              <div class="contact-item-value">+63 935 110 9339</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">Location</div>
-              <div class="contact-item-value">Davao City, Philippines</div>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div>
-              <div class="contact-item-label">Portfolio</div>
-              <div class="contact-item-value"><a href="https://amrahata.my.canva.site/my-portfolio" target="_blank" rel="noopener">amrahata.my.canva.site</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 <span>Amrahata Camid Paalisbo</span> · SEO &amp; GEO Strategist · Davao City, Philippines</p>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
-
+<script>
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
+HTMLEOF
+echo "Done"
