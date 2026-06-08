@@ -1,4 +1,3 @@
-cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,197 +7,207 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
   <meta name="description" content="SEO & GEO Strategist | Local SEO Specialist | Digital Marketing Professional with 14+ years of experience."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --espresso:#3b2410;--brown:#6b4226;--caramel:#a07248;--sand:#c9a882;
+      --espresso:#2a1810;--brown:#5d3a24;--caramel:#a07248;--sand:#c9a882;
       --sand-pale:#e8d5be;--cream:#f7f1e8;--warm-white:#fdf9f4;
-      --border:rgba(59,36,16,0.1);--border-c:rgba(160,114,72,0.28);
-      --max:1100px;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
+      --accent:#d4956f;--success:#34a853;--text-light:#6b5d52;
+      --border:rgba(42,24,16,0.08);--border-c:rgba(160,114,72,0.2);
+      --max:1200px;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
     }
     html{scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:62px;display:flex;align-items:center;justify-content:space-between}
-    .nav-brand{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:.02em}
-    .nav-links{display:flex;gap:1.6rem;list-style:none}
-    .nav-links a{font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color .2s}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    .nav-brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:.02em}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);text-decoration:none;transition:color .3s;position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--caramel);transition:width .3s}
     .nav-links a:hover{color:var(--caramel)}
-    .nav-cta{font-size:.74rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-white);background:var(--espresso);padding:.45rem 1.15rem;border-radius:3px;text-decoration:none;transition:background .2s}
-    .nav-cta:hover{background:var(--caramel)}
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-white);background:var(--caramel);padding:.5rem 1.3rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel)}
+    .nav-cta:hover{background:transparent;color:var(--caramel)}
 
     /* HERO */
-    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:62px}
-    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem 6rem 6rem;background:var(--espresso);color:var(--warm-white);position:relative;overflow:hidden}
-    .hero-left::before{content:'';position:absolute;top:-50px;left:-50px;width:320px;height:320px;border:1px solid rgba(201,168,130,.12);border-radius:50%}
-    .hero-left::after{content:'';position:absolute;bottom:40px;right:-90px;width:220px;height:220px;border:1px solid rgba(201,168,130,.08);border-radius:50%}
-    .hero-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:1.2rem}
-    .hero-name{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.4rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:var(--warm-white)}
+    #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px;align-items:stretch}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem;background:linear-gradient(135deg,var(--espresso) 0%,#3a2517 100%);color:var(--warm-white);position:relative;overflow:hidden}
+    .hero-left::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:1px solid rgba(201,168,130,.08);border-radius:50%}
+    .hero-left::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border:1px solid rgba(201,168,130,.06);border-radius:50%}
+    .hero-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.7rem}
+    .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--accent)}
+    .hero-name{font-family:var(--serif);font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.1;margin-bottom:1.8rem;color:var(--warm-white)}
     .hero-name span{display:block}
-    .hero-name .last{font-weight:700;color:var(--sand)}
-    .hero-tagline{font-size:.97rem;font-weight:300;color:rgba(253,249,244,.62);max-width:380px;line-height:1.75;margin-bottom:2.5rem}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:3rem}
-    .hero-tag{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;border:1px solid rgba(201,168,130,.35);color:var(--sand-pale);padding:.28rem .75rem;border-radius:2px}
-    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-    .btn-primary{display:inline-block;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--caramel);color:var(--warm-white);padding:.75rem 1.8rem;border-radius:3px;text-decoration:none;transition:background .2s}
-    .btn-primary:hover{background:var(--sand);color:var(--espresso)}
-    .btn-outline{display:inline-block;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(253,249,244,.28);color:rgba(253,249,244,.8);padding:.75rem 1.8rem;border-radius:3px;text-decoration:none;transition:all .2s}
-    .btn-outline:hover{border-color:var(--sand);color:var(--sand)}
-    .hero-right{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;padding:6rem 5rem 6rem 4rem}
-    .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);margin-bottom:2.5rem}
-    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 3rem}
-    .stat-num{font-family:var(--serif);font-size:3.2rem;font-weight:700;color:var(--espresso);line-height:1}
-    .stat-unit{color:var(--caramel);font-weight:400}
-    .stat-desc{font-size:.78rem;color:var(--brown);margin-top:.35rem;line-height:1.4}
+    .hero-name .last{font-weight:700;color:var(--accent)}
+    .hero-tagline{font-size:1rem;font-weight:300;color:rgba(253,249,244,.7);max-width:420px;line-height:1.8;margin-bottom:2.8rem}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3.5rem}
+    .hero-tag{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(201,168,130,.4);color:var(--sand-pale);padding:.35rem .9rem;border-radius:4px;transition:all .3s}
+    .hero-tag:hover{border-color:var(--accent);color:var(--accent)}
+    .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap}
+    .btn-primary{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--accent)}
+    .btn-primary:hover{background:transparent;color:var(--accent)}
+    .btn-outline{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:2px solid rgba(253,249,244,.35);color:rgba(253,249,244,.9);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+    .hero-right{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem;position:relative;overflow:hidden}
+    .hero-right::before{content:'';position:absolute;top:-150px;left:-150px;width:350px;height:350px;border:1px solid var(--border);border-radius:50%}
+    .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);margin-bottom:3rem;font-weight:600}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+    .stat-num{font-family:var(--serif);font-size:3.5rem;font-weight:700;color:var(--espresso);line-height:1;background:linear-gradient(135deg,var(--espresso),var(--brown));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stat-unit{color:var(--caramel);font-weight:600;font-size:1.8rem}
+    .stat-desc{font-size:.8rem;color:var(--text-light);margin-top:.5rem;line-height:1.5;font-weight:500}
 
     /* SECTIONS */
-    section{padding:5rem 0}
+    section{padding:6rem 0}
     .container{max-width:var(--max);margin:0 auto;padding:0 3rem}
-    .section-header{margin-bottom:3.5rem}
-    .section-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);display:block;margin-bottom:.6rem}
-    .section-title{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:600;color:var(--espresso);line-height:1.15}
-    .section-rule{width:36px;height:2px;background:var(--caramel);margin-top:1rem}
+    .section-header{margin-bottom:4rem}
+    .section-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+    .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--caramel)}
+    .section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--espresso);line-height:1.2;max-width:600px}
+    .section-rule{width:0;height:0;background:none;margin-top:0}
 
     /* ABOUT */
     #about{background:var(--warm-white)}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-    .about-text p{font-size:.97rem;color:var(--brown);line-height:1.85;margin-bottom:1.2rem}
-    .about-highlights{display:flex;flex-direction:column;gap:1.5rem}
-    .highlight-card{border-left:2px solid var(--caramel);padding-left:1.2rem}
-    .highlight-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--espresso);margin-bottom:.3rem}
-    .highlight-card p{font-size:.82rem;color:var(--brown);line-height:1.55}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+    .about-text p{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:1.5rem}
+    .about-text p strong{color:var(--espresso);font-weight:600}
+    .about-highlights{display:flex;flex-direction:column;gap:2rem}
+    .highlight-card{border-left:3px solid var(--caramel);padding-left:1.5rem;transition:all .3s}
+    .highlight-card:hover{padding-left:2rem;border-left-color:var(--accent)}
+    .highlight-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);margin-bottom:.5rem}
+    .highlight-card p{font-size:.85rem;color:var(--text-light);line-height:1.65}
+
+    /* COPYWRITER SECTION */
+    #copywriter-work{background:var(--cream)}
+    .work-exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .work-exp-card{background:var(--warm-white);border:1px solid var(--border);border-radius:8px;padding:2rem;transition:all .3s}
+    .work-exp-card:hover{border-color:var(--caramel);box-shadow:0 8px 24px rgba(160,114,72,0.12)}
+    .work-exp-icon{font-size:2.5rem;margin-bottom:1rem}
+    .work-exp-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--espresso);margin-bottom:.8rem}
+    .work-exp-card p{font-size:.9rem;color:var(--text-light);line-height:1.7;margin-bottom:1.2rem}
+    .work-exp-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+    .work-exp-tag{font-size:.7rem;background:var(--sand-pale);color:var(--espresso);padding:.35rem .8rem;border-radius:3px;font-weight:500}
 
     /* SKILLS */
-    #skills{background:var(--cream)}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.55rem}
-    .skill-chip{background:var(--warm-white);border:1px solid var(--border);padding:.62rem 1rem;border-radius:3px;font-size:.8rem;color:var(--brown);transition:all .2s}
-    .skill-chip:hover{border-color:var(--caramel);color:var(--espresso);background:var(--sand-pale)}
-
-    /* EXPERIENCE */
-    #experience{background:var(--warm-white)}
-    .resume-cta-box{
-      display:flex;align-items:center;justify-content:center;flex-direction:column;
-      gap:1.5rem;padding:3.5rem 2rem;
-      background:var(--cream);border:1px solid var(--border-c);border-radius:8px;
-      text-align:center;
-    }
-    .resume-cta-box p{font-size:1rem;color:var(--brown);max-width:480px;line-height:1.7}
-    .resume-cta-box p strong{color:var(--espresso)}
-    .btn-resume{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--warm-white);padding:.85rem 2rem;border-radius:3px;text-decoration:none;transition:background .2s}
-    .btn-resume:hover{background:var(--caramel)}
+    #skills{background:var(--warm-white)}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+    .skill-chip{background:var(--cream);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:6px;font-size:.8rem;color:var(--espresso);transition:all .3s;font-weight:500;text-align:center;cursor:default}
+    .skill-chip:hover{border-color:var(--caramel);color:var(--caramel);background:var(--sand-pale);transform:translateY(-2px)}
 
     /* TOOLS MARQUEE */
-    #tools{background:var(--espresso);overflow:hidden}
+    #tools{background:var(--espresso);overflow:hidden;padding:6rem 0}
     #tools .section-title{color:var(--warm-white)}
-    #tools .section-rule{background:var(--caramel)}
-    #tools .section-eyebrow{color:var(--sand)}
-    .marquee-outer{overflow:hidden;padding:1rem 0 2.5rem;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
-    .marquee-track{display:flex;gap:1.2rem;width:max-content;animation:ticker 35s linear infinite}
+    #tools .section-eyebrow{color:var(--accent)}
+    #tools .section-eyebrow::before{background:var(--accent)}
+    .marquee-outer{overflow:hidden;padding:2rem 0 3rem;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+    .marquee-track{display:flex;gap:1.5rem;width:max-content;animation:ticker 40s linear infinite}
     .marquee-track:hover{animation-play-state:paused}
     @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .tool-tile{
-      display:flex;flex-direction:column;align-items:center;gap:10px;
-      padding:18px 20px;min-width:115px;border-radius:16px;flex-shrink:0;
-      cursor:default;transition:transform .2s;
-    }
-    .tool-tile:hover{transform:translateY(-4px) scale(1.04)}
-    .tool-emoji{font-size:2rem;line-height:1}
-    .tool-name{font-size:.68rem;color:rgba(255,255,255,.9);text-align:center;font-weight:500;line-height:1.3;letter-spacing:.02em}
+    .tool-tile{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 24px;min-width:130px;border-radius:12px;flex-shrink:0;cursor:default;transition:transform .3s}
+    .tool-tile:hover{transform:translateY(-6px) scale(1.06)}
+    .tool-emoji{font-size:2.2rem;line-height:1}
+    .tool-name{font-size:.7rem;color:rgba(255,255,255,.95);text-align:center;font-weight:600;line-height:1.4;letter-spacing:.02em}
 
     /* EDUCATION */
     #education{background:var(--cream)}
-    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-    .edu-card{background:var(--warm-white);border:1px solid var(--border);border-radius:6px;padding:2rem}
-    .edu-icon{width:44px;height:44px;background:var(--sand-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.2rem}
-    .edu-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.3rem}
-    .edu-school{font-size:.82rem;color:var(--caramel);font-weight:500;margin-bottom:.15rem}
-    .edu-year{font-size:.78rem;color:var(--brown)}
-    .quals-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-    .quals-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.84rem;color:var(--brown);line-height:1.5}
-    .qual-dot{width:6px;height:6px;background:var(--caramel);border-radius:50%;margin-top:7px;flex-shrink:0}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+    .edu-card{background:var(--warm-white);border:1px solid var(--border);border-radius:8px;padding:2.5rem;transition:all .3s;position:relative;overflow:hidden}
+    .edu-card::before{content:'';position:absolute;top:-50px;right:-50px;width:150px;height:150px;background:var(--sand-pale);border-radius:50%;opacity:0;transition:opacity .3s}
+    .edu-card:hover::before{opacity:.3}
+    .edu-icon{width:50px;height:50px;background:var(--sand-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.5rem}
+    .edu-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.4rem}
+    .edu-school{font-size:.85rem;color:var(--caramel);font-weight:600;margin-bottom:.2rem}
+    .edu-year{font-size:.8rem;color:var(--text-light)}
+    .quals-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
+    .quals-list li{display:flex;align-items:flex-start;gap:.8rem;font-size:.85rem;color:var(--text-light);line-height:1.6}
+    .qual-dot{width:6px;height:6px;background:var(--caramel);border-radius:50%;margin-top:6px;flex-shrink:0}
 
     /* CERTIFICATIONS */
     #certifications{background:var(--warm-white)}
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem}
-    .cert-card{
-      background:var(--cream);border:1px solid var(--border-c);border-radius:8px;
-      overflow:hidden;display:flex;flex-direction:column;
-    }
-    .cert-card-top{padding:1.6rem 2rem 1.4rem;background:var(--espresso);position:relative;overflow:hidden}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+    .cert-card{background:var(--cream);border:1px solid var(--border-c);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s}
+    .cert-card:hover{border-color:var(--caramel);box-shadow:0 12px 32px rgba(160,114,72,0.15)}
+    .cert-card-top{padding:1.8rem 2rem 1.6rem;background:linear-gradient(135deg,var(--espresso),#3a2517);position:relative;overflow:hidden}
     .cert-card-top::before{content:'';position:absolute;right:-40px;top:-40px;width:130px;height:130px;border:1px solid rgba(201,168,130,.1);border-radius:50%}
-    .cert-badge-row{display:flex;align-items:center;gap:.9rem}
-    .cert-logo{width:42px;height:42px;border-radius:8px;background:var(--warm-white);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-    .cert-issuer-name{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sand);margin-bottom:.2rem}
-    .cert-type-badge{font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(201,168,130,.18);color:var(--sand-pale);padding:.2rem .55rem;border-radius:2px;display:inline-block}
-    .cert-card-body{padding:1.4rem 2rem 1.8rem}
-    .cert-name{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.6rem;line-height:1.3}
-    .cert-meta{display:flex;flex-wrap:wrap;gap:.8rem}
-    .cert-meta-item{font-size:.76rem;color:var(--brown);display:flex;align-items:center;gap:.35rem}
+    .cert-badge-row{display:flex;align-items:center;gap:1rem}
+    .cert-logo{width:45px;height:45px;border-radius:8px;background:var(--warm-white);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .cert-issuer-name{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+    .cert-type-badge{font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(212,149,111,.2);color:var(--sand-pale);padding:.3rem .7rem;border-radius:3px;display:inline-block}
+    .cert-card-body{padding:1.8rem 2rem 2rem}
+    .cert-name{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.8rem;line-height:1.4}
+    .cert-meta{display:flex;flex-wrap:wrap;gap:1rem}
+    .cert-meta-item{font-size:.75rem;color:var(--text-light);display:flex;align-items:center;gap:.4rem}
     .cert-meta-item svg{color:var(--caramel)}
 
     /* SAMPLE WORKS */
     #sample-works{background:var(--cream)}
-    .works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem}
-    .work-card{
-      background:var(--warm-white);border:1px solid var(--border);border-radius:8px;
-      overflow:hidden;display:flex;flex-direction:column;
-      text-decoration:none;color:inherit;
-      transition:border-color .2s,transform .2s;
-    }
-    .work-card:hover{border-color:var(--caramel);transform:translateY(-3px)}
-    .work-img{width:100%;height:160px;overflow:hidden;background:var(--espresso);display:flex;align-items:center;justify-content:center;position:relative}
-    .work-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .3s}
-    .work-card:hover .work-img img{transform:scale(1.04)}
-    .work-img-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:2.4rem;gap:.5rem}
-    .work-img-fallback span{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-    .work-body{padding:1.3rem 1.5rem 1.5rem;flex:1;display:flex;flex-direction:column}
-    .work-tag-label{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.5rem;display:block}
-    .work-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--espresso);line-height:1.3;margin-bottom:.6rem}
-    .work-desc{font-size:.82rem;color:var(--brown);line-height:1.6;flex:1;margin-bottom:1rem}
-    .work-visit{font-size:.73rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel);display:inline-flex;align-items:center;gap:.3rem;margin-top:auto}
+    .works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+    .work-card{background:var(--warm-white);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .3s}
+    .work-card:hover{border-color:var(--caramel);transform:translateY(-4px);box-shadow:0 12px 32px rgba(160,114,72,0.12)}
+    .work-img{width:100%;height:180px;overflow:hidden;background:var(--espresso);display:flex;align-items:center;justify-content:center;position:relative}
+    .work-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s}
+    .work-card:hover .work-img img{transform:scale(1.06)}
+    .work-img-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:2.8rem;gap:.6rem}
+    .work-img-fallback span{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+    .work-body{padding:1.6rem;flex:1;display:flex;flex-direction:column}
+    .work-tag-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.7rem;display:block}
+    .work-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);line-height:1.4;margin-bottom:.8rem}
+    .work-desc{font-size:.85rem;color:var(--text-light);line-height:1.7;flex:1;margin-bottom:1.2rem}
+    .work-visit{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel);display:inline-flex;align-items:center;gap:.4rem;margin-top:auto;transition:all .3s}
+    .work-card:hover .work-visit{color:var(--accent);gap:.6rem}
 
     /* CONTACT */
     #contact{background:var(--warm-white)}
-    .contact-centered{max-width:620px;margin:0 auto;text-align:center}
-    .contact-intro{font-family:var(--serif);font-size:2rem;font-weight:300;color:var(--espresso);line-height:1.3;margin-bottom:1.5rem}
+    .contact-centered{max-width:680px;margin:0 auto;text-align:center}
+    .contact-intro{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--espresso);line-height:1.35;margin-bottom:1.8rem}
     .contact-intro span{color:var(--caramel);font-weight:600}
-    .contact-sub{font-size:.92rem;color:var(--brown);line-height:1.8;margin-bottom:2rem}
-    .contact-cta-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
-    .btn-contact{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--espresso);color:var(--warm-white);padding:.75rem 1.7rem;border-radius:3px;text-decoration:none;transition:background .2s}
-    .btn-contact:hover{background:var(--caramel)}
-    .btn-contact-alt{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border-c);color:var(--brown);padding:.75rem 1.7rem;border-radius:3px;text-decoration:none;transition:all .2s}
+    .contact-sub{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:2.5rem}
+    .contact-cta-row{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap}
+    .btn-contact{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--caramel);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel)}
+    .btn-contact:hover{background:transparent;color:var(--caramel)}
+    .btn-contact-alt{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--border-c);color:var(--espresso);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
     .btn-contact-alt:hover{border-color:var(--caramel);color:var(--caramel)}
 
     /* FOOTER */
-    footer{background:var(--espresso);padding:1.6rem 2.5rem}
-    .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
-    .footer-copy{font-size:.78rem;color:rgba(253,249,244,.4);letter-spacing:.04em}
-    .footer-copy span{color:var(--sand)}
-    .footer-links{display:flex;align-items:center;gap:1.8rem}
-    .footer-links a{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(253,249,244,.4);text-decoration:none;display:flex;align-items:center;gap:.4rem;transition:color .2s}
-    .footer-links a:hover{color:var(--sand)}
-    .footer-sep{color:rgba(253,249,244,.2);font-size:.7rem}
+    footer{background:var(--espresso);padding:2rem 2.5rem;border-top:1px solid rgba(201,168,130,0.1)}
+    .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem}
+    .footer-copy{font-size:.8rem;color:rgba(253,249,244,.5);letter-spacing:.04em}
+    .footer-copy span{color:var(--accent)}
+    .footer-links{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+    .footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(253,249,244,.5);text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .3s;font-weight:500}
+    .footer-links a:hover{color:var(--accent)}
+    .footer-sep{color:rgba(253,249,244,.2);font-size:.75rem}
 
     /* ANIMATIONS */
-    .fade-up{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+    .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
     .fade-up.visible{opacity:1;transform:translateY(0)}
 
     /* RESPONSIVE */
-    @media(max-width:900px){
+    @media(max-width:1024px){
       #hero{grid-template-columns:1fr;min-height:auto}
-      .hero-left{padding:5rem 2.5rem 4rem}
-      .hero-right{padding:3rem 2.5rem 4rem}
-      .about-grid,.edu-grid{grid-template-columns:1fr;gap:2.5rem}
-      .container{padding:0 1.5rem}
+      .hero-left{padding:5rem 3rem 4rem}
+      .hero-right{padding:4rem 3rem}
+      .about-grid,.edu-grid{grid-template-columns:1fr;gap:3.5rem}
+      .container{padding:0 2rem}
       .nav-links{display:none}
-      .footer-inner{flex-direction:column;align-items:flex-start}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:.8rem}
       .cert-grid{grid-template-columns:1fr}
     }
-    @media(max-width:600px){
-      .hero-stats{grid-template-columns:1fr 1fr}
+    @media(max-width:768px){
+      nav{padding:0 1.5rem;height:56px}
+      .hero-stats{grid-template-columns:1fr}
       .works-grid{grid-template-columns:1fr}
+      .hero-left{padding:4rem 2rem}
+      .hero-right{padding:3rem 2rem}
+      .container{padding:0 1.5rem}
+      section{padding:4rem 0}
+    }
+    @media(max-width:600px){
+      .nav-brand{font-size:1.1rem}
+      .hero-left::before,.hero-left::after{display:none}
+      .hero-right::before{display:none}
+      .work-exp-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -209,10 +218,10 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
   <a href="#hero" class="nav-brand">A. Paalisbo</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#copywriter">Copywriting</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Resume</a></li>
     <li><a href="#tools">Tools</a></li>
-    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#certifications">Certs</a></li>
     <li><a href="#sample-works">Works</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -228,15 +237,15 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <span>Camid</span>
       <span class="last">Paalisbo</span>
     </h1>
-    <p class="hero-tagline">SEO &amp; GEO Strategist specializing in local search optimization, AI-powered visibility, and digital marketing—helping businesses rank, be found, and convert.</p>
+    <p class="hero-tagline">SEO & GEO Strategist + Copywriter specializing in local search optimization, AI-powered visibility, and high-converting content—helping businesses rank, be found, and convert.</p>
     <div class="hero-tags">
       <span class="hero-tag">Local SEO</span>
       <span class="hero-tag">GEO / AI Search</span>
-      <span class="hero-tag">Technical SEO</span>
-      <span class="hero-tag">Google Business Profile</span>
+      <span class="hero-tag">Copywriting</span>
+      <span class="hero-tag">Content Strategy</span>
     </div>
     <div class="hero-actions">
-      <a href="#experience" class="btn-primary">View Resume</a>
+      <a href="#sample-works" class="btn-primary">View My Work</a>
       <a href="#contact" class="btn-outline">Get In Touch</a>
     </div>
   </div>
@@ -245,7 +254,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     <div class="hero-stats">
       <div>
         <div class="stat-num">14<span class="stat-unit">+</span></div>
-        <div class="stat-desc">Years supporting international &amp; offshore clients</div>
+        <div class="stat-desc">Years supporting international & offshore clients</div>
       </div>
       <div>
         <div class="stat-num">8<span class="stat-unit">+</span></div>
@@ -268,33 +277,82 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
   <div class="container">
     <div class="section-header fade-up">
       <span class="section-eyebrow">Professional Summary</span>
-      <h2 class="section-title">Who I Am &amp; What I Do</h2>
-      <div class="section-rule"></div>
+      <h2 class="section-title">Who I Am & What I Do</h2>
     </div>
     <div class="about-grid">
       <div class="about-text fade-up">
-        <p>I'm an SEO and Digital Marketing Professional with over 14 years of experience supporting international and offshore clients across SEO, content marketing, local SEO, technical website optimization, customer support, recruiting, and digital operations.</p>
-        <p>With over 3 years of dedicated SEO experience at a national HVAC and air filtration company, I've built deep expertise in local SEO strategy, Google Business Profile optimization, schema markup implementation, structured data, and AI-powered search visibility initiatives.</p>
-        <p>I'm passionate about staying ahead of the curve—particularly in Generative Engine Optimization (GEO) and AI search platforms—helping businesses not just rank on Google, but be discovered across emerging AI-driven discovery surfaces.</p>
+        <p>I'm an <strong>SEO Strategist, Digital Marketer, and Copywriter</strong> with over 14 years of experience supporting international and offshore clients across SEO, content marketing, local search optimization, technical website optimization, and digital strategy.</p>
+        <p>With over <strong>3 years of dedicated SEO experience</strong> at a national HVAC and air filtration company, I've built deep expertise in local SEO strategy, Google Business Profile optimization, schema markup, and home services market dynamics.</p>
+        <p>Beyond SEO, I'm a <strong>skilled copywriter</strong> experienced in WordPress blog management, email marketing campaigns for e-commerce, and crafting compelling content that resonates with audiences and drives conversions.</p>
+        <p>I'm passionate about staying ahead of the curve—particularly in <strong>Generative Engine Optimization (GEO), AI search platforms, and data-driven copywriting</strong>—helping businesses not just rank on Google, but be discovered across all search channels and convert visitors into loyal customers.</p>
       </div>
       <div class="about-highlights fade-up">
         <div class="highlight-card">
-          <h4>Local SEO &amp; Google Maps</h4>
+          <h4>Local SEO & Google Maps</h4>
           <p>Deep expertise in Google Business Profile optimization, near-me search, citation building, and local search strategies tailored to U.S. home services markets.</p>
         </div>
         <div class="highlight-card">
-          <h4>Generative Engine Optimization</h4>
-          <p>Early adopter of GEO strategies—optimizing content and structured data for AI-driven platforms like ChatGPT, Perplexity, and Google AI Overviews.</p>
+          <h4>SEO Copywriting</h4>
+          <p>Crafting search-optimized copy that balances keyword strategy with compelling storytelling—for blog posts, email campaigns, landing pages, and product descriptions.</p>
         </div>
         <div class="highlight-card">
-          <h4>Technical SEO &amp; Schema</h4>
+          <h4>Technical SEO & Schema</h4>
           <p>Hands-on experience with schema markup, structured data, website audits, crawlability, page speed, and metadata optimization.</p>
         </div>
         <div class="highlight-card">
-          <h4>Remote-Ready &amp; EST Hours</h4>
+          <h4>Remote-Ready & EST Hours</h4>
           <p>8+ years working remotely with international clients, comfortable with night shift and EST hours, self-directed with strong English communication skills.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- COPYWRITER WORK EXPERIENCE -->
+<section id="copywriter-work">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Copywriting Experience</span>
+      <h2 class="section-title">Content Creation & Email Marketing</h2>
+    </div>
+    <div class="work-exp-grid fade-up">
+      
+      <div class="work-exp-card">
+        <div class="work-exp-icon">📝</div>
+        <h3>WordPress Blog Management</h3>
+        <p>Full-cycle WordPress content creation and management—from topic ideation and keyword research through drafting, editing, publishing, and performance optimization. Creating evergreen content that drives organic traffic and establishes thought leadership.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">WordPress</span>
+          <span class="work-exp-tag">Blog Writing</span>
+          <span class="work-exp-tag">Content Strategy</span>
+          <span class="work-exp-tag">SEO Copywriting</span>
+        </div>
+      </div>
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">✉️</div>
+        <h3>Email Marketing Campaigns</h3>
+        <p>Crafting compelling email sequences for e-commerce and service-based businesses. From subject lines that boost open rates to body copy designed to drive clicks and conversions—all while maintaining brand voice and compliance standards.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Email Copywriting</span>
+          <span class="work-exp-tag">E-Commerce</span>
+          <span class="work-exp-tag">Campaigns</span>
+          <span class="work-exp-tag">Conversion Optimization</span>
+        </div>
+      </div>
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">🎯</div>
+        <h3>Landing Page Copywriting</h3>
+        <p>Writing high-converting landing page copy with clear value propositions, compelling headlines, persuasive body text, and strategic CTAs. Each page optimized for both search engines and user psychology to maximize conversion rates.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Landing Pages</span>
+          <span class="work-exp-tag">Copywriting</span>
+          <span class="work-exp-tag">CRO</span>
+          <span class="work-exp-tag">High-Converting Copy</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -305,16 +363,16 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     <div class="section-header fade-up">
       <span class="section-eyebrow">Core Competencies</span>
       <h2 class="section-title">What I Bring to the Table</h2>
-      <div class="section-rule"></div>
     </div>
     <div class="skills-grid fade-up">
       <div class="skill-chip">Local SEO Strategy</div>
-      <div class="skill-chip">Google Business Profile Optimization</div>
-      <div class="skill-chip">Google Maps Optimization</div>
-      <div class="skill-chip">Generative Engine Optimization (GEO)</div>
-      <div class="skill-chip">AI Search Visibility</div>
+      <div class="skill-chip">GBP Optimization</div>
+      <div class="skill-chip">Generative Engine Optimization</div>
       <div class="skill-chip">Technical SEO</div>
-      <div class="skill-chip">Schema Markup &amp; Structured Data</div>
+      <div class="skill-chip">SEO Copywriting</div>
+      <div class="skill-chip">Email Marketing</div>
+      <div class="skill-chip">WordPress Management</div>
+      <div class="skill-chip">Schema Markup</div>
       <div class="skill-chip">Keyword Research</div>
       <div class="skill-chip">Competitor Analysis</div>
       <div class="skill-chip">Content Optimization</div>
@@ -322,30 +380,11 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <div class="skill-chip">Authority Building</div>
       <div class="skill-chip">Citation Building</div>
       <div class="skill-chip">Google Search Console</div>
-      <div class="skill-chip">Search Intent Optimization</div>
-      <div class="skill-chip">Near Me Search Optimization</div>
+      <div class="skill-chip">Search Intent</div>
       <div class="skill-chip">Lead Generation SEO</div>
       <div class="skill-chip">Content Strategy</div>
       <div class="skill-chip">Website Audits</div>
-      <div class="skill-chip">SOP &amp; Workflow Documentation</div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-eyebrow">Professional Experience</span>
-      <h2 class="section-title">View My Full Resume</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="resume-cta-box fade-up">
-      <p><strong>14+ years of experience</strong> in SEO, digital marketing, local search, and remote operations — all in one document. Click below to view or download my complete resume.</p>
-      <a href="https://drive.google.com/file/d/1LVJXFOO4pat6PA8oJbwGDl1VnBrHlCmR/view?usp=drive_link" target="_blank" rel="noopener" class="btn-resume">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        View My Resume
-      </a>
+      <div class="skill-chip">SOP Documentation</div>
     </div>
   </div>
 </section>
@@ -354,9 +393,8 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <section id="tools">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="section-eyebrow">Tools &amp; Platforms</span>
+      <span class="section-eyebrow">Tools & Platforms</span>
       <h2 class="section-title">My Tech Stack</h2>
-      <div class="section-rule"></div>
     </div>
   </div>
   <div class="marquee-outer fade-up">
@@ -364,43 +402,43 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <!-- SET 1 -->
       <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">SEMrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">CTRify</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Keywords Everywhere</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Topical Relevance</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Builder</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">Screaming Frog</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">SEMrush GBP</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Sheets</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema.org</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">Shopify</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Google Workspace</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">MailChimp</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Claude AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Gemini AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">AI Studios</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Figma</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Adobe Suite</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">CapCut</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Git / GitHub</span></div>
       <!-- SET 2 (duplicate for seamless loop) -->
       <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">SEMrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">CTRify</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Keywords Everywhere</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Topical Relevance</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Builder</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">Screaming Frog</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">SEMrush GBP</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Sheets</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema.org</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">Shopify</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Google Workspace</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">MailChimp</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Claude AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Gemini AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">AI Studios</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Figma</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Adobe Suite</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">CapCut</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Git / GitHub</span></div>
     </div>
   </div>
 </section>
@@ -410,18 +448,17 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
   <div class="container">
     <div class="section-header fade-up">
       <span class="section-eyebrow">Background</span>
-      <h2 class="section-title">Education &amp; Qualifications</h2>
-      <div class="section-rule"></div>
+      <h2 class="section-title">Education & Qualifications</h2>
     </div>
     <div class="edu-grid fade-up">
       <div class="edu-card">
         <div class="edu-icon">🎓</div>
-        <h3>BS in Accounting &amp; Financial Management</h3>
+        <h3>BS in Accounting & Financial Management</h3>
         <div class="edu-school">Notre Dame University</div>
         <div class="edu-year">Class of 2009</div>
       </div>
       <div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);margin-bottom:1.2rem;">Additional Qualifications</h4>
+        <h4 style="font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:1.4rem;">Additional Qualifications</h4>
         <ul class="quals-list">
           <li><span class="qual-dot"></span>14+ years supporting international and offshore clients</li>
           <li><span class="qual-dot"></span>8+ years of remote work experience</li>
@@ -441,7 +478,6 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     <div class="section-header fade-up">
       <span class="section-eyebrow">Credentials</span>
       <h2 class="section-title">Professional Certifications</h2>
-      <div class="section-rule"></div>
     </div>
     <div class="cert-grid fade-up">
 
@@ -490,8 +526,8 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
               Live Workshop — 3 Hours
             </div>
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              Issued by Eula Hernandez &amp; Mijs Johan Iglesia
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              Issued by Eula Hernandez & Mijs Johan Iglesia
             </div>
           </div>
         </div>
@@ -507,7 +543,6 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     <div class="section-header fade-up">
       <span class="section-eyebrow">Sample Works</span>
       <h2 class="section-title">Featured Projects</h2>
-      <div class="section-rule"></div>
     </div>
     <div class="works-grid fade-up">
 
@@ -530,7 +565,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <!-- Card 2: IndoorAirHub -->
       <a href="https://indoorairhub.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌿</span><span>IndoorAirHub</span></div>'" />
+          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📰</span><span>IndoorAirHub</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">SEO Content — Author Profile</span>
@@ -543,7 +578,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <!-- Card 3: HVACLoop -->
       <a href="https://hvacloop.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img" style="background:linear-gradient(135deg,#0277bd,#01579b)">
-          <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌀</span><span>HVACLoop</span></div>'" />
+          <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>❄️</span><span>HVACLoop</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">SEO Content — Author Profile</span>
@@ -572,7 +607,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <!-- Card 5: merv-13-filters article -->
       <a href="https://www.merv-13-filters.com/how-to-check-if-your-12x26-5x4-air-filters-need-replacement" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🌬️</span><span>MERV-13 Filters</span></div>'" />
+          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>✍️</span><span>Blog Article</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">On-Page SEO — Blog Article</span>
@@ -585,7 +620,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       <!-- Card 6: 16x25x4furnacefilter article -->
       <a href="https://www.16x25x4furnacefilter.com/do-furnace-systems-require-12x26-5x4-air-filters-" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'work-img-fallback\'><span>🔥</span><span>Furnace Filter Blog</span></div>'" />
+          <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>✍️</span><span>Blog Article</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">On-Page SEO — Blog Article</span>
@@ -605,10 +640,10 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
     <div class="contact-centered fade-up">
       <span class="section-eyebrow">Get In Touch</span>
       <p class="contact-intro">Let's work together to <span>grow your search visibility</span> and capture more leads.</p>
-      <p class="contact-sub">I'm currently open to new opportunities in SEO, local search strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to connect.</p>
+      <p class="contact-sub">I'm currently open to new opportunities in SEO, copywriting, content strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to discuss how I can help your business succeed.</p>
       <div class="contact-cta-row">
         <a href="mailto:amra.camid@gmail.com" class="btn-contact">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
           Send an Email
         </a>
         <a href="https://www.linkedin.com/in/amrahata-paalisbo-399144167/" target="_blank" rel="noopener" class="btn-contact-alt">
@@ -623,10 +658,10 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> · SEO &amp; GEO Strategist · Davao City, Philippines</p>
+    <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> · SEO & GEO Strategist · Davao City, Philippines</p>
     <div class="footer-links">
       <a href="mailto:amra.camid@gmail.com">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
         Email
       </a>
       <span class="footer-sep">·</span>
@@ -641,7 +676,7 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
       </a>
       <span class="footer-sep">·</span>
       <a href="tel:+639351109339">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1 3.07-8.63A2 2 0 0 1 9.08 2h3a2 2 0 0 1 2 1.72 12 12 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12 12 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         +63 935 110 9339
       </a>
     </div>
@@ -654,5 +689,3 @@ cat > /mnt/user-data/outputs/index.html << 'HTMLEOF'
 </script>
 </body>
 </html>
-HTMLEOF
-echo "Done"
