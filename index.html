@@ -21,7 +21,7 @@
     body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
     /* NAV */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:64px;display:flex;align-items:center;justify-content:space-between}
     .nav-brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:.02em}
     .nav-links{display:flex;gap:2rem;list-style:none}
     .nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);text-decoration:none;transition:color .3s;position:relative}
@@ -41,6 +41,7 @@
     .hero-name{font-family:var(--serif);font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.1;margin-bottom:1.8rem;color:var(--warm-white)}
     .hero-name span{display:block}
     .hero-name .last{font-weight:700;color:var(--accent)}
+    .hero-title{font-size:1.3rem;font-weight:500;color:rgba(201,168,130,.9);margin-bottom:1.5rem;line-height:1.5}
     .hero-tagline{font-size:1rem;font-weight:300;color:rgba(253,249,244,.7);max-width:420px;line-height:1.8;margin-bottom:2.8rem}
     .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3.5rem}
     .hero-tag{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(201,168,130,.4);color:var(--sand-pale);padding:.35rem .9rem;border-radius:4px;transition:all .3s}
@@ -52,6 +53,7 @@
     .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
     .hero-right{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem;position:relative;overflow:hidden}
     .hero-right::before{content:'';position:absolute;top:-150px;left:-150px;width:350px;height:350px;border:1px solid var(--border);border-radius:50%}
+    .hero-image{width:100%;max-width:350px;border-radius:12px;object-fit:cover;box-shadow:0 20px 40px rgba(42,24,16,0.15)}
     .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);margin-bottom:3rem;font-weight:600}
     .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
     .stat-num{font-family:var(--serif);font-size:3.5rem;font-weight:700;color:var(--espresso);line-height:1;background:linear-gradient(135deg,var(--espresso),var(--brown));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -70,6 +72,7 @@
     /* ABOUT */
     #about{background:var(--warm-white)}
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+    .about-image{width:100%;border-radius:12px;object-fit:cover;box-shadow:0 20px 40px rgba(42,24,16,0.15)}
     .about-text p{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:1.5rem}
     .about-text p strong{color:var(--espresso);font-weight:600}
     .about-highlights{display:flex;flex-direction:column;gap:2rem}
@@ -77,6 +80,19 @@
     .highlight-card:hover{padding-left:2rem;border-left-color:var(--accent)}
     .highlight-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);margin-bottom:.5rem}
     .highlight-card p{font-size:.85rem;color:var(--text-light);line-height:1.65}
+    .skill-badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
+    .badge{display:inline-block;background:linear-gradient(135deg,rgba(212,149,111,.15),rgba(201,168,130,.1));border:1px solid var(--border-c);color:var(--espresso);padding:.5rem 1.1rem;border-radius:24px;font-size:.75rem;font-weight:600;letter-spacing:.05em}
+
+    /* FEATURED CASE STUDY */
+    #featured-case{background:var(--cream)}
+    .case-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1fr;gap:0;transition:all .3s;box-shadow:0 4px 12px rgba(160,114,72,0.08)}
+    .case-card:hover{border-color:var(--caramel);box-shadow:0 12px 32px rgba(160,114,72,0.15);transform:translateY(-4px)}
+    .case-card-body{padding:2.5rem}
+    .case-tag{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.8rem;display:block}
+    .case-title{font-family:var(--serif);font-size:1.8rem;font-weight:600;color:var(--espresso);margin-bottom:1.2rem;line-height:1.3}
+    .case-desc{font-size:.95rem;color:var(--text-light);line-height:1.8;margin-bottom:2rem}
+    .btn-case{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--caramel);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel)}
+    .btn-case:hover{background:transparent;color:var(--caramel)}
 
     /* COPYWRITER SECTION */
     #copywriter-work{background:var(--cream)}
@@ -92,7 +108,7 @@
     /* SKILLS */
     #skills{background:var(--warm-white)}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
-    .skill-chip{background:var(--cream);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:6px;font-size:.8rem;color:var(--espresso);transition:all .3s;font-weight:500;text-align:center;cursor:default}
+    .skill-chip{background:var(--cream);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:6px;font-size:.8rem;color:var(--espresso);transition:all .3s;font-weight:500;text-align:center}
     .skill-chip:hover{border-color:var(--caramel);color:var(--caramel);background:var(--sand-pale);transform:translateY(-2px)}
 
     /* TOOLS MARQUEE */
@@ -202,12 +218,14 @@
       .hero-right{padding:3rem 2rem}
       .container{padding:0 1.5rem}
       section{padding:4rem 0}
+      .skill-badges{flex-direction:column;align-items:flex-start}
     }
     @media(max-width:600px){
       .nav-brand{font-size:1.1rem}
       .hero-left::before,.hero-left::after{display:none}
       .hero-right::before{display:none}
       .work-exp-grid{grid-template-columns:1fr}
+      .hero-title{font-size:1.1rem}
     }
   </style>
 </head>
@@ -218,6 +236,7 @@
   <a href="#hero" class="nav-brand">A. Paalisbo</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#featured-case">Case Study</a></li>
     <li><a href="#copywriter">Copywriting</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#tools">Tools</a></li>
@@ -234,41 +253,17 @@
     <p class="hero-eyebrow">Available for New Opportunities</p>
     <h1 class="hero-name">
       <span>Amrahata</span>
-      <span>Camid</span>
       <span class="last">Paalisbo</span>
     </h1>
-    <p class="hero-tagline">SEO & GEO Strategist + Copywriter specializing in local search optimization, AI-powered visibility, and high-converting content—helping businesses rank, be found, and convert.</p>
-    <div class="hero-tags">
-      <span class="hero-tag">Local SEO</span>
-      <span class="hero-tag">GEO / AI Search</span>
-      <span class="hero-tag">Copywriting</span>
-      <span class="hero-tag">Content Strategy</span>
-    </div>
+    <p class="hero-title">SEO Specialist | Content Operations | GEO Strategist</p>
+    <p class="hero-tagline">Helping businesses increase visibility through content strategy, technical SEO, local SEO, and AI search optimization.</p>
     <div class="hero-actions">
-      <a href="#sample-works" class="btn-primary">View My Work</a>
-      <a href="#contact" class="btn-outline">Get In Touch</a>
+      <a href="#featured-case" class="btn-primary">View Case Study</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
     </div>
   </div>
   <div class="hero-right">
-    <p class="hero-stat-label">Career at a glance</p>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">14<span class="stat-unit">+</span></div>
-        <div class="stat-desc">Years supporting international & offshore clients</div>
-      </div>
-      <div>
-        <div class="stat-num">8<span class="stat-unit">+</span></div>
-        <div class="stat-desc">Years of remote work experience</div>
-      </div>
-      <div>
-        <div class="stat-num">3<span class="stat-unit">+</span></div>
-        <div class="stat-desc">Years dedicated SEO specialist experience</div>
-      </div>
-      <div>
-        <div class="stat-num">50<span class="stat-unit">/wk</span></div>
-        <div class="stat-desc">SEO content pieces managed weekly</div>
-      </div>
-    </div>
+    <img src="assets/images/amrahata-paalisbo.jpg" alt="Amrahata Paalisbo" class="hero-image"/>
   </div>
 </section>
 
@@ -277,32 +272,46 @@
   <div class="container">
     <div class="section-header fade-up">
       <span class="section-eyebrow">Professional Summary</span>
-      <h2 class="section-title">Who I Am & What I Do</h2>
+      <h2 class="section-title">About Me</h2>
     </div>
     <div class="about-grid">
-      <div class="about-text fade-up">
-        <p>I'm an <strong>SEO Strategist, Digital Marketer, and Copywriter</strong> with over 14 years of experience supporting international and offshore clients across SEO, content marketing, local search optimization, technical website optimization, and digital strategy.</p>
-        <p>With over <strong>3 years of dedicated SEO experience</strong> at a national HVAC and air filtration company, I've built deep expertise in local SEO strategy, Google Business Profile optimization, schema markup, and home services market dynamics.</p>
-        <p>Beyond SEO, I'm a <strong>skilled copywriter</strong> experienced in WordPress blog management, email marketing campaigns for e-commerce, and crafting compelling content that resonates with audiences and drives conversions.</p>
-        <p>I'm passionate about staying ahead of the curve—particularly in <strong>Generative Engine Optimization (GEO), AI search platforms, and data-driven copywriting</strong>—helping businesses not just rank on Google, but be discovered across all search channels and convert visitors into loyal customers.</p>
+      <div class="fade-up">
+        <img src="assets/images/amrahata-paalisbo.jpg" alt="Amrahata Paalisbo" class="about-image"/>
       </div>
-      <div class="about-highlights fade-up">
-        <div class="highlight-card">
-          <h4>Local SEO & Google Maps</h4>
-          <p>Deep expertise in Google Business Profile optimization, near-me search, citation building, and local search strategies tailored to U.S. home services markets.</p>
+      <div class="fade-up">
+        <p><strong>Hi, I'm Amrahata Paalisbo.</strong></p>
+        <p>I'm an SEO Specialist with experience managing content operations, keyword research, on-page SEO, off-page SEO, local SEO, and AI search visibility.</p>
+        <p>My expertise includes building scalable SEO systems, creating content strategies, developing backlink opportunities, and improving website visibility across traditional search engines and emerging AI platforms.</p>
+        <p>Throughout my career, I have worked with HVAC, indoor air quality, healthcare, local business, and technology brands.</p>
+        <div class="skill-badges">
+          <span class="badge">Keyword Research</span>
+          <span class="badge">On-Page SEO</span>
+          <span class="badge">Off-Page SEO</span>
+          <span class="badge">Internal Linking</span>
+          <span class="badge">Content Optimization</span>
+          <span class="badge">Metadata Optimization</span>
+          <span class="badge">GBP Management</span>
+          <span class="badge">Technical SEO</span>
+          <span class="badge">AI Search Optimization</span>
         </div>
-        <div class="highlight-card">
-          <h4>SEO Copywriting</h4>
-          <p>Crafting search-optimized copy that balances keyword strategy with compelling storytelling—for blog posts, email campaigns, landing pages, and product descriptions.</p>
-        </div>
-        <div class="highlight-card">
-          <h4>Technical SEO & Schema</h4>
-          <p>Hands-on experience with schema markup, structured data, website audits, crawlability, page speed, and metadata optimization.</p>
-        </div>
-        <div class="highlight-card">
-          <h4>Remote-Ready & EST Hours</h4>
-          <p>8+ years working remotely with international clients, comfortable with night shift and EST hours, self-directed with strong English communication skills.</p>
-        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED CASE STUDY -->
+<section id="featured-case">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Featured Work</span>
+      <h2 class="section-title">Featured SEO Case Study</h2>
+    </div>
+    <div class="case-card fade-up">
+      <div class="case-card-body">
+        <span class="case-tag">SEO Strategy & Operations</span>
+        <h3 class="case-title">Scaling SEO Content Operations for a National HVAC Brand</h3>
+        <p class="case-desc">How content strategy, internal linking, supporting content hubs, and SEO operations helped strengthen visibility for a leading HVAC brand.</p>
+        <a href="case-study-filterbuy.html" class="btn-case">View Case Study</a>
       </div>
     </div>
   </div>
@@ -320,7 +329,7 @@
       <div class="work-exp-card">
         <div class="work-exp-icon">📝</div>
         <h3>WordPress Blog Management</h3>
-        <p>Full-cycle WordPress content creation and management—from topic ideation and keyword research through drafting, editing, publishing, and performance optimization. Creating evergreen content that drives organic traffic and establishes thought leadership.</p>
+        <p>Full-cycle WordPress content creation and management—from topic ideation and keyword research through drafting, editing, publishing, and performance optimization. Creating evergreen content that drives organic visibility.</p>
         <div class="work-exp-tags">
           <span class="work-exp-tag">WordPress</span>
           <span class="work-exp-tag">Blog Writing</span>
@@ -332,7 +341,7 @@
       <div class="work-exp-card">
         <div class="work-exp-icon">✉️</div>
         <h3>Email Marketing Campaigns</h3>
-        <p>Crafting compelling email sequences for e-commerce and service-based businesses. From subject lines that boost open rates to body copy designed to drive clicks and conversions—all while maintaining brand voice and compliance standards.</p>
+        <p>Crafting compelling email sequences for e-commerce and service-based businesses. From subject lines that boost open rates to body copy designed to drive clicks and conversions—all while maintaining brand voice.</p>
         <div class="work-exp-tags">
           <span class="work-exp-tag">Email Copywriting</span>
           <span class="work-exp-tag">E-Commerce</span>
@@ -344,7 +353,7 @@
       <div class="work-exp-card">
         <div class="work-exp-icon">🎯</div>
         <h3>Landing Page Copywriting</h3>
-        <p>Writing high-converting landing page copy with clear value propositions, compelling headlines, persuasive body text, and strategic CTAs. Each page optimized for both search engines and user psychology to maximize conversion rates.</p>
+        <p>Writing high-converting landing page copy with clear value propositions, compelling headlines, persuasive body text, and strategic CTAs. Each page optimized for both search engines and user experience.</p>
         <div class="work-exp-tags">
           <span class="work-exp-tag">Landing Pages</span>
           <span class="work-exp-tag">Copywriting</span>
@@ -404,41 +413,41 @@
       <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">Screaming Frog</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">SEMrush GBP</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Sheets</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema.org</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">MailChimp</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Figma</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Adobe Suite</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Git / GitHub</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
       <!-- SET 2 (duplicate for seamless loop) -->
       <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">Screaming Frog</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">SEMrush GBP</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Sheets</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema.org</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">MailChimp</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Asana</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Figma</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Adobe Suite</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
       <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Git / GitHub</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
     </div>
   </div>
 </section>
@@ -526,7 +535,7 @@
               Live Workshop — 3 Hours
             </div>
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
               Issued by Eula Hernandez & Mijs Johan Iglesia
             </div>
           </div>
@@ -565,7 +574,7 @@
       <!-- Card 2: IndoorAirHub -->
       <a href="https://indoorairhub.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📰</span><span>IndoorAirHub</span></div>'"/>
+          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>👤</span><span>Author Profile</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">SEO Content — Author Profile</span>
@@ -578,7 +587,7 @@
       <!-- Card 3: HVACLoop -->
       <a href="https://hvacloop.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img" style="background:linear-gradient(135deg,#0277bd,#01579b)">
-          <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>❄️</span><span>HVACLoop</span></div>'"/>
+          <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>👤</span><span>Author Profile</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">SEO Content — Author Profile</span>
@@ -599,7 +608,7 @@
         <div class="work-body">
           <span class="work-tag-label">Social Media SEO</span>
           <h3 class="work-title">FilterbuyUS — Pinterest Brand Presence</h3>
-          <p class="work-desc">Contributed to building and managing Filterbuy's branded Pinterest presence, supporting visual SEO, product discovery, and brand authority through strategic social content.</p>
+          <p class="work-desc">Contributed to building and managing Filterbuy's branded Pinterest presence, supporting visual SEO, product discovery, and brand authority through strategic social strategy.</p>
           <span class="work-visit">Visit Page ↗</span>
         </div>
       </a>
@@ -607,12 +616,12 @@
       <!-- Card 5: merv-13-filters article -->
       <a href="https://www.merv-13-filters.com/how-to-check-if-your-12x26-5x4-air-filters-need-replacement" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>✍️</span><span>Blog Article</span></div>'"/>
+          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📄</span><span>Blog Article</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">On-Page SEO — Blog Article</span>
           <h3 class="work-title">How to Check If Your Air Filters Need Replacement</h3>
-          <p class="work-desc">A fully search-optimized article targeting high-intent HVAC queries, demonstrating on-page SEO, structured content, and search intent alignment for the home services niche.</p>
+          <p class="work-desc">A fully search-optimized article targeting high-intent HVAC queries, demonstrating on-page SEO, structured content, and search intent alignment for the home services market.</p>
           <span class="work-visit">Read Article ↗</span>
         </div>
       </a>
@@ -620,7 +629,7 @@
       <!-- Card 6: 16x25x4furnacefilter article -->
       <a href="https://www.16x25x4furnacefilter.com/do-furnace-systems-require-12x26-5x4-air-filters-" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>✍️</span><span>Blog Article</span></div>'"/>
+          <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📄</span><span>Blog Article</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">On-Page SEO — Blog Article</span>
@@ -640,14 +649,14 @@
     <div class="contact-centered fade-up">
       <span class="section-eyebrow">Get In Touch</span>
       <p class="contact-intro">Let's work together to <span>grow your search visibility</span> and capture more leads.</p>
-      <p class="contact-sub">I'm currently open to new opportunities in SEO, copywriting, content strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to discuss how I can help your business succeed.</p>
+      <p class="contact-sub">I'm currently open to new opportunities in SEO, copywriting, content strategy, and digital marketing. Whether you're looking for a full-time specialist or a remote contractor, I'd love to discuss how I can help your business rank higher and reach more customers.</p>
       <div class="contact-cta-row">
         <a href="mailto:amra.camid@gmail.com" class="btn-contact">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Send an Email
         </a>
         <a href="https://www.linkedin.com/in/amrahata-paalisbo-399144167/" target="_blank" rel="noopener" class="btn-contact-alt">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           Connect on LinkedIn
         </a>
       </div>
@@ -661,17 +670,17 @@
     <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> · SEO & GEO Strategist + Copywriter · Davao City, Philippines</p>
     <div class="footer-links">
       <a href="mailto:amra.camid@gmail.com">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email
       </a>
       <span class="footer-sep">·</span>
       <a href="https://www.linkedin.com/in/amrahata-paalisbo-399144167/" target="_blank" rel="noopener">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
       <span class="footer-sep">·</span>
       <a href="tel:+639351109339">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1 3.07-8.63A2 2 0 0 1 9.08 2h3a2 2 0 0 1 2 1.72 12 12 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12 12 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 15.68a2 2 0 0 1 2.18-2h3l2 3-2.5 1.25A12.04 12.04 0 0 0 13 17.5a12.04 12.04 0 0 0 3.63-5.25L14 9v3h3a2 2 0 0 1 2 2.18z"/></svg>
         +63 935 110 9339
       </a>
     </div>
