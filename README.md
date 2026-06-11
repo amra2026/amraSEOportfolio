@@ -1,4 +1,4 @@
-# Amrahata Paalisbo - SEO Portfolio
+# Amrahata Camid Paalisbo - SEO Portfolio
 
 A modern, premium SaaS-inspired portfolio website built with React, Tailwind CSS, and Framer Motion.
 
