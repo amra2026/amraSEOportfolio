@@ -3,359 +3,725 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Amrahata Paalisbo | SEO + AEO & GEO Strategist</title>
-  <meta name="description" content="SEO & GEO Strategist | Local SEO Specialist | Digital Marketing Professional with 14+ years of experience."/>
+  <title>Amrahata Paalisbo | SEO + AEO &amp; GEO Strategist</title>
+  <meta name="description" content="SEO, AEO &amp; GEO Strategist | Local SEO Specialist | Digital Marketing Professional with 14+ years of experience."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
+    /* ── RESET ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --espresso:#2a1810;--brown:#5d3a24;--caramel:#a07248;--sand:#c9a882;
-      --sand-pale:#e8d5be;--cream:#f7f1e8;--warm-white:#fdf9f4;
-      --accent:#d4956f;--success:#34a853;--text-light:#6b5d52;
-      --border:rgba(42,24,16,0.08);--border-c:rgba(160,114,72,0.2);
-      --max:1200px;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--cream);color:var(--espresso);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-    /* ── NAV ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,241,232,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 2.5rem;height:64px;display:flex;align-items:center;justify-content:space-between}
-    .nav-brand{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--espresso);text-decoration:none;letter-spacing:.02em}
+    /* ── TOKENS ── */
+    :root{
+      --espresso:#2a1810;
+      --brown:#5d3a24;
+      --caramel:#a07248;
+      --sand:#c9a882;
+      --sand-pale:#e8d5be;
+      --cream:#f7f1e8;
+      --warm-white:#fdf9f4;
+      --accent:#d4956f;
+      --text-light:#6b5d52;
+      --border:rgba(42,24,16,0.08);
+      --border-c:rgba(160,114,72,0.2);
+      --max:1200px;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --sans:'Jost',system-ui,sans-serif;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      font-family:var(--sans);
+      background:var(--cream);
+      color:var(--espresso);
+      line-height:1.7;
+      font-size:16px;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       NAV
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(247,241,232,0.96);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      padding:0 2.5rem;height:64px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .nav-brand{
+      font-family:var(--serif);font-size:1.5rem;font-weight:600;
+      color:var(--espresso);text-decoration:none;letter-spacing:.02em;
+    }
     .nav-links{display:flex;gap:2rem;list-style:none}
-    .nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);text-decoration:none;transition:color .3s;position:relative}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--caramel);transition:width .3s}
+    .nav-links a{
+      font-size:.82rem;font-weight:500;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--text-light);text-decoration:none;
+      transition:color .3s;position:relative;
+    }
+    .nav-links a::after{
+      content:'';position:absolute;bottom:-4px;left:0;
+      width:0;height:2px;background:var(--caramel);transition:width .3s;
+    }
     .nav-links a:hover{color:var(--caramel)}
     .nav-links a:hover::after{width:100%}
-    .nav-cta{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-white);background:var(--caramel);padding:.5rem 1.3rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel)}
+    .nav-cta{
+      font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--warm-white);background:var(--caramel);padding:.55rem 1.4rem;
+      border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel);
+    }
     .nav-cta:hover{background:transparent;color:var(--caramel)}
 
-    /* ── HERO ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       HERO
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #hero{
-    min-height:100vh;
-    display:grid;
-    grid-template-columns:420px 1fr;
-    margin-top:64px;
-}
-    .hero-image-panel{
-    justify-content:center;
-    align-items:flex-start;
-}
-    .hero-image-panel::before{content:'';position:absolute;top:-150px;left:-150px;width:350px;height:350px;border:1px solid var(--border);border-radius:50%}
-    .hero-img{width:100%;max-width:320px;border-radius:12px;object-fit:cover;box-shadow:0 20px 40px rgba(42,24,16,0.15)}
-    .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);font-weight:600;text-align:center}
-    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;width:100%;max-width:320px}
-    .stat-num{font-family:var(--serif);font-size:2.8rem;font-weight:700;color:var(--espresso);line-height:1;background:linear-gradient(135deg,var(--espresso),var(--brown));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .stat-unit{color:var(--caramel);font-weight:600;font-size:1.5rem}
-    .stat-desc{font-size:.78rem;color:var(--text-light);margin-top:.35rem;line-height:1.4;font-weight:500}
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:420px 1fr;
+      margin-top:64px;
+    }
 
-    .hero-content-panel{display:flex;flex-direction:column;justify-content:center;padding:7rem 5rem;background:linear-gradient(135deg,var(--espresso) 0%,#3a2517 100%);color:var(--warm-white);position:relative;overflow:hidden}
-    .hero-content-panel::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border:1px solid rgba(201,168,130,.08);border-radius:50%}
-    .hero-content-panel::after{content:'';position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border:1px solid rgba(201,168,130,.06);border-radius:50%}
-    .hero-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.7rem}
+    /* Left panel — photo + stats */
+    .hero-image-panel{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:2.5rem;
+      padding:4rem 3rem;
+      background:var(--warm-white);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-image-panel::before{
+      content:'';position:absolute;
+      top:-150px;left:-150px;
+      width:350px;height:350px;
+      border:1px solid var(--border);border-radius:50%;
+    }
+    .hero-photo-wrap{
+      width:260px;height:300px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border-c);
+      box-shadow:0 16px 40px rgba(42,24,16,.13);
+      background:var(--sand-pale);
+      flex-shrink:0;
+    }
+    .hero-photo-wrap img{
+      width:100%;height:100%;
+      object-fit:cover;object-position:top center;
+      display:block;
+    }
+    .hero-stat-label{
+      font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--caramel);font-weight:600;text-align:center;
+    }
+    .hero-stats{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:1.8rem 2.2rem;
+      width:100%;max-width:280px;
+    }
+    .stat-num{
+      font-family:var(--serif);font-size:2.6rem;font-weight:700;
+      line-height:1;
+      background:linear-gradient(135deg,var(--espresso),var(--brown));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .stat-unit{color:var(--caramel);font-weight:600;font-size:1.4rem}
+    .stat-desc{font-size:.82rem;color:var(--text-light);margin-top:.3rem;line-height:1.4;font-weight:500}
+
+    /* Right panel — name + intro */
+    .hero-content-panel{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:6rem 5rem;
+      background:linear-gradient(135deg,var(--espresso) 0%,#3a2517 100%);
+      color:var(--warm-white);
+      position:relative;overflow:hidden;
+    }
+    .hero-content-panel::before{
+      content:'';position:absolute;top:-100px;right:-100px;
+      width:400px;height:400px;
+      border:1px solid rgba(201,168,130,.08);border-radius:50%;
+    }
+    .hero-content-panel::after{
+      content:'';position:absolute;bottom:-80px;left:-80px;
+      width:300px;height:300px;
+      border:1px solid rgba(201,168,130,.06);border-radius:50%;
+    }
+    .hero-eyebrow{
+      font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:1.4rem;
+      display:flex;align-items:center;gap:.7rem;
+    }
     .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--accent)}
-    .hero-name{font-family:var(--serif);font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.1;margin-bottom:1.8rem;color:var(--warm-white)}
+    .hero-name{
+      font-family:var(--serif);
+      font-size:clamp(3.2rem,5.5vw,5.2rem);
+      font-weight:300;line-height:1.08;
+      margin-bottom:1.6rem;color:var(--warm-white);
+    }
     .hero-name span{display:block}
     .hero-name .last{font-weight:700;color:var(--accent)}
-    .hero-title{font-size:1.15rem;font-weight:400;color:rgba(201,168,130,.9);margin-bottom:1.5rem;line-height:1.5}
-    .hero-tagline{font-size:.95rem;font-weight:300;color:rgba(253,249,244,.7);max-width:420px;line-height:1.85;margin-bottom:2.8rem}
-    .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3.5rem}
-    .hero-tag{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(201,168,130,.4);color:var(--sand-pale);padding:.35rem .9rem;border-radius:4px;transition:all .3s}
+    .hero-title{
+      font-size:1.2rem;font-weight:400;
+      color:rgba(201,168,130,.9);margin-bottom:1.4rem;line-height:1.5;
+    }
+    .hero-tagline{
+      font-size:1rem;font-weight:300;
+      color:rgba(253,249,244,.72);
+      max-width:440px;line-height:1.85;margin-bottom:2.5rem;
+    }
+    .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3rem}
+    .hero-tag{
+      font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;
+      border:1px solid rgba(201,168,130,.4);color:var(--sand-pale);
+      padding:.38rem .95rem;border-radius:4px;transition:all .3s;
+    }
     .hero-tag:hover{border-color:var(--accent);color:var(--accent)}
     .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap}
-    .btn-primary{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--accent)}
+    .btn-primary{
+      display:inline-block;font-size:.82rem;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;background:var(--accent);color:var(--warm-white);
+      padding:.85rem 2.1rem;border-radius:6px;text-decoration:none;
+      transition:all .3s;border:2px solid var(--accent);
+    }
     .btn-primary:hover{background:transparent;color:var(--accent)}
-    .btn-outline{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:2px solid rgba(253,249,244,.35);color:rgba(253,249,244,.9);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
+    .btn-outline{
+      display:inline-block;font-size:.82rem;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;border:2px solid rgba(253,249,244,.35);
+      color:rgba(253,249,244,.9);padding:.85rem 2.1rem;border-radius:6px;
+      text-decoration:none;transition:all .3s;
+    }
     .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
 
-    /* ── SHARED SECTION STYLES ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       SHARED SECTION STYLES
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     section{padding:6rem 0}
     .container{max-width:var(--max);margin:0 auto;padding:0 3rem}
     .section-header{margin-bottom:4rem}
-    .section-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--caramel);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+    .section-eyebrow{
+      font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--caramel);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;
+    }
     .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--caramel)}
-    .section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:600;color:var(--espresso);line-height:1.2;max-width:600px}
+    .section-title{
+      font-family:var(--serif);
+      font-size:clamp(2.2rem,4vw,3.4rem);
+      font-weight:600;color:var(--espresso);line-height:1.2;max-width:620px;
+    }
 
-    /* ── ABOUT ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       ABOUT
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #about{background:var(--warm-white)}
-    .about-grid{display:grid;
-    grid-template-columns:280px 1fr;
-    gap:3rem;
-    align-items:start;}
-   .about-photo-card{
-    width:280px;
-}
-.about-image{
-    display:block;
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    border-radius:12px;
-}
-    height:320px;
-    object-fit:cover;
-    border-radius:12px;
-    border:1px solid var(--border-c);
-    box-shadow:0 12px 30px rgba(42,24,16,.12)}
-    .about-text p{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:1.5rem}
+    .about-grid{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:4rem;
+      align-items:start;
+    }
+    .about-photo-card{
+      width:260px;
+      background:var(--cream);
+      padding:10px;
+      border-radius:14px;
+      border:1px solid var(--border-c);
+      box-shadow:0 12px 30px rgba(42,24,16,.1);
+    }
+    .about-image{
+      display:block;
+      width:100%;
+      height:300px;
+      object-fit:cover;
+      border-radius:10px;
+    }
+    .about-text p{
+      font-size:1rem;color:var(--text-light);line-height:1.95;margin-bottom:1.4rem;
+    }
     .about-text p strong{color:var(--espresso);font-weight:600}
     .skill-badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
-    .badge{display:inline-block;background:linear-gradient(135deg,rgba(212,149,111,.15),rgba(201,168,130,.1));border:1px solid var(--border-c);color:var(--espresso);padding:.5rem 1.1rem;border-radius:24px;font-size:.75rem;font-weight:600;letter-spacing:.05em}
-.about-photo-card{
-    background:var(--cream);
-    padding:12px;
-    border-radius:14px;
-    border:1px solid var(--border-c);}
-    /* ── FEATURED CASE STUDY ── */
-    #featured-case{background:var(--espresso);position:relative;overflow:hidden;padding:7rem 0}
-    #featured-case::before{content:'';position:absolute;top:-250px;right:-250px;width:700px;height:700px;border:1px solid rgba(201,168,130,.04);border-radius:50%}
-    #featured-case::after{content:'';position:absolute;bottom:-200px;left:-200px;width:500px;height:500px;border:1px solid rgba(201,168,130,.04);border-radius:50%}
+    .badge{
+      display:inline-block;
+      background:linear-gradient(135deg,rgba(212,149,111,.15),rgba(201,168,130,.1));
+      border:1px solid var(--border-c);color:var(--espresso);
+      padding:.5rem 1.15rem;border-radius:24px;
+      font-size:.82rem;font-weight:600;letter-spacing:.04em;
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       FEATURED CASE STUDY
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    #featured-case{
+      background:var(--espresso);
+      position:relative;overflow:hidden;padding:7rem 0;
+    }
+    #featured-case::before{
+      content:'';position:absolute;top:-250px;right:-250px;
+      width:700px;height:700px;
+      border:1px solid rgba(201,168,130,.04);border-radius:50%;
+    }
+    #featured-case::after{
+      content:'';position:absolute;bottom:-200px;left:-200px;
+      width:500px;height:500px;
+      border:1px solid rgba(201,168,130,.04);border-radius:50%;
+    }
 
     .cs-header{margin-bottom:3.5rem}
-    .cs-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem}
+    .cs-eyebrow{
+      font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem;
+    }
     .cs-eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
-    .cs-title{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:300;color:var(--warm-white);line-height:1.15;margin-bottom:.8rem}
+    .cs-title{
+      font-family:var(--serif);
+      font-size:clamp(2.4rem,4.5vw,3.8rem);
+      font-weight:300;color:var(--warm-white);line-height:1.12;margin-bottom:.8rem;
+    }
     .cs-title em{font-style:italic;color:var(--sand)}
-    .cs-tagline{font-size:1rem;color:rgba(253,249,244,.55);font-weight:300;margin-bottom:2rem}
+    .cs-tagline{font-size:1.05rem;color:rgba(253,249,244,.55);font-weight:300;margin-bottom:2rem}
     .cs-meta-row{display:flex;flex-wrap:wrap;gap:2rem}
-    .cs-meta-item{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(253,249,244,.45);font-weight:500}
-    .cs-meta-item strong{color:var(--sand);font-weight:600;display:block;margin-bottom:.2rem;font-size:.8rem;letter-spacing:.04em;text-transform:none}
+    .cs-meta-item{
+      font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;
+      color:rgba(253,249,244,.45);font-weight:500;
+    }
+    .cs-meta-item strong{
+      color:var(--sand);font-weight:600;display:block;
+      margin-bottom:.2rem;font-size:.85rem;letter-spacing:.03em;text-transform:none;
+    }
 
-    .cs-challenge{background:rgba(253,249,244,.05);border:1px solid rgba(201,168,130,.15);border-radius:12px;padding:2.8rem;margin-bottom:4.5rem}
-    .cs-challenge-label{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem}
-    .cs-challenge-text{font-size:1.05rem;color:rgba(253,249,244,.75);line-height:1.9;font-weight:300}
+    .cs-challenge{
+      background:rgba(253,249,244,.05);border:1px solid rgba(201,168,130,.15);
+      border-radius:12px;padding:2.8rem;margin-bottom:4.5rem;
+    }
+    .cs-challenge-label{
+      font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:1.2rem;
+    }
+    .cs-challenge-text{
+      font-size:1.05rem;color:rgba(253,249,244,.78);line-height:1.92;font-weight:300;
+    }
     .cs-challenge-text strong{color:var(--sand-pale);font-weight:600}
 
     .cs-pillars-header{margin-bottom:2rem}
-    .cs-pillars-label{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
-    .cs-pillars-heading{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:300;color:var(--warm-white);margin-bottom:.5rem}
-    .cs-pillars-sub{font-size:.9rem;color:rgba(253,249,244,.45);font-weight:300}
+    .cs-pillars-label{
+      font-size:.76rem;font-weight:600;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;
+    }
+    .cs-pillars-heading{
+      font-family:var(--serif);
+      font-size:clamp(1.7rem,2.6vw,2.3rem);
+      font-weight:300;color:var(--warm-white);margin-bottom:.5rem;
+    }
+    .cs-pillars-sub{font-size:.95rem;color:rgba(253,249,244,.45);font-weight:300}
 
-    .cs-pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-bottom:4.5rem}
-    .cs-pillar{background:var(--warm-white);border-radius:10px;overflow:hidden;position:relative;transition:transform .3s,box-shadow .3s}
+    .cs-pillars{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;margin-bottom:4.5rem;
+    }
+    .cs-pillar{
+      background:var(--warm-white);border-radius:10px;
+      overflow:hidden;position:relative;
+      transition:transform .3s,box-shadow .3s;
+    }
     .cs-pillar:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.25)}
     .cs-pillar-bar{height:3px;width:100%}
     .pillar-seo .cs-pillar-bar{background:linear-gradient(90deg,var(--caramel),var(--sand))}
     .pillar-aeo .cs-pillar-bar{background:linear-gradient(90deg,var(--accent),#e8a87c)}
     .pillar-geo .cs-pillar-bar{background:linear-gradient(90deg,#34a853,#56d672)}
-    .cs-pillar-top{padding:1.8rem 2rem 1.5rem;border-bottom:1px solid var(--border)}
-    .cs-pillar-tag{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .8rem;border-radius:3px;display:inline-block;margin-bottom:1rem}
+    .cs-pillar-top{
+      padding:1.8rem 2rem 1.5rem;
+      border-bottom:1px solid var(--border);
+    }
+    .cs-pillar-tag{
+      font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+      padding:.3rem .8rem;border-radius:3px;display:inline-block;margin-bottom:1rem;
+    }
     .pillar-seo .cs-pillar-tag{background:rgba(160,114,72,.12);color:var(--brown)}
     .pillar-aeo .cs-pillar-tag{background:rgba(212,149,111,.15);color:#8a4a20}
     .pillar-geo .cs-pillar-tag{background:rgba(52,168,83,.1);color:#1b6e30}
-    .cs-pillar-name{font-family:var(--serif);font-size:1.45rem;font-weight:600;color:var(--espresso);margin-bottom:.3rem;line-height:1.2}
-    .cs-pillar-subtitle{font-size:.8rem;color:var(--text-light);line-height:1.5}
+    .cs-pillar-name{
+      font-family:var(--serif);font-size:1.5rem;font-weight:600;
+      color:var(--espresso);margin-bottom:.35rem;line-height:1.2;
+    }
+    .cs-pillar-subtitle{font-size:.88rem;color:var(--text-light);line-height:1.5}
     .cs-pillar-body{padding:1.8rem 2rem}
-    .cs-pillar-points{list-style:none;display:flex;flex-direction:column;gap:.85rem}
-    .cs-pillar-points li{display:flex;align-items:flex-start;gap:.75rem;font-size:.84rem;color:var(--text-light);line-height:1.6}
-    .pp-dot{width:5px;height:5px;border-radius:50%;margin-top:7px;flex-shrink:0}
+    .cs-pillar-points{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+    .cs-pillar-points li{
+      display:flex;align-items:flex-start;gap:.75rem;
+      font-size:.9rem;color:var(--text-light);line-height:1.65;
+    }
+    .pp-dot{width:5px;height:5px;border-radius:50%;margin-top:8px;flex-shrink:0}
     .pillar-seo .pp-dot{background:var(--caramel)}
     .pillar-aeo .pp-dot{background:var(--accent)}
     .pillar-geo .pp-dot{background:#34a853}
 
-    .cs-why{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;margin-bottom:4.5rem;padding:3rem;background:rgba(253,249,244,.04);border:1px solid rgba(201,168,130,.12);border-radius:12px}
-    .cs-why-left .cs-why-label{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-    .cs-why-heading{font-family:var(--serif);font-size:clamp(1.8rem,2.5vw,2.5rem);font-weight:300;color:var(--warm-white);line-height:1.25}
+    .cs-why{
+      display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;
+      margin-bottom:4.5rem;padding:3rem;
+      background:rgba(253,249,244,.04);
+      border:1px solid rgba(201,168,130,.12);border-radius:12px;
+    }
+    .cs-why-label{
+      font-size:.76rem;font-weight:600;letter-spacing:.2em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:1rem;
+    }
+    .cs-why-heading{
+      font-family:var(--serif);
+      font-size:clamp(1.9rem,2.6vw,2.6rem);
+      font-weight:300;color:var(--warm-white);line-height:1.25;
+    }
     .cs-why-heading em{font-style:italic;color:var(--sand)}
-    .cs-why-right{display:flex;flex-direction:column;gap:1.5rem}
+    .cs-why-right{display:flex;flex-direction:column;gap:1.6rem}
     .cs-why-row{display:flex;gap:1.2rem;align-items:flex-start}
-    .cs-why-pill{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:3px;white-space:nowrap;margin-top:.15rem;flex-shrink:0}
+    .cs-why-pill{
+      font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+      padding:.28rem .75rem;border-radius:3px;white-space:nowrap;
+      margin-top:.2rem;flex-shrink:0;
+    }
     .why-seo{background:rgba(160,114,72,.15);color:var(--caramel)}
     .why-aeo{background:rgba(212,149,111,.15);color:var(--accent)}
     .why-geo{background:rgba(52,168,83,.12);color:#34a853}
     .why-all{background:rgba(201,168,130,.12);color:var(--sand)}
-    .cs-why-point{font-size:.9rem;color:rgba(253,249,244,.65);line-height:1.75}
+    .cs-why-point{font-size:.95rem;color:rgba(253,249,244,.65);line-height:1.8}
     .cs-why-point strong{color:var(--sand-pale);font-weight:600}
 
-    .cs-pullquote{text-align:center;padding:4rem 3rem;border-top:1px solid rgba(201,168,130,.1);border-bottom:1px solid rgba(201,168,130,.1);margin-bottom:4.5rem}
-    .cs-pq-mark{font-family:var(--serif);font-size:6rem;line-height:.4;display:block;margin-bottom:2rem;color:var(--caramel);opacity:.35}
-    .cs-pq-text{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;color:var(--warm-white);line-height:1.55;max-width:760px;margin:0 auto 1.5rem}
+    .cs-pullquote{
+      text-align:center;
+      padding:4rem 3rem;
+      border-top:1px solid rgba(201,168,130,.1);
+      border-bottom:1px solid rgba(201,168,130,.1);
+      margin-bottom:4.5rem;
+    }
+    .cs-pq-mark{
+      font-family:var(--serif);font-size:6rem;line-height:.4;
+      display:block;margin-bottom:2rem;color:var(--caramel);opacity:.35;
+    }
+    .cs-pq-text{
+      font-family:var(--serif);
+      font-size:clamp(1.5rem,2.6vw,2.1rem);
+      font-weight:300;color:var(--warm-white);line-height:1.55;
+      max-width:760px;margin:0 auto 1.5rem;
+    }
     .cs-pq-text em{font-style:italic;color:var(--sand)}
-    .cs-pq-attr{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,249,244,.35)}
+    .cs-pq-attr{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(253,249,244,.35)}
 
-    .cs-results-label{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:2rem}
+    .cs-results-label{
+      font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+      color:var(--accent);display:flex;align-items:center;gap:.7rem;margin-bottom:2rem;
+    }
     .cs-results-label::before{content:'';width:24px;height:1px;background:var(--accent)}
-    .cs-results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:3rem}
-    .cs-result{background:rgba(253,249,244,.05);border:1px solid rgba(201,168,130,.14);border-radius:10px;padding:1.8rem;transition:border-color .3s}
-    .cs-result:hover{border-color:rgba(201,168,130,.35)}
-    .cs-result-icon{font-size:1.8rem;display:block;margin-bottom:.9rem}
-    .cs-result-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--warm-white);margin-bottom:.45rem;line-height:1.3}
-    .cs-result-desc{font-size:.82rem;color:rgba(253,249,244,.5);line-height:1.65}
+    .cs-results-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1.5rem;margin-bottom:3rem;
+    }
+    .cs-result{
+      background:rgba(253,249,244,.05);
+      border:1px solid rgba(201,168,130,.14);
+      border-radius:10px;padding:1.8rem;transition:border-color .3s;
+    }
+    .cs-result:hover{border-color:rgba(201,168,130,.38)}
+    .cs-result-icon{font-size:1.9rem;display:block;margin-bottom:.9rem}
+    .cs-result-title{
+      font-family:var(--serif);font-size:1.12rem;font-weight:600;
+      color:var(--warm-white);margin-bottom:.5rem;line-height:1.3;
+    }
+    .cs-result-desc{font-size:.88rem;color:rgba(253,249,244,.52);line-height:1.7}
 
-    .cs-proof-row{display:flex;align-items:center;justify-content:space-between;padding:2.5rem;background:rgba(212,149,111,.07);border:1px solid rgba(212,149,111,.18);border-radius:10px;flex-wrap:wrap;gap:1.5rem}
-    .cs-proof-text{font-size:.95rem;color:var(--sand-pale);font-weight:300;line-height:1.65;max-width:520px}
+    .cs-proof-row{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:2.5rem;
+      background:rgba(212,149,111,.07);
+      border:1px solid rgba(212,149,111,.18);
+      border-radius:10px;flex-wrap:wrap;gap:1.5rem;
+    }
+    .cs-proof-text{font-size:1rem;color:var(--sand-pale);font-weight:300;line-height:1.7;max-width:520px}
     .cs-proof-text strong{color:var(--warm-white);font-weight:600}
-    .btn-proof{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--accent);white-space:nowrap}
+    .btn-proof{
+      display:inline-flex;align-items:center;gap:.6rem;
+      font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      background:var(--accent);color:var(--warm-white);
+      padding:.85rem 2.1rem;border-radius:6px;text-decoration:none;
+      transition:all .3s;border:2px solid var(--accent);white-space:nowrap;
+    }
     .btn-proof:hover{background:transparent;color:var(--accent)}
 
-    /* ── COPYWRITING ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       COPYWRITING
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #copywriter{background:var(--cream)}
     .work-exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-    .work-exp-card{background:var(--warm-white);border:1px solid var(--border);border-radius:8px;padding:2rem;transition:all .3s}
-    .work-exp-card:hover{border-color:var(--caramel);box-shadow:0 8px 24px rgba(160,114,72,0.12)}
-    .work-exp-icon{font-size:2.5rem;margin-bottom:1rem}
-    .work-exp-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--espresso);margin-bottom:.8rem}
-    .work-exp-card p{font-size:.9rem;color:var(--text-light);line-height:1.7;margin-bottom:1.2rem}
+    .work-exp-card{
+      background:var(--warm-white);border:1px solid var(--border);
+      border-radius:8px;padding:2rem;transition:all .3s;
+    }
+    .work-exp-card:hover{border-color:var(--caramel);box-shadow:0 8px 24px rgba(160,114,72,.12)}
+    .work-exp-icon{font-size:2.6rem;margin-bottom:1rem}
+    .work-exp-card h3{
+      font-family:var(--serif);font-size:1.35rem;font-weight:600;
+      color:var(--espresso);margin-bottom:.8rem;
+    }
+    .work-exp-card p{font-size:.95rem;color:var(--text-light);line-height:1.75;margin-bottom:1.2rem}
     .work-exp-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-    .work-exp-tag{font-size:.7rem;background:var(--sand-pale);color:var(--espresso);padding:.35rem .8rem;border-radius:3px;font-weight:500}
+    .work-exp-tag{
+      font-size:.75rem;background:var(--sand-pale);color:var(--espresso);
+      padding:.35rem .85rem;border-radius:3px;font-weight:500;
+    }
 
-    /* ── SKILLS ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       SKILLS
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #skills{background:var(--warm-white)}
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
-    .skill-chip{background:var(--cream);border:1px solid var(--border);padding:.75rem 1.1rem;border-radius:6px;font-size:.8rem;color:var(--espresso);transition:all .3s;font-weight:500;text-align:center}
-    .skill-chip:hover{border-color:var(--caramel);color:var(--caramel);background:var(--sand-pale);transform:translateY(-2px)}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1rem}
+    .skill-chip{
+      background:var(--cream);border:1px solid var(--border);
+      padding:.8rem 1.1rem;border-radius:6px;
+      font-size:.88rem;color:var(--espresso);
+      transition:all .3s;font-weight:500;text-align:center;
+    }
+    .skill-chip:hover{
+      border-color:var(--caramel);color:var(--caramel);
+      background:var(--sand-pale);transform:translateY(-2px);
+    }
 
-    /* ── TOOLS MARQUEE ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       TOOLS MARQUEE
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #tools{background:var(--espresso);overflow:hidden;padding:6rem 0}
     #tools .section-title{color:var(--warm-white)}
     #tools .section-eyebrow{color:var(--accent)}
     #tools .section-eyebrow::before{background:var(--accent)}
-    .marquee-outer{overflow:hidden;padding:2rem 0 3rem;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
-    .marquee-track{display:flex;gap:1.5rem;width:max-content;animation:ticker 40s linear infinite}
+    .marquee-outer{
+      overflow:hidden;padding:2rem 0 3rem;
+      mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+      -webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);
+    }
+    .marquee-track{
+      display:flex;gap:1.5rem;width:max-content;
+      animation:ticker 40s linear infinite;
+    }
     .marquee-track:hover{animation-play-state:paused}
     @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .tool-tile{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 24px;min-width:130px;border-radius:12px;flex-shrink:0;cursor:default;transition:transform .3s}
+    .tool-tile{
+      display:flex;flex-direction:column;align-items:center;gap:12px;
+      padding:20px 24px;min-width:130px;border-radius:12px;
+      flex-shrink:0;cursor:default;transition:transform .3s;
+    }
     .tool-tile:hover{transform:translateY(-6px) scale(1.06)}
     .tool-emoji{font-size:2.2rem;line-height:1}
-    .tool-name{font-size:.7rem;color:rgba(255,255,255,.95);text-align:center;font-weight:600;line-height:1.4;letter-spacing:.02em}
+    .tool-name{
+      font-size:.75rem;color:rgba(255,255,255,.95);
+      text-align:center;font-weight:600;line-height:1.4;letter-spacing:.02em;
+    }
 
-    /* ── CERTIFICATIONS ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       CERTIFICATIONS
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #certifications{background:var(--warm-white)}
     .cert-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(400px,1fr));
-    gap:2rem;
-    max-width:1000px;
-    margin:0 auto;
-}
-    .cert-card{background:var(--cream);border:1px solid var(--border-c);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s}
-    .cert-card:hover{border-color:var(--caramel);box-shadow:0 12px 32px rgba(160,114,72,0.15)}
-    .cert-card-top{padding:1.8rem 2rem 1.6rem;background:linear-gradient(135deg,var(--espresso),#3a2517);position:relative;overflow:hidden}
-    .cert-card-top::before{content:'';position:absolute;right:-40px;top:-40px;width:130px;height:130px;border:1px solid rgba(201,168,130,.1);border-radius:50%}
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:2rem;
+    }
+    .cert-card{
+      background:var(--cream);border:1px solid var(--border-c);
+      border-radius:10px;overflow:hidden;display:flex;flex-direction:column;
+      transition:all .3s;
+    }
+    .cert-card:hover{border-color:var(--caramel);box-shadow:0 12px 32px rgba(160,114,72,.15);transform:translateY(-3px)}
+    .cert-card-top{
+      padding:1.8rem 2rem 1.6rem;
+      background:linear-gradient(135deg,var(--espresso),#3a2517);
+      position:relative;overflow:hidden;
+    }
+    .cert-card-top::before{
+      content:'';position:absolute;right:-40px;top:-40px;
+      width:130px;height:130px;
+      border:1px solid rgba(201,168,130,.1);border-radius:50%;
+    }
     .cert-badge-row{display:flex;align-items:center;gap:1rem}
-    .cert-logo{width:45px;height:45px;border-radius:8px;background:var(--warm-white);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
-    .cert-issuer-name{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
-    .cert-type-badge{font-size:.65rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(212,149,111,.2);color:var(--sand-pale);padding:.3rem .7rem;border-radius:3px;display:inline-block}
+    .cert-logo{
+      width:48px;height:48px;border-radius:8px;background:var(--warm-white);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.5rem;flex-shrink:0;
+    }
+    .cert-issuer-name{
+      font-size:.75rem;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:.35rem;
+    }
+    .cert-type-badge{
+      font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;
+      background:rgba(212,149,111,.2);color:var(--sand-pale);
+      padding:.3rem .75rem;border-radius:3px;display:inline-block;
+    }
     .cert-card-body{padding:1.8rem 2rem 2rem}
-    .cert-name{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--espresso);margin-bottom:.8rem;line-height:1.4}
+    .cert-name{
+      font-family:var(--serif);font-size:1.2rem;font-weight:600;
+      color:var(--espresso);margin-bottom:.9rem;line-height:1.4;
+    }
     .cert-meta{display:flex;flex-wrap:wrap;gap:1rem}
-    .cert-meta-item{font-size:.75rem;color:var(--text-light);display:flex;align-items:center;gap:.4rem}
+    .cert-meta-item{
+      font-size:.8rem;color:var(--text-light);display:flex;align-items:center;gap:.4rem;
+    }
     .cert-meta-item svg{color:var(--caramel)}
-    .cert-link{
-  text-decoration:none;
-  color:inherit;
-  display:block;
-}
 
-.cert-link:hover .cert-card{
-  transform:translateY(-4px);
-  cursor:pointer;
-}
-
-    /* ── SAMPLE WORKS ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       SAMPLE WORKS
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #sample-works{background:var(--cream)}
     .works-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
-    .work-card{background:var(--warm-white);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:all .3s}
-    .work-card:hover{border-color:var(--caramel);transform:translateY(-4px);box-shadow:0 12px 32px rgba(160,114,72,0.12)}
-    .work-img{width:100%;height:180px;overflow:hidden;background:var(--espresso);display:flex;align-items:center;justify-content:center;position:relative}
+    .work-card{
+      background:var(--warm-white);border:1px solid var(--border);
+      border-radius:10px;overflow:hidden;display:flex;flex-direction:column;
+      text-decoration:none;color:inherit;transition:all .3s;
+    }
+    .work-card:hover{border-color:var(--caramel);transform:translateY(-4px);box-shadow:0 12px 32px rgba(160,114,72,.12)}
+    .work-img{
+      width:100%;height:185px;overflow:hidden;background:var(--espresso);
+      display:flex;align-items:center;justify-content:center;position:relative;
+    }
     .work-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s}
     .work-card:hover .work-img img{transform:scale(1.06)}
-    .work-img-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font-size:2.8rem;gap:.6rem}
-    .work-img-fallback span{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-    .work-body{padding:1.6rem;flex:1;display:flex;flex-direction:column}
-    .work-tag-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.7rem;display:block}
-    .work-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--espresso);line-height:1.4;margin-bottom:.8rem}
-    .work-desc{font-size:.85rem;color:var(--text-light);line-height:1.7;flex:1;margin-bottom:1.2rem}
-    .work-visit{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel);display:inline-flex;align-items:center;gap:.4rem;margin-top:auto;transition:all .3s}
-    .work-card:hover .work-visit{color:var(--accent);gap:.6rem}
+    .work-img-fallback{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      height:100%;font-size:2.8rem;gap:.6rem;
+    }
+    .work-img-fallback span{
+      font-size:.78rem;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;color:rgba(255,255,255,.5);
+    }
+    .work-body{padding:1.7rem;flex:1;display:flex;flex-direction:column}
+    .work-tag-label{
+      font-size:.73rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--caramel);margin-bottom:.7rem;display:block;
+    }
+    .work-title{
+      font-family:var(--serif);font-size:1.18rem;font-weight:600;
+      color:var(--espresso);line-height:1.4;margin-bottom:.8rem;
+    }
+    .work-desc{font-size:.92rem;color:var(--text-light);line-height:1.75;flex:1;margin-bottom:1.2rem}
+    .work-visit{
+      font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--caramel);display:inline-flex;align-items:center;gap:.4rem;
+      margin-top:auto;transition:all .3s;
+    }
+    .work-card:hover .work-visit{color:var(--accent);gap:.65rem}
 
-    /* ── CONTACT ── */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       CONTACT
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
     #contact{background:var(--warm-white)}
     .contact-centered{max-width:680px;margin:0 auto;text-align:center}
-    .contact-intro{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--espresso);line-height:1.35;margin-bottom:1.8rem}
+    .contact-intro{
+      font-family:var(--serif);font-size:2.4rem;font-weight:300;
+      color:var(--espresso);line-height:1.32;margin-bottom:1.8rem;
+    }
     .contact-intro span{color:var(--caramel);font-weight:600}
-    .contact-sub{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:2.5rem}
+    .contact-sub{font-size:1rem;color:var(--text-light);line-height:1.9;margin-bottom:2.5rem}
     .contact-cta-row{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap}
-    .btn-contact{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--caramel);color:var(--warm-white);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s;border:2px solid var(--caramel)}
+    .btn-contact{
+      display:inline-flex;align-items:center;gap:.6rem;
+      font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      background:var(--caramel);color:var(--warm-white);
+      padding:.85rem 2.1rem;border-radius:6px;text-decoration:none;
+      transition:all .3s;border:2px solid var(--caramel);
+    }
     .btn-contact:hover{background:transparent;color:var(--caramel)}
-    .btn-contact-alt{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--border-c);color:var(--espresso);padding:.8rem 2rem;border-radius:6px;text-decoration:none;transition:all .3s}
+    .btn-contact-alt{
+      display:inline-flex;align-items:center;gap:.6rem;
+      font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      border:2px solid var(--border-c);color:var(--espresso);
+      padding:.85rem 2.1rem;border-radius:6px;text-decoration:none;transition:all .3s;
+    }
     .btn-contact-alt:hover{border-color:var(--caramel);color:var(--caramel)}
 
-    /* ── FOOTER ── */
-    footer{background:var(--espresso);padding:2rem 2.5rem;border-top:1px solid rgba(201,168,130,0.1)}
-    .footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem}
-    .footer-copy{font-size:.8rem;color:rgba(253,249,244,.5);letter-spacing:.04em}
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    footer{
+      background:var(--espresso);padding:2.2rem 2.5rem;
+      border-top:1px solid rgba(201,168,130,.1);
+    }
+    .footer-inner{
+      max-width:var(--max);margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:1.2rem;
+    }
+    .footer-copy{font-size:.85rem;color:rgba(253,249,244,.5);letter-spacing:.03em}
     .footer-copy span{color:var(--accent)}
     .footer-links{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
-    .footer-links a{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(253,249,244,.5);text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .3s;font-weight:500}
+    .footer-links a{
+      font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+      color:rgba(253,249,244,.5);text-decoration:none;
+      display:flex;align-items:center;gap:.5rem;transition:color .3s;font-weight:500;
+    }
     .footer-links a:hover{color:var(--accent)}
-    .footer-sep{color:rgba(253,249,244,.2);font-size:.75rem}
+    .footer-sep{color:rgba(253,249,244,.2);font-size:.8rem}
 
-    /* ── ANIMATIONS ── */
-    .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       ANIMATIONS
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
     .fade-up.visible{opacity:1;transform:translateY(0)}
 
-    /* ── RESPONSIVE ── */
-    @media(max-width:1024px){
-      #hero{grid-template-columns:1fr;min-height:auto}
-      .hero-image-panel{padding:4rem 3rem 3rem;order:1}
-      .hero-content-panel{padding:5rem 3rem;order:2}
-      .about-grid{grid-template-columns:1fr;gap:3.5rem}
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       RESPONSIVE
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    @media(max-width:1100px){
+      #hero{grid-template-columns:1fr}
+      .hero-image-panel{
+        flex-direction:row;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:3rem;
+        padding:4rem 3rem;
+        min-height:auto;
+      }
+      .hero-content-panel{padding:5rem 3rem}
+      .about-grid{grid-template-columns:1fr;gap:3rem}
+      .about-photo-card{width:220px;margin:0 auto}
       .cs-pillars{grid-template-columns:1fr}
       .cs-why{grid-template-columns:1fr;gap:2rem}
       .container{padding:0 2rem}
       .nav-links{display:none}
       .footer-inner{flex-direction:column;align-items:flex-start;gap:.8rem}
-      .cert-grid{grid-template-columns:1fr}
     }
     @media(max-width:768px){
       nav{padding:0 1.5rem;height:56px}
+      .hero-image-panel{padding:3rem 2rem;flex-direction:column;align-items:center}
+      .hero-content-panel{padding:4rem 2rem}
       .hero-stats{grid-template-columns:1fr 1fr}
       .works-grid{grid-template-columns:1fr}
-      .hero-content-panel{padding:4rem 2rem}
-      .hero-image-panel{padding:3rem 2rem}
-      #hero{
-        grid-template-columns:1fr;
-    }
-.hero-image-panel{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
-    gap:3rem;
-    padding:7rem 5rem;
-    position:relative;
-}
-    .about-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-photo-card{
-        width:220px;
-        margin:0 auto;}
       .container{padding:0 1.5rem}
-      section{padding:4rem 0}
+      section{padding:4.5rem 0}
       #featured-case{padding:5rem 0}
       .cs-challenge{padding:2rem}
       .cs-why{padding:2rem}
       .cs-pullquote{padding:3rem 1.5rem}
-      .skill-badges{flex-direction:column;align-items:flex-start}
+      .skill-badges{flex-wrap:wrap}
     }
     @media(max-width:600px){
-      .nav-brand{font-size:1.1rem}
+      .nav-brand{font-size:1.2rem}
       .hero-content-panel::before,.hero-content-panel::after{display:none}
-      .hero-image-panel::before{display:none}
+      .hero-photo-wrap{width:220px;height:250px}
       .work-exp-grid{grid-template-columns:1fr}
-      .hero-title{font-size:1rem}
       .cs-proof-row{flex-direction:column}
-      .cs-results-grid{grid-template-columns:1fr 1fr}
+      .cs-results-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     NAV
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <nav>
   <a href="#hero" class="nav-brand">A. Paalisbo</a>
   <ul class="nav-links">
@@ -371,32 +737,51 @@
   <a href="mailto:amra.camid@gmail.com" class="nav-cta">Hire Me</a>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     HERO
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="hero">
-  <!-- Left Side -->
+
+  <!-- Left — Photo + Stats -->
   <div class="hero-image-panel">
-
-    <p class="hero-stat-label">By the Numbers</p>
-
-    <div class="hero-stats">
-      ...
+    <div class="hero-photo-wrap">
+      <img
+        src="assets/images/amrahata-paalisbo.png"
+        alt="Amrahata Paalisbo — SEO &amp; GEO Strategist"
+        onerror="this.parentElement.style.background='var(--sand-pale)'"
+      />
     </div>
-
+    <div>
+      <p class="hero-stat-label" style="margin-bottom:1.4rem">By the Numbers</p>
+      <div class="hero-stats">
+        <div>
+          <p class="stat-num">14<span class="stat-unit">+</span></p>
+          <p class="stat-desc">Years in Digital Marketing</p>
+        </div>
+        <div>
+          <p class="stat-num">3</p>
+          <p class="stat-desc">Search Disciplines: SEO, AEO &amp; GEO</p>
+        </div>
+        <div>
+          <p class="stat-num">100<span class="stat-unit">%</span></p>
+          <p class="stat-desc">Remote-Ready &amp; Available</p>
+        </div>
+        <div>
+          <p class="stat-num">AI</p>
+          <p class="stat-desc">Visible in ChatGPT, Perplexity &amp; Google AI Mode</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="hero-content-panel">
-      ...
-  </div>
 
-</section>
-
-  <!-- Right: Name + Bio -->
+  <!-- Right — Name + Bio -->
   <div class="hero-content-panel">
     <p class="hero-eyebrow">Available for New Opportunities</p>
     <h1 class="hero-name">
       <span>Amrahata</span>
       <span class="last">Paalisbo</span>
     </h1>
-    <p class="hero-title">SEO Specialist · Content Operations · GEO Strategist</p>
+    <p class="hero-title">SEO Specialist &nbsp;·&nbsp; Content Operations &nbsp;·&nbsp; GEO Strategist</p>
     <p class="hero-tagline">
       Helping businesses increase visibility through content strategy, technical SEO, local SEO, and AI search optimization — across every surface where customers now search.
     </p>
@@ -416,28 +801,34 @@
 
 </section>
 
-<!-- ── ABOUT ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     ABOUT
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="about">
-  
   <div class="container">
     <div class="section-header fade-up">
       <span class="section-eyebrow">Professional Summary</span>
       <h2 class="section-title">About Me</h2>
     </div>
     <div class="about-grid">
+
       <div class="fade-up">
-      <div class="about-photo-card">
-    <img src="assets/images/amrahata-paalisbo.png"
-         alt="Amrahata Paalisbo"
-         class="about-image">
+        <div class="about-photo-card">
+          <img
+            src="assets/images/amrahata-paalisbo.png"
+            alt="Amrahata Paalisbo"
+            class="about-image"
+            onerror="this.style.display='none'"
+          />
         </div>
-</div>
+      </div>
+
       <div class="fade-up">
         <div class="about-text">
           <p><strong>Hi, I'm Amrahata Paalisbo.</strong></p>
           <p>I'm an SEO Specialist with experience managing content operations, keyword research, on-page SEO, off-page SEO, local SEO, and AI search visibility.</p>
           <p>My expertise includes building scalable SEO systems, creating content strategies, developing backlink opportunities, and improving website visibility across traditional search engines and emerging AI platforms.</p>
-          <p>Throughout my career, I have worked with HVAC, indoor air quality, healthcare, local business, and brands — and I understand that ranking today means being visible not just in Google's blue links, but in featured snippets, AI Overviews, and generative search results.</p>
+          <p>Throughout my career, I have worked with HVAC, indoor air quality, healthcare, local business, and technology brands — and I understand that ranking today means being visible not just in Google's blue links, but in featured snippets, AI Overviews, and generative search results.</p>
         </div>
         <div class="skill-badges">
           <span class="badge">Keyword Research</span>
@@ -451,11 +842,14 @@
           <span class="badge">AI Search Optimization</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ── FEATURED CASE STUDY ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     FEATURED CASE STUDY
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="featured-case">
   <div class="container">
 
@@ -465,26 +859,14 @@
       <h2 class="cs-title">Winning Search in the <em>Age of AI Assistants</em></h2>
       <p class="cs-tagline">A three-layer visibility strategy for a national HVAC and air filtration brand.</p>
       <div class="cs-meta-row">
-        <div class="cs-meta-item">
-          <strong>Company</strong>
-          Filterbuy, Inc.
-        </div>
-        <div class="cs-meta-item">
-          <strong>Industry</strong>
-          HVAC / Air Filtration
-        </div>
-        <div class="cs-meta-item">
-          <strong>Role</strong>
-          SEO Specialist — Content Operations
-        </div>
-        <div class="cs-meta-item">
-          <strong>Scope</strong>
-          National (US Market)
-        </div>
+        <div class="cs-meta-item"><strong>Company</strong>Filterbuy, Inc.</div>
+        <div class="cs-meta-item"><strong>Industry</strong>HVAC / Air Filtration</div>
+        <div class="cs-meta-item"><strong>Role</strong>SEO Specialist — Content Operations</div>
+        <div class="cs-meta-item"><strong>Scope</strong>National (US Market)</div>
       </div>
     </div>
 
-    <!-- The Challenge -->
+    <!-- Challenge -->
     <div class="cs-challenge fade-up">
       <p class="cs-challenge-label">The Challenge</p>
       <p class="cs-challenge-text">
@@ -504,7 +886,6 @@
 
       <div class="cs-pillars">
 
-        <!-- SEO Pillar -->
         <div class="cs-pillar pillar-seo">
           <div class="cs-pillar-bar"></div>
           <div class="cs-pillar-top">
@@ -524,7 +905,6 @@
           </div>
         </div>
 
-        <!-- AEO Pillar -->
         <div class="cs-pillar pillar-aeo">
           <div class="cs-pillar-bar"></div>
           <div class="cs-pillar-top">
@@ -534,16 +914,15 @@
           </div>
           <div class="cs-pillar-body">
             <ul class="cs-pillar-points">
-              <li><span class="pp-dot"></span>Every article structured with a direct, concise answer paragraph (under 60 words) before expanding into detail — giving search engines exactly what they need to surface an answer</li>
+              <li><span class="pp-dot"></span>Every article structured with a direct, concise answer paragraph (under 60 words) before expanding — giving search engines exactly what they need to surface an answer</li>
               <li><span class="pp-dot"></span>Targeted People Also Ask boxes: "what does MERV rating mean," "how to check if your air filter needs replacing," "what happens if you don't change your air filter"</li>
-              <li><span class="pp-dot"></span>Structured FAQ schema on high-traffic informational pages to qualify for Google's featured snippet and PAA placement</li>
+              <li><span class="pp-dot"></span>Structured FAQ schema on high-traffic informational pages to qualify for featured snippet and PAA placement</li>
               <li><span class="pp-dot"></span>Definitional content built to appear in Knowledge Panels — tying the brand to core HVAC entities</li>
               <li><span class="pp-dot"></span>Voice-search-ready phrasing for conversational queries from smart home assistants</li>
             </ul>
           </div>
         </div>
 
-        <!-- GEO Pillar -->
         <div class="cs-pillar pillar-geo">
           <div class="cs-pillar-bar"></div>
           <div class="cs-pillar-top">
@@ -556,7 +935,7 @@
               <li><span class="pp-dot"></span>Content structured for AI citability: clear author attribution, expert positioning, original claims backed by verifiable data — the signals AI models use to determine trustworthiness</li>
               <li><span class="pp-dot"></span>Published on authoritative third-party domains (IndoorAirHub, HVACLoop) to create expert nodes that AI models associate with HVAC topics</li>
               <li><span class="pp-dot"></span>Entity-first content architecture: brand name + product category + specific verifiable claim — the building block of AI citations</li>
-              <li><span class="pp-dot"></span>Tested and confirmed: content surfacing in Google AI Mode, Perplexity, and ChatGPT search results for target HVAC queries</li>
+              <li><span class="pp-dot"></span>Tested and confirmed: content surfacing in Google AI Mode, Perplexity, and ChatGPT for target HVAC queries</li>
               <li><span class="pp-dot"></span>E-E-A-T signals reinforced through consistent author identity, domain specialization, and cross-platform presence</li>
             </ul>
           </div>
@@ -567,7 +946,7 @@
 
     <!-- Why All Three? -->
     <div class="cs-why fade-up">
-      <div class="cs-why-left">
+      <div>
         <p class="cs-why-label">The Argument</p>
         <h3 class="cs-why-heading">Why <em>all three</em> disciplines must work together</h3>
       </div>
@@ -578,11 +957,11 @@
         </div>
         <div class="cs-why-row">
           <span class="cs-why-pill why-aeo">AEO Alone</span>
-          <p class="cs-why-point">You appear in featured snippets and PAA boxes. But without the entity authority, author trust signals, and citable structure that AI models require, <strong>you remain invisible in generative results</strong> — the fastest-growing search surface.</p>
+          <p class="cs-why-point">You appear in featured snippets and PAA boxes. But without entity authority and citable structure, <strong>you remain invisible in generative results</strong> — the fastest-growing search surface.</p>
         </div>
         <div class="cs-why-row">
           <span class="cs-why-pill why-geo">GEO Alone</span>
-          <p class="cs-why-point">AI tools cite your content. But traditional search still accounts for the majority of search volume and commercial intent clicks. <strong>Ignoring the index means ignoring your highest-converting traffic channel.</strong></p>
+          <p class="cs-why-point">AI tools cite your content. But traditional search still accounts for the majority of commercial intent clicks. <strong>Ignoring the index means ignoring your highest-converting traffic channel.</strong></p>
         </div>
         <div class="cs-why-row">
           <span class="cs-why-pill why-all">All Three</span>
@@ -607,32 +986,32 @@
         <div class="cs-result">
           <span class="cs-result-icon">🤖</span>
           <h4 class="cs-result-title">Google AI Mode Visibility</h4>
-          <p class="cs-result-desc">HVAC content from the Filterbuy ecosystem confirmed surfacing in Google's AI Mode — live, verifiable proof of GEO working in practice.</p>
+          <p class="cs-result-desc">HVAC content confirmed surfacing in Google's AI Mode — live, verifiable proof of GEO working in practice.</p>
         </div>
         <div class="cs-result">
           <span class="cs-result-icon">✍️</span>
           <h4 class="cs-result-title">Expert Author Nodes</h4>
-          <p class="cs-result-desc">Author profiles established on IndoorAirHub.com and HVACLoop.com — authoritative third-party domains that AI models treat as trusted HVAC sources.</p>
+          <p class="cs-result-desc">Author profiles on IndoorAirHub.com and HVACLoop.com — authoritative domains AI models treat as trusted HVAC sources.</p>
         </div>
         <div class="cs-result">
           <span class="cs-result-icon">📄</span>
           <h4 class="cs-result-title">Ranking HVAC Content</h4>
-          <p class="cs-result-desc">Size-specific and symptom-based HVAC articles published and ranking for targeted queries — from MERV ratings to replacement timing guides.</p>
+          <p class="cs-result-desc">Size-specific and symptom-based HVAC articles published and ranking for targeted queries across multiple domains.</p>
         </div>
         <div class="cs-result">
           <span class="cs-result-icon">📌</span>
           <h4 class="cs-result-title">Brand Entity Signals</h4>
-          <p class="cs-result-desc">Pinterest brand presence and cross-platform publishing reinforcing entity associations between Filterbuy and core HVAC/air quality topics.</p>
+          <p class="cs-result-desc">Pinterest brand presence and cross-platform publishing reinforcing entity association between Filterbuy and core HVAC topics.</p>
         </div>
         <div class="cs-result">
           <span class="cs-result-icon">🔗</span>
           <h4 class="cs-result-title">Content Ecosystem Built</h4>
-          <p class="cs-result-desc">Interlinking content hubs spanning product pages, educational guides, and external editorial sites — designed to funnel authority and user intent together.</p>
+          <p class="cs-result-desc">Interlinking content hubs spanning product pages, educational guides, and external editorial sites funneling authority together.</p>
         </div>
         <div class="cs-result">
           <span class="cs-result-icon">🎯</span>
           <h4 class="cs-result-title">Answer Box Targeting</h4>
-          <p class="cs-result-desc">Structured Q&amp;A content and FAQ schema deployed across key informational pages, targeting featured snippets and People Also Ask placements.</p>
+          <p class="cs-result-desc">Structured Q&amp;A content and FAQ schema deployed across key pages targeting featured snippets and People Also Ask.</p>
         </div>
       </div>
     </div>
@@ -651,7 +1030,9 @@
   </div>
 </section>
 
-<!-- ── COPYWRITING ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     COPYWRITING
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="copywriter">
   <div class="container">
     <div class="section-header fade-up">
@@ -700,7 +1081,9 @@
   </div>
 </section>
 
-<!-- ── SKILLS ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     SKILLS
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="skills">
   <div class="container">
     <div class="section-header fade-up">
@@ -733,7 +1116,9 @@
   </div>
 </section>
 
-<!-- ── TOOLS MARQUEE ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     TOOLS MARQUEE
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="tools">
   <div class="container">
     <div class="section-header fade-up">
@@ -744,50 +1129,52 @@
   <div class="marquee-outer fade-up">
     <div class="marquee-track">
       <!-- SET 1 -->
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
       <!-- SET 2 — duplicate for seamless loop -->
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
-      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,0.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔍</span><span class="tool-name">Google Search Console</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ffb04f,#f57c00);box-shadow:0 4px 0 #c55d00,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📊</span><span class="tool-name">Google Analytics</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#ff8a5e,#ff642d);box-shadow:0 4px 0 #d94010,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📈</span><span class="tool-name">Semrush</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5c9bba,#2d7a9b);box-shadow:0 4px 0 #1a5f7a,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔗</span><span class="tool-name">Ahrefs</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8f72ff,#6c47ff);box-shadow:0 4px 0 #4f2ae0,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🖱️</span><span class="tool-name">SEMrush Keyword Tool</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5bbf78,#34a853);box-shadow:0 4px 0 #228040,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🔑</span><span class="tool-name">Google Business Profile</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4db6ac,#00897b);box-shadow:0 4px 0 #00695c,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🗂️</span><span class="tool-name">Google Data Studio</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#7a909c,#546e7a);box-shadow:0 4px 0 #37474f,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🏗️</span><span class="tool-name">Schema Markup</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a9aba,#21759b);box-shadow:0 4px 0 #155a7b,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🌐</span><span class="tool-name">WordPress</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#b3d466,#96bf48);box-shadow:0 4px 0 #72a028,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🛒</span><span class="tool-name">WooCommerce</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#6ba5f5,#4285f4);box-shadow:0 4px 0 #2a6bd4,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✉️</span><span class="tool-name">Mailchimp</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#f47c7c,#f06a6a);box-shadow:0 4px 0 #d04848,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✅</span><span class="tool-name">Yoast SEO</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3394cf,#0079bf);box-shadow:0 4px 0 #005c96,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">📋</span><span class="tool-name">Trello</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3abf96,#10a37f);box-shadow:0 4px 0 #0a7d62,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🤖</span><span class="tool-name">ChatGPT</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#c07858,#a07248);box-shadow:0 4px 0 #7a5434,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🧠</span><span class="tool-name">Perplexity AI</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#8b7cf7,#6c63ef);box-shadow:0 4px 0 #5248cc,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✨</span><span class="tool-name">Claude</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#4a4aff,#2b2bef);box-shadow:0 4px 0 #1a1acc,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🎬</span><span class="tool-name">Figma</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#3dd4d9,#00c4cc);box-shadow:0 4px 0 #00979e,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">🎨</span><span class="tool-name">Canva</span></div>
+      <div class="tool-tile" style="background:linear-gradient(145deg,#5a5a5a,#2d2d2d);box-shadow:0 4px 0 #111,0 7px 18px rgba(0,0,0,.18)"><span class="tool-emoji">✂️</span><span class="tool-name">Adobe Suite</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── CERTIFICATIONS ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     CERTIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="certifications">
   <div class="container">
     <div class="section-header fade-up">
@@ -796,9 +1183,7 @@
     </div>
     <div class="cert-grid fade-up">
 
-      <!-- Cert 1: Semrush -->
-      <a href="semrush-certificate.pdf" target="_blank" class="cert-link">
-<div class="cert-card">
+      <div class="cert-card">
         <div class="cert-card-top">
           <div class="cert-badge-row">
             <div class="cert-logo">📈</div>
@@ -808,25 +1193,22 @@
             </div>
           </div>
         </div>
-  
         <div class="cert-card-body">
           <h3 class="cert-name">Keyword Research with Semrush: A Step-by-Step Guide</h3>
           <div class="cert-meta">
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Expires: 21 August 2025
             </div>
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
               ID: ef1197fab7
             </div>
           </div>
         </div>
       </div>
-</a>
-      <!-- Cert 2: Excelerate -->
-      <a href="facebook-ads-certificate.png" target="_blank" class="cert-link">
-<div class="cert-card">
+
+      <div class="cert-card">
         <div class="cert-card-top">
           <div class="cert-badge-row">
             <div class="cert-logo">📣</div>
@@ -836,16 +1218,15 @@
             </div>
           </div>
         </div>
- 
         <div class="cert-card-body">
           <h3 class="cert-name">3-Hour Live Facebook Ads Workshop</h3>
           <div class="cert-meta">
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               Live Workshop — 3 Hours
             </div>
             <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
               Issued by Eula Hernandez &amp; Mijs Johan Iglesia
             </div>
           </div>
@@ -856,7 +1237,9 @@
   </div>
 </section>
 
-<!-- ── SAMPLE WORKS ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     SAMPLE WORKS
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="sample-works">
   <div class="container">
     <div class="section-header fade-up">
@@ -865,7 +1248,6 @@
     </div>
     <div class="works-grid fade-up">
 
-      <!-- Card 1: Google AI Mode -->
       <a href="https://share.google/aimode/24NhGKjXv3A3MK5dw" target="_blank" rel="noopener" class="work-card">
         <div class="work-img" style="background:linear-gradient(135deg,#1a73e8,#0d47a1)">
           <div class="work-img-fallback">
@@ -881,10 +1263,9 @@
         </div>
       </a>
 
-      <!-- Card 2: IndoorAirHub -->
       <a href="https://indoorairhub.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Amrahata Paalisbo author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>👤</span><span>Author Profile</span></div>'"/>
+          <img src="https://indoorairhub.com/wp-content/uploads/2025/05/amrahata-paalisbo-author.png" alt="Author profile on IndoorAirHub" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>👤</span><span>Author Profile</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">SEO Content — Author Profile</span>
@@ -894,7 +1275,6 @@
         </div>
       </a>
 
-      <!-- Card 3: HVACLoop -->
       <a href="https://hvacloop.com/about-the-author-amrahata-paalisbo/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img" style="background:linear-gradient(135deg,#0277bd,#01579b)">
           <img src="https://hvacloop.com/wp-content/uploads/2025/05/HVACLoop-logo-horizontal.png" alt="HVACLoop logo" style="object-fit:contain;padding:1.5rem;" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>👤</span><span>Author Profile</span></div>'"/>
@@ -907,7 +1287,6 @@
         </div>
       </a>
 
-      <!-- Card 4: Pinterest FilterbuyUS -->
       <a href="https://www.pinterest.com/FilterbuyUS/" target="_blank" rel="noopener" class="work-card">
         <div class="work-img" style="background:linear-gradient(135deg,#e60023,#ad0321)">
           <div class="work-img-fallback">
@@ -923,10 +1302,9 @@
         </div>
       </a>
 
-      <!-- Card 5: merv-13-filters article -->
       <a href="https://www.merv-13-filters.com/how-to-check-if-your-12x26-5x4-air-filters-need-replacement" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
-          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter replacement article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📄</span><span>Blog Article</span></div>'"/>
+          <img src="https://www.merv-13-filters.com/img/49299785f8cc72bacc96c9a5109227da.jpg?16" alt="MERV-13 air filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📄</span><span>Blog Article</span></div>'"/>
         </div>
         <div class="work-body">
           <span class="work-tag-label">On-Page SEO — Blog Article</span>
@@ -936,7 +1314,6 @@
         </div>
       </a>
 
-      <!-- Card 6: 16x25x4furnacefilter article -->
       <a href="https://www.16x25x4furnacefilter.com/do-furnace-systems-require-12x26-5x4-air-filters-" target="_blank" rel="noopener" class="work-card">
         <div class="work-img">
           <img src="https://www.16x25x4furnacefilter.com/img/8d0a69f60d17b005bc66c1a019d050fa.jpg?16" alt="Furnace filter article" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=work-img-fallback><span style=font-size:2.5rem>📄</span><span>Blog Article</span></div>'"/>
@@ -953,7 +1330,9 @@
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <section id="contact">
   <div class="container">
     <div class="contact-centered fade-up">
@@ -974,10 +1353,12 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━ -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> &middot; SEO, AEO, &amp; GEO Strategist + Copywriter &middot; Davao City, Philippines</p>
+    <p class="footer-copy">&copy; 2026 <span>Amrahata Camid Paalisbo</span> &middot; SEO, AEO &amp; GEO Strategist + Copywriter &middot; Davao City, Philippines</p>
     <div class="footer-links">
       <a href="mailto:amra.camid@gmail.com">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
