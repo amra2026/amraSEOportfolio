@@ -33,7 +33,7 @@
 
     /* ── HERO ── */
     #hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:64px;align-items:stretch}
-    .hero-image-panel{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:5rem 4rem;position:relative;overflow:hidden;gap:3rem}
+    .hero-image-panel{background:var(--warm-white);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:7rem 5rem;position:relative;overflow:hidden;gap:3rem}
     .hero-image-panel::before{content:'';position:absolute;top:-150px;left:-150px;width:350px;height:350px;border:1px solid var(--border);border-radius:50%}
     .hero-img{width:100%;max-width:320px;border-radius:12px;object-fit:cover;box-shadow:0 20px 40px rgba(42,24,16,0.15)}
     .hero-stat-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);font-weight:600;text-align:center}
@@ -71,13 +71,25 @@
 
     /* ── ABOUT ── */
     #about{background:var(--warm-white)}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
-    .about-image{width:100%;border-radius:12px;object-fit:cover;box-shadow:0 20px 40px rgba(42,24,16,0.15)}
+    .about-grid{display:grid;
+    grid-template-columns:280px 1fr;
+    gap:3rem;
+    align-items:start;}
+    .about-image{width:280px;
+    height:320px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid var(--border-c);
+    box-shadow:0 12px 30px rgba(42,24,16,.12)}
     .about-text p{font-size:.95rem;color:var(--text-light);line-height:1.9;margin-bottom:1.5rem}
     .about-text p strong{color:var(--espresso);font-weight:600}
     .skill-badges{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
     .badge{display:inline-block;background:linear-gradient(135deg,rgba(212,149,111,.15),rgba(201,168,130,.1));border:1px solid var(--border-c);color:var(--espresso);padding:.5rem 1.1rem;border-radius:24px;font-size:.75rem;font-weight:600;letter-spacing:.05em}
-
+.about-photo-card{
+    background:var(--cream);
+    padding:12px;
+    border-radius:14px;
+    border:1px solid var(--border-c);}
     /* ── FEATURED CASE STUDY ── */
     #featured-case{background:var(--espresso);position:relative;overflow:hidden;padding:7rem 0}
     #featured-case::before{content:'';position:absolute;top:-250px;right:-250px;width:700px;height:700px;border:1px solid rgba(201,168,130,.04);border-radius:50%}
@@ -325,29 +337,23 @@
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <!-- Left Side -->
+  <div class="hero-image-panel">
 
-  <!-- Left: Quick Stats -->
-      <p class="hero-stat-label">By the Numbers</p>
-      <div class="hero-stats">
-        <div>
-          <p class="stat-num">14<span class="stat-unit">+</span></p>
-          <p class="stat-desc">Years in Digital Marketing</p>
-        </div>
-        <div>
-          <p class="stat-num">3</p>
-          <p class="stat-desc">Search Disciplines: SEO, AEO &amp; GEO</p>
-        </div>
-        <div>
-          <p class="stat-num">100<span class="stat-unit">%</span></p>
-          <p class="stat-desc">Remote-Ready &amp; Available Now</p>
-        </div>
-        <div>
-          <p class="stat-num">AI</p>
-          <p class="stat-desc">Search Visible Across ChatGPT, Perplexity &amp; Google AI Mode</p>
-        </div>
-      </div>
+    <p class="hero-stat-label">By the Numbers</p>
+
+    <div class="hero-stats">
+      ...
     </div>
+
   </div>
+
+  <!-- Right Side -->
+  <div class="hero-content-panel">
+      ...
+  </div>
+
+</section>
 
   <!-- Right: Name + Bio -->
   <div class="hero-content-panel">
@@ -387,12 +393,17 @@
     <div class="about-grid">
       <div class="fade-up">
         <img
-          src="assets/images/amrahata-paalisbo.jpg"
+          src="assets/images/amrahata-paalisbo.png"
           alt="Amrahata Paalisbo"
           class="about-image"
           onerror="this.style.display='none'"
         />
       </div>
+      <div class="about-photo-card">
+    <img src="assets/images/amrahata-paalisbo.png"
+         alt="Amrahata Paalisbo"
+         class="about-image">
+</div>
       <div class="fade-up">
         <div class="about-text">
           <p><strong>Hi, I'm Amrahata Paalisbo.</strong></p>
