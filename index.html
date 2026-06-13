@@ -40,7 +40,11 @@
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
-
+a:has(.cert-card):hover .cert-card {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(160,114,72,0.2);
+  border-color: var(--caramel);
+}
     /* ━━━━━━━━━━━━━━━━━━━━━━━
        NAV
     ━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -1183,10 +1187,11 @@
     </div>
     <div class="cert-grid fade-up">
 
-      <div class="cert-card">
+      <a href="https://github.com/amra2026/amraSEOportfolio/blob/main/semrush-certificate.pdf" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div class="cert-card" style="flex:1">
         <div class="cert-card-top">
           <div class="cert-badge-row">
-            <div class="cert-logo">📈</div>
+            <div class="cert-logo">📈</div></a>
             <div>
               <div class="cert-issuer-name">Semrush Academy</div>
               <span class="cert-type-badge">Certificate of Achievement</span>
@@ -1208,10 +1213,11 @@
         </div>
       </div>
 
-      <div class="cert-card">
+      <a href="https://github.com/amra2026/amraSEOportfolio/blob/main/facebook-ads-certificate.png" target="_blank" rel="noopener" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div class="cert-card" style="flex:1">
         <div class="cert-card-top">
           <div class="cert-badge-row">
-            <div class="cert-logo">📣</div>
+            <div class="cert-logo">📣</div></a>
             <div>
               <div class="cert-issuer-name">Excelerate Digital Marketing</div>
               <span class="cert-type-badge">Certificate of Participation</span>
