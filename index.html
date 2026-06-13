@@ -193,7 +193,12 @@
 
     /* ── CERTIFICATIONS ── */
     #certifications{background:var(--warm-white)}
-    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch;}
+    @media (max-width: 768px){
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+}
     .cert-card{background:var(--cream);border:1px solid var(--border-c);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:all .3s}
     .cert-card:hover{border-color:var(--caramel);box-shadow:0 12px 32px rgba(160,114,72,0.15)}
     .cert-card-top{padding:1.8rem 2rem 1.6rem;background:linear-gradient(135deg,var(--espresso),#3a2517);position:relative;overflow:hidden}
