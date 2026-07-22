@@ -522,6 +522,31 @@ a:has(.cert-card):hover .cert-card {
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━
+       DIGITAL MARKETING SCHEDULE TABLE
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    .dm-schedule{margin-top:3rem}
+    .dm-schedule-title{
+      font-family:var(--serif);font-size:1.5rem;font-weight:600;
+      color:var(--espresso);margin-bottom:1.4rem;
+    }
+    .dm-table-wrap{
+      overflow-x:auto;border:1px solid var(--border);
+      border-radius:8px;background:var(--warm-white);
+    }
+    .dm-table{width:100%;border-collapse:collapse;font-size:.92rem}
+    .dm-table th{
+      text-align:left;font-size:.75rem;font-weight:600;letter-spacing:.08em;
+      text-transform:uppercase;color:var(--caramel);
+      padding:1rem 1.4rem;border-bottom:1px solid var(--border);
+    }
+    .dm-table td{
+      padding:1rem 1.4rem;color:var(--text-light);
+      border-bottom:1px solid var(--border);vertical-align:top;
+    }
+    .dm-table tr:last-child td{border-bottom:none}
+    .dm-table td:first-child{color:var(--espresso);font-weight:600;white-space:nowrap}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
        SKILLS
     ━━━━━━━━━━━━━━━━━━━━━━━ */
     #skills{background:var(--warm-white)}
@@ -779,6 +804,7 @@ a:has(.cert-card):hover .cert-card {
     <li><a href="#featured-case">Case Study</a></li>
     <li><a href="#copywriter">Copywriting</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#digital-marketing">Digital Marketing</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#sample-works">Works</a></li>
@@ -796,6 +822,7 @@ a:has(.cert-card):hover .cert-card {
   <a href="#featured-case">Case Study</a>
   <a href="#copywriter">Copywriting</a>
   <a href="#skills">Skills</a>
+  <a href="#digital-marketing">Digital Marketing</a>
   <a href="#tools">Tools</a>
   <a href="#certifications">Certs</a>
   <a href="#sample-works">Works</a>
@@ -1170,6 +1197,82 @@ a:has(.cert-card):hover .cert-card {
       <div class="skill-chip">Content Publishing</div>
       <div class="skill-chip">Website Audits</div>
       <div class="skill-chip">SOP Documentation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     DIGITAL MARKETING & SOCIAL MEDIA
+━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="digital-marketing" style="background:var(--cream)">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Beyond SEO</span>
+      <h2 class="section-title">Digital Marketing &amp; Social Media</h2>
+    </div>
+    <div class="work-exp-grid fade-up">
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">✉️</div>
+        <h3>Email Marketing (Klaviyo)</h3>
+        <p>Built and sent email campaigns for an Australian beauty brand using Klaviyo — including flows, promotional sends, and a recurring monthly send schedule to keep the calendar consistent.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Klaviyo</span>
+          <span class="work-exp-tag">Email Flows</span>
+          <span class="work-exp-tag">Campaign Scheduling</span>
+        </div>
+      </div>
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Manage content strategy, posting, and community engagement across Instagram, Facebook, and Pinterest for a wellness brand, plus supporting Pinterest for a US home goods brand.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Instagram</span>
+          <span class="work-exp-tag">Facebook</span>
+          <span class="work-exp-tag">Pinterest</span>
+          <span class="work-exp-tag">Content Calendars</span>
+        </div>
+      </div>
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">🎨</div>
+        <h3>UGC &amp; Content Assets</h3>
+        <p>Design social and email creative in Canva — post graphics, carousel slides, and campaign assets — built to match brand voice and ready to drop straight into a posting or send schedule.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Canva</span>
+          <span class="work-exp-tag">Content Design</span>
+          <span class="work-exp-tag">Asset Creation</span>
+        </div>
+      </div>
+
+      <div class="work-exp-card">
+        <div class="work-exp-icon">🎯</div>
+        <h3>Facebook &amp; Meta Ads (Foundations)</h3>
+        <p>Completed a live Facebook Ads workshop covering campaign structure and targeting fundamentals, and continuing to build hands-on ad experience alongside organic social work.</p>
+        <div class="work-exp-tags">
+          <span class="work-exp-tag">Facebook Ads</span>
+          <span class="work-exp-tag">Meta Ads Manager</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dm-schedule fade-up">
+      <h3 class="dm-schedule-title">Sample Monthly Content &amp; Email Schedule</h3>
+      <div class="dm-table-wrap">
+        <table class="dm-table">
+          <thead>
+            <tr><th>Week</th><th>Email Send</th><th>Social Content Focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Week 1</td><td>New arrivals / product spotlight email</td><td>Product photo posts + Reels teaser</td></tr>
+            <tr><td>Week 2</td><td>Educational / how-to-use email</td><td>UGC-style tips content</td></tr>
+            <tr><td>Week 3</td><td>Promo / limited-time offer email</td><td>Promo graphics + countdown Stories</td></tr>
+            <tr><td>Week 4</td><td>Customer favorites / social proof email</td><td>Reviews &amp; testimonial carousel</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
