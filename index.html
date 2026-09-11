@@ -563,6 +563,81 @@ a:has(.cert-card):hover .cert-card {
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━
+       AI AUTOMATION (IN PROGRESS)
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    #ai-automation{
+      background:var(--espresso);position:relative;overflow:hidden;
+    }
+    #ai-automation::before{
+      content:'';position:absolute;top:-220px;right:-180px;
+      width:600px;height:600px;border:1px solid rgba(201,168,130,.05);border-radius:50%;
+    }
+    #ai-automation .section-eyebrow{color:var(--accent)}
+    #ai-automation .section-eyebrow::before{background:var(--accent)}
+    #ai-automation .section-title{color:var(--warm-white)}
+    .aa-intro{
+      font-size:1rem;color:rgba(253,249,244,.62);line-height:1.9;
+      max-width:680px;margin-top:-2.4rem;margin-bottom:3rem;font-weight:300;
+    }
+    .status-badge{
+      display:inline-flex;align-items:center;gap:.5rem;
+      font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+      padding:.4rem .9rem;border-radius:20px;white-space:nowrap;
+    }
+    .status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    .status-progress{background:rgba(212,149,111,.15);color:var(--accent)}
+    .status-progress .status-dot{background:var(--accent);animation:pulse-dot 1.8s ease-in-out infinite}
+    .status-soon{background:rgba(201,168,130,.12);color:var(--sand)}
+    .status-soon .status-dot{background:var(--sand)}
+    @keyframes pulse-dot{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:.4;transform:scale(.75)}
+    }
+
+    .aa-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;margin-bottom:2.5rem;
+    }
+    .aa-card{
+      background:rgba(253,249,244,.05);border:1px solid rgba(201,168,130,.15);
+      border-radius:10px;padding:1.8rem;transition:border-color .3s,transform .3s;
+    }
+    .aa-card:hover{border-color:rgba(201,168,130,.4);transform:translateY(-3px)}
+    .aa-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+    .aa-card-icon{font-size:1.7rem}
+    .aa-card h3{
+      font-family:var(--serif);font-size:1.2rem;font-weight:600;
+      color:var(--warm-white);margin-bottom:.6rem;line-height:1.3;
+    }
+    .aa-card p{font-size:.88rem;color:rgba(253,249,244,.5);line-height:1.7}
+
+    .aa-demo-banner{
+      display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;
+      padding:2.2rem 2.5rem;
+      background:linear-gradient(135deg,rgba(212,149,111,.1),rgba(160,114,72,.06));
+      border:1px dashed rgba(212,149,111,.4);border-radius:10px;
+    }
+    .aa-demo-text{max-width:560px}
+    .aa-demo-title{
+      font-family:var(--serif);font-size:1.3rem;font-weight:600;
+      color:var(--warm-white);margin-bottom:.5rem;
+    }
+    .aa-demo-desc{font-size:.9rem;color:rgba(253,249,244,.55);line-height:1.7}
+    .aa-progress-wrap{min-width:220px}
+    .aa-progress-label{
+      font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:.6rem;display:block;
+    }
+    .aa-progress-track{
+      width:100%;height:6px;border-radius:6px;
+      background:rgba(253,249,244,.12);overflow:hidden;
+    }
+    .aa-progress-fill{
+      height:100%;border-radius:6px;width:35%;
+      background:linear-gradient(90deg,var(--caramel),var(--accent));
+    }
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
        TOOLS MARQUEE
     ━━━━━━━━━━━━━━━━━━━━━━━ */
     #tools{background:var(--espresso);overflow:hidden;padding:6rem 0}
@@ -805,6 +880,7 @@ a:has(.cert-card):hover .cert-card {
     <li><a href="#copywriter">Copywriting</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#digital-marketing">Digital Marketing</a></li>
+    <li><a href="#ai-automation">AI Automation</a></li>
     <li><a href="#tools">Tools</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#sample-works">Works</a></li>
@@ -823,6 +899,7 @@ a:has(.cert-card):hover .cert-card {
   <a href="#copywriter">Copywriting</a>
   <a href="#skills">Skills</a>
   <a href="#digital-marketing">Digital Marketing</a>
+  <a href="#ai-automation">AI Automation</a>
   <a href="#tools">Tools</a>
   <a href="#certifications">Certs</a>
   <a href="#sample-works">Works</a>
@@ -841,7 +918,7 @@ a:has(.cert-card):hover .cert-card {
     <div class="hero-stats">
       <div>
         <p class="stat-num">14<span class="stat-unit">+</span></p>
-        <p class="stat-desc">Years in Freelancing</p>
+        <p class="stat-desc">Years of Work Experience</p>
       </div>
       <div>
         <p class="stat-num">3</p>
@@ -876,6 +953,7 @@ a:has(.cert-card):hover .cert-card {
       <span class="hero-tag">Local SEO</span>
       <span class="hero-tag">Content Support</span>
       <span class="hero-tag">AI Search</span>
+      <span class="hero-tag">Executive Support</span>
     </div>
     <div class="hero-actions">
       <a href="#featured-case" class="btn-primary">View Case Study</a>
@@ -911,6 +989,7 @@ a:has(.cert-card):hover .cert-card {
         <div class="about-text">
           <p><strong>Hi, I'm Amrahata Paalisbo.</strong></p>
           <p>I work as an SEO Specialist and Executive Assistant — my role is to take SEO tasks off a business owner's plate and make sure they actually get done. Day to day, that means keyword research, on-page optimization, publishing and updating content, local SEO updates, and reaching out for backlink opportunities.</p>
+          <p>My career actually started back in 2012 as a Virtual Assistant, with stops along the way as a Customer Service Representative and an HR Recruiter before I moved into SEO and digital marketing. That background is why the "Executive Assistant" part of my title isn't just a label — inbox and calendar management, scheduling, data entry, and day-to-day admin support are things I've genuinely done for years, and I'm comfortable picking them back up alongside SEO work.</p>
           <p>I've supported HVAC, indoor air quality, healthcare, local business, and technology brands — usually working behind the scenes on WordPress, keeping content organized, and tracking performance through Google Search Console and Analytics so I can flag what's working and what needs attention.</p>
           <p>I've also been paying closer attention to how AI tools like ChatGPT, Claude, Perplexity, and Google's AI Overviews are changing how people search, and I enjoy learning how that affects the everyday SEO work I do — like writing content that's easy for both readers and AI to understand.</p>
           <p>If you need someone dependable to handle the SEO to-do list — research, content, on-page fixes, reporting, and the small recurring tasks that keep adding up — that's where I can help.</p>
@@ -925,6 +1004,8 @@ a:has(.cert-card):hover .cert-card {
           <span class="badge">GBP Management</span>
           <span class="badge">Technical SEO</span>
           <span class="badge">AI Search Optimization</span>
+          <span class="badge">Calendar &amp; Inbox Management</span>
+          <span class="badge">Executive &amp; Admin Support</span>
         </div>
       </div>
 
@@ -1224,6 +1305,10 @@ a:has(.cert-card):hover .cert-card {
       <div class="skill-chip">Content Publishing</div>
       <div class="skill-chip">Website Audits</div>
       <div class="skill-chip">SOP Documentation</div>
+      <div class="skill-chip">Executive Assistance</div>
+      <div class="skill-chip">Calendar &amp; Inbox Management</div>
+      <div class="skill-chip">Data Entry</div>
+      <div class="skill-chip">Recruiting Support</div>
     </div>
   </div>
 </section>
@@ -1301,6 +1386,73 @@ a:has(.cert-card):hover .cert-card {
         </table>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     AI AUTOMATION (IN PROGRESS)
+━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="ai-automation">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">New Skill, Real Progress</span>
+      <h2 class="section-title">AI Automation &amp; Workflow Systems</h2>
+    </div>
+    <p class="aa-intro fade-up">
+      I'm currently expanding beyond SEO into AI-powered automation — learning how to build workflows in GoHighLevel (GHL) that connect lead capture, follow-up, and CRM tasks so businesses spend less time on repetitive admin work. This is a skill I'm building hands-on right now, and I'm keeping this section updated as I go.
+    </p>
+
+    <div class="aa-grid fade-up">
+
+      <div class="aa-card">
+        <div class="aa-card-top">
+          <span class="aa-card-icon">⚙️</span>
+          <span class="status-badge status-progress"><span class="status-dot"></span>In Progress</span>
+        </div>
+        <h3>GoHighLevel (GHL) Workflows</h3>
+        <p>Practicing how to build automated pipelines inside GHL — lead capture forms, CRM tagging, and stage-based follow-up sequences.</p>
+      </div>
+
+      <div class="aa-card">
+        <div class="aa-card-top">
+          <span class="aa-card-icon">💬</span>
+          <span class="status-badge status-progress"><span class="status-dot"></span>In Progress</span>
+        </div>
+        <h3>Automated Lead Follow-Up</h3>
+        <p>Learning to set up SMS and email follow-up sequences that trigger automatically based on lead activity, so no inquiry falls through the cracks.</p>
+      </div>
+
+      <div class="aa-card">
+        <div class="aa-card-top">
+          <span class="aa-card-icon">🤖</span>
+          <span class="status-badge status-soon"><span class="status-dot"></span>Coming Soon</span>
+        </div>
+        <h3>AI Chat &amp; Intake Automation</h3>
+        <p>Exploring AI-assisted chat and intake flows that qualify leads and answer common questions before they reach a sales conversation.</p>
+      </div>
+
+      <div class="aa-card">
+        <div class="aa-card-top">
+          <span class="aa-card-icon">🔗</span>
+          <span class="status-badge status-soon"><span class="status-dot"></span>Coming Soon</span>
+        </div>
+        <h3>SEO + Automation, Connected</h3>
+        <p>Looking at how automation can support the SEO and content side of a business too — think automated reporting and content workflow hand-offs.</p>
+      </div>
+
+    </div>
+
+    <div class="aa-demo-banner fade-up">
+      <div class="aa-demo-text">
+        <p class="aa-demo-title">🚧 First Demo Project — In the Works</p>
+        <p class="aa-demo-desc">I'm building a sample GHL automation project to showcase here, since I don't have client work in this area yet. If you're open to piloting a small automation workflow together, I'd love to hear from you.</p>
+      </div>
+      <div class="aa-progress-wrap">
+        <span class="aa-progress-label">Learning Progress</span>
+        <div class="aa-progress-track"><div class="aa-progress-fill"></div></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
