@@ -232,6 +232,22 @@ a:has(.cert-card):hover .cert-card {
     }
     .hero-tag:hover{border-color:var(--accent);color:var(--accent)}
     .hero-actions{display:flex;gap:1.2rem;flex-wrap:wrap}
+    .btn-service-selector{
+      display:inline-flex;align-items:center;gap:.65rem;
+      font-size:.82rem;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;background:var(--warm-white);color:var(--espresso);
+      padding:.85rem 2.1rem;border-radius:6px;text-decoration:none;
+      transition:all .3s;border:2px solid var(--warm-white);
+      box-shadow:0 10px 28px rgba(0,0,0,.16);
+    }
+    .btn-service-selector:hover{
+      background:var(--accent);border-color:var(--accent);color:var(--warm-white);
+      transform:translateY(-2px);
+    }
+    .hero-cta-note{
+      flex-basis:100%;margin-top:-.35rem;
+      color:rgba(253,249,244,.58);font-size:.76rem;letter-spacing:.04em;
+    }
     .btn-primary{
       display:inline-block;font-size:.82rem;font-weight:600;letter-spacing:.1em;
       text-transform:uppercase;background:var(--accent);color:var(--warm-white);
@@ -860,6 +876,8 @@ a:has(.cert-card):hover .cert-card {
       .nav-brand{font-size:1.2rem}
       .hero-content-panel::before,.hero-content-panel::after{display:none}
       .hero-photo-wrap{width:220px;height:250px}
+      .hero-actions a{width:100%;justify-content:center;text-align:center}
+      .hero-cta-note{text-align:center;margin-top:0}
       .work-exp-grid{grid-template-columns:1fr}
       .cs-proof-row{flex-direction:column}
       .cs-results-grid{grid-template-columns:1fr}
@@ -886,7 +904,12 @@ a:has(.cert-card):hover .cert-card {
     <li><a href="#sample-works">Works</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:amra.camid@gmail.com" class="nav-cta">Hire Me</a>
+  <a
+    href="https://calendar.app.google/mt5X4MoiwiEDd5816"
+    class="nav-cta"
+    target="_blank"
+    rel="noopener noreferrer"
+  >Book a Call</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -904,7 +927,12 @@ a:has(.cert-card):hover .cert-card {
   <a href="#certifications">Certs</a>
   <a href="#sample-works">Works</a>
   <a href="#contact">Contact</a>
-  <a href="mailto:amra.camid@gmail.com" class="mobile-hire">Hire Me</a>
+  <a
+    href="https://calendar.app.google/mt5X4MoiwiEDd5816"
+    class="mobile-hire"
+    target="_blank"
+    rel="noopener noreferrer"
+  >Book a Discovery Call</a>
 </div>
 
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━
@@ -956,8 +984,21 @@ a:has(.cert-card):hover .cert-card {
       <span class="hero-tag">Executive Support</span>
     </div>
     <div class="hero-actions">
+      <a
+        href="https://amra-seo-service-selector.amra-camid.chatgpt.site"
+        class="btn-service-selector"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Find the best-fit SEO service for your business"
+      >Find My SEO Service <span aria-hidden="true">→</span></a>
       <a href="#featured-case" class="btn-primary">View Case Study</a>
-      <a href="#contact" class="btn-outline">Contact Me</a>
+      <a
+        href="https://calendar.app.google/mt5X4MoiwiEDd5816"
+        class="btn-outline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Book a Discovery Call</a>
+      <p class="hero-cta-note">Answer two quick questions and receive a focused service recommendation.</p>
     </div>
   </div>
 
