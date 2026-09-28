@@ -222,7 +222,11 @@ a:has(.cert-card):hover .cert-card {
     .hero-tagline{
       font-size:1rem;font-weight:300;
       color:rgba(253,249,244,.72);
-      max-width:440px;line-height:1.85;margin-bottom:2.5rem;
+      max-width:480px;line-height:1.85;margin-bottom:2.5rem;
+    }
+    .hero-hook{
+      display:block;font-family:var(--serif);font-size:1.55rem;font-weight:400;
+      font-style:italic;color:var(--sand-pale);line-height:1.35;margin-bottom:.9rem;
     }
     .hero-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3rem}
     .hero-tag{
@@ -603,6 +607,8 @@ a:has(.cert-card):hover .cert-card {
     .status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
     .status-progress{background:rgba(212,149,111,.15);color:var(--accent)}
     .status-progress .status-dot{background:var(--accent);animation:pulse-dot 1.8s ease-in-out infinite}
+    .status-live{background:rgba(52,168,83,.14);color:#56d672}
+    .status-live .status-dot{background:#56d672}
     .status-soon{background:rgba(201,168,130,.12);color:var(--sand)}
     .status-soon .status-dot{background:var(--sand)}
     @keyframes pulse-dot{
@@ -973,7 +979,8 @@ a:has(.cert-card):hover .cert-card {
     </h1>
     <p class="hero-title">SEO Specialist &nbsp;·&nbsp; Content Operations &nbsp;·&nbsp; Executive Assistant</p>
     <p class="hero-tagline">
-      I help businesses keep up with the SEO side of things — keyword research, on-page fixes, content publishing, and local SEO — while staying curious about how AI search tools are changing the way people find businesses online.
+      <span class="hero-hook">Great SEO takes consistency, and most business owners don't have the time for it.</span>
+      I'm the SEO specialist and executive assistant who quietly gets it done — from keyword research and on-page fixes to publishing, local SEO, and the everyday admin that keeps it all moving.
     </p>
     <div class="hero-tags">
       <span class="hero-tag">SEO</span>
@@ -1486,13 +1493,11 @@ a:has(.cert-card):hover .cert-card {
 
     <div class="aa-demo-banner fade-up">
       <div class="aa-demo-text">
-        <p class="aa-demo-title">🚧 First Demo Project — In the Works</p>
-        <p class="aa-demo-desc">I'm building a sample GHL automation project to showcase here, since I don't have client work in this area yet. If you're open to piloting a small automation workflow together, I'd love to hear from you.</p>
+        <span class="status-badge status-live" style="margin-bottom:.9rem"><span class="status-dot"></span>Demo Live</span>
+        <p class="aa-demo-title">First Demo Project — Website Built in GoHighLevel</p>
+        <p class="aa-demo-desc">A demo website I built inside GoHighLevel while learning the platform. It's a practice project rather than client work, and it's the first of several GHL demos I'm building for this page. If you'd like to pilot a small automation workflow together, I'd love to hear from you.</p>
       </div>
-      <div class="aa-progress-wrap">
-        <span class="aa-progress-label">Learning Progress</span>
-        <div class="aa-progress-track"><div class="aa-progress-fill"></div></div>
-      </div>
+      <a href="https://sites.leadconnectorhq.com/preview/GcTquC2X7QsAAJEYdCiq" target="_blank" rel="noopener" class="btn-proof">View Demo Site ↗</a>
     </div>
 
   </div>
