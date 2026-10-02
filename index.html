@@ -285,6 +285,44 @@ a:has(.cert-card):hover .cert-card {
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━
+       AT A GLANCE — DASHBOARD GRID
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    #glance{background:var(--cream);padding-top:4.5rem}
+    .glance-note{
+      font-size:.95rem;color:var(--text-light);max-width:560px;
+      margin-top:-2.4rem;margin-bottom:3rem;line-height:1.8;
+    }
+    .glance-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+      gap:1.25rem;
+    }
+    .glance-card{
+      display:flex;flex-direction:column;
+      background:var(--warm-white);border:1px solid var(--border-c);
+      border-radius:10px;padding:1.6rem 1.7rem;text-decoration:none;color:inherit;
+      transition:all .3s;position:relative;min-height:168px;
+    }
+    .glance-card:hover{
+      border-color:var(--caramel);transform:translateY(-4px);
+      box-shadow:0 12px 28px rgba(160,114,72,.15);
+    }
+    .glance-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.8rem;margin-bottom:.8rem}
+    .glance-icon{font-size:1.5rem}
+    .glance-card h3{
+      font-family:var(--serif);font-size:1.18rem;font-weight:600;
+      color:var(--espresso);margin-bottom:.5rem;line-height:1.25;
+    }
+    .glance-card p{font-size:.86rem;color:var(--text-light);line-height:1.65;flex:1}
+    .glance-meta{
+      font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+      color:var(--caramel);margin-top:1rem;display:flex;align-items:center;gap:.4rem;
+    }
+    .glance-card:hover .glance-meta{color:var(--accent)}
+    .glance-meta .arrow{transition:transform .3s}
+    .glance-card:hover .glance-meta .arrow{transform:translateX(4px)}
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
        ABOUT
     ━━━━━━━━━━━━━━━━━━━━━━━ */
     #about{background:var(--warm-white)}
@@ -1015,6 +1053,96 @@ a:has(.cert-card):hover .cert-card {
 <!-- ━━━━━━━━━━━━━━━━━━━━━━━
      ABOUT
 ━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     AT A GLANCE — DASHBOARD GRID
+━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="glance">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Explore My Work</span>
+      <h2 class="section-title">Everything at a Glance</h2>
+    </div>
+    <p class="glance-note fade-up">A quick overview of what's on this page — click into whatever's useful to you, no scrolling required.</p>
+
+    <div class="glance-grid fade-up">
+
+      <a href="#about" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">👋</span></div>
+        <h3>About Me</h3>
+        <p>14+ years of work experience — from Virtual Assistant in 2012 to SEO Specialist today. My background and how I work.</p>
+        <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#featured-case" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">📊</span></div>
+        <h3>Featured Case Study</h3>
+        <p>A full breakdown of SEO and content work for a national HVAC and air filtration brand.</p>
+        <span class="glance-meta">Read Case Study <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#copywriter" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">✍️</span></div>
+        <h3>Copywriting &amp; Email</h3>
+        <p>WordPress blogging, email campaigns, and landing page copy — three areas of hands-on writing work.</p>
+        <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#skills" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">🧩</span></div>
+        <h3>Core Skills</h3>
+        <p>SEO, Technical SEO, GEO/AEO, and executive support — the full skill set at a glance.</p>
+        <span class="glance-meta">View Skills <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#digital-marketing" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">📱</span></div>
+        <h3>Digital Marketing &amp; Social</h3>
+        <p>Email marketing with Klaviyo, social media management, and content scheduling beyond SEO.</p>
+        <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#ai-automation" class="glance-card">
+        <div class="glance-top">
+          <span class="glance-icon">⚙️</span>
+          <span class="status-badge status-progress"><span class="status-dot"></span>In Progress</span>
+        </div>
+        <h3>AI Automation</h3>
+        <p>Learning GoHighLevel workflows and automation — first demo site is live now.</p>
+        <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#tools" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">🛠️</span></div>
+        <h3>Tools &amp; Platforms</h3>
+        <p>SEMrush, Ahrefs, Google Search Console, WordPress, and more — my everyday tech stack.</p>
+        <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#certifications" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">🎓</span></div>
+        <h3>Certifications</h3>
+        <p>Credentials from Semrush Academy and Excelerate Digital Marketing.</p>
+        <span class="glance-meta">View Certificates <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#sample-works" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">💼</span></div>
+        <h3>Sample Works</h3>
+        <p>Live pages and published content I've worked on — from blog articles to a page appearing in Google AI Mode.</p>
+        <span class="glance-meta">View Projects <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#contact" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">📩</span></div>
+        <h3>Get In Touch</h3>
+        <p>Book a discovery call, send an email, or connect on LinkedIn — let's talk about your SEO needs.</p>
+        <span class="glance-meta">Contact Me <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="container">
     <div class="section-header fade-up">
