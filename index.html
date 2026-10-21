@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Amrahata Paalisbo | SEO Specialist &amp; Executive Assistant</title>
   <meta name="description" content="SEO Specialist &amp; Executive Assistant | Local SEO Support | Content &amp; Digital Marketing Tasks | 14+ Years of Experience."/>
+  <meta property="og:title" content="Amrahata Paalisbo | SEO Specialist &amp; WordPress Content QA"/>
+  <meta property="og:description" content="Featured case studies: WordPress SEO content publishing at scale and an independent content QA and on-page SEO reoptimization audit."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/images/filterbuy-seo-content-publishing-at-scale-cover.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -877,6 +881,70 @@ a:has(.cert-card):hover .cert-card {
     .fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
     .fade-up.visible{opacity:1;transform:translateY(0)}
 
+
+    /* ━━━━━━━━━━━━━━━━━━━━━━━
+       FEATURED CASE STUDIES (portfolio cards + expandable detail)
+    ━━━━━━━━━━━━━━━━━━━━━━━ */
+    #case-studies{background:var(--warm-white)}
+    .csx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;align-items:stretch}
+    .csx-card{background:var(--cream);border:1px solid var(--border-c);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+    .csx-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(160,114,72,.2);border-color:var(--caramel)}
+    .csx-card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+    .csx-card-body{padding:1.8rem 2rem 2rem;display:flex;flex-direction:column;flex:1}
+    .csx-label{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brown);margin-bottom:.6rem}
+    .csx-card h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;line-height:1.2;margin-bottom:.7rem;color:var(--espresso)}
+    .csx-card p{font-size:.95rem;color:var(--text-light);line-height:1.75;margin-bottom:1rem}
+    .csx-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.1rem}
+    .csx-tag{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(160,114,72,.12);color:var(--brown);padding:.3rem .7rem;border-radius:4px}
+    .csx-hl{font-size:.9rem;font-weight:500;color:var(--espresso);background:rgba(212,149,111,.14);border-radius:8px;padding:.7rem 1rem;margin-bottom:1.4rem}
+    .csx-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:auto}
+    .csx-btn{display:inline-block;font:inherit;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--brown);color:var(--warm-white);padding:.8rem 1.4rem;border-radius:6px;text-decoration:none;border:2px solid var(--brown);cursor:pointer;transition:all .3s}
+    .csx-btn:hover{background:var(--espresso);border-color:var(--espresso)}
+    .csx-btn.alt{background:transparent;color:var(--brown)}
+    .csx-btn.alt:hover{background:rgba(160,114,72,.12);color:var(--espresso)}
+    .csx-btn:focus-visible,.csx-card a:focus-visible,.csx-panel a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+    .csx-panel{background:var(--cream);border:1px solid var(--border-c);border-radius:12px;padding:3rem;margin-top:1.75rem;scroll-margin-top:84px}
+    .csx-panel[hidden]{display:none}
+    .csx-panel h3{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.6rem);font-weight:600;line-height:1.15;margin-bottom:.8rem}
+    .csx-panel h4{font-family:var(--serif);font-size:1.5rem;font-weight:600;margin:2.4rem 0 .8rem;color:var(--espresso)}
+    .csx-panel h5{font-size:1rem;font-weight:600;margin-bottom:.3rem;color:var(--espresso)}
+    .csx-panel p,.csx-panel li{font-size:.96rem;color:var(--text-light);line-height:1.8}
+    .csx-panel ul{padding-left:1.2rem}
+    .csx-lede{font-size:1.05rem!important;max-width:760px}
+    .csx-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.6rem 0}
+    .csx-meta div,.csx-box{background:var(--warm-white);border:1px solid var(--border-c);border-radius:10px;padding:1rem 1.2rem}
+    .csx-meta strong{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--caramel);margin-bottom:.2rem}
+    .csx-meta span{font-weight:500;color:var(--espresso);font-size:.95rem}
+    .csx-metric{background:var(--espresso);border-radius:10px;padding:1.6rem 2rem;margin:1.6rem 0}
+    .csx-metric strong{display:block;font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--warm-white)}
+    .csx-metric p{color:rgba(253,249,244,.78)!important;margin:0}
+    .csx-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .csx-steps{list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(7,1fr);gap:.6rem;counter-reset:s}
+    .csx-steps li{counter-increment:s;background:var(--warm-white);border:1px solid var(--border-c);border-radius:10px;padding:1rem .8rem;position:relative}
+    .csx-steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--brown);color:var(--warm-white);font-weight:600;font-size:.85rem;margin-bottom:.6rem}
+    .csx-steps strong{display:block;font-size:.88rem;line-height:1.3;color:var(--espresso);margin-bottom:.3rem}
+    .csx-steps span{font-size:.78rem;line-height:1.5;color:var(--text-light);display:block}
+    .csx-pri{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .65rem;border-radius:4px;margin-bottom:.6rem}
+    .csx-pri.hi{background:var(--espresso);color:var(--warm-white)}
+    .csx-pri.md{background:transparent;color:var(--espresso);border:2px solid var(--espresso)}
+    .csx-note{border:2px dashed var(--sand);border-radius:10px;padding:1.2rem 1.5rem;margin-top:2rem;background:var(--warm-white)}
+    .csx-note p{margin:0;color:var(--espresso)}
+    .csx-cta{background:var(--espresso);border-radius:10px;padding:2rem;margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+    .csx-cta p{color:rgba(253,249,244,.85)!important;margin:0;max-width:560px}
+    .csx-cta .csx-btn{background:var(--accent);border-color:var(--accent);color:var(--espresso)}
+    .csx-cta .csx-btn:hover{background:transparent;color:var(--accent)}
+    .csx-cta .csx-btn.alt{background:transparent;color:var(--warm-white);border-color:rgba(253,249,244,.4)}
+    .csx-cta .csx-btn.alt:hover{border-color:var(--accent);color:var(--accent)}
+    .csx-checks{list-style:none;padding:0!important}
+    .csx-checks li::before{content:'\2610';margin-right:.5rem;color:var(--caramel)}
+    .csx-existing,.csx-proposed{border-radius:10px;padding:1.4rem}
+    .csx-existing{background:var(--warm-white);border:1px solid var(--border-c)}
+    .csx-proposed{background:rgba(212,149,111,.14);border:1px solid var(--accent)}
+    @media(max-width:1100px){.csx-steps{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:900px){.csx-grid{grid-template-columns:1fr}.csx-panel{padding:2rem}}
+    @media(max-width:600px){.csx-steps{grid-template-columns:1fr}.csx-actions .csx-btn{width:100%;text-align:center}.csx-panel{padding:1.5rem}}
+    @media(prefers-reduced-motion:reduce){.csx-card{transition:none}.csx-card:hover{transform:none}}
+
     /* ━━━━━━━━━━━━━━━━━━━━━━━
        RESPONSIVE
     ━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -939,6 +1007,7 @@ a:has(.cert-card):hover .cert-card {
   <a href="#hero" class="nav-brand">A. Paalisbo</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#case-studies">Featured Work</a></li>
     <li><a href="#featured-case">Case Study</a></li>
     <li><a href="#copywriter">Copywriting</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -963,6 +1032,7 @@ a:has(.cert-card):hover .cert-card {
 <!-- Mobile slide-down menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about">About</a>
+  <a href="#case-studies">Featured Work</a>
   <a href="#featured-case">Case Study</a>
   <a href="#copywriter">Copywriting</a>
   <a href="#skills">Skills</a>
@@ -1071,6 +1141,13 @@ a:has(.cert-card):hover .cert-card {
         <h3>About Me</h3>
         <p>14+ years of work experience — from Virtual Assistant in 2012 to SEO Specialist today. My background and how I work.</p>
         <span class="glance-meta">View Section <span class="arrow">→</span></span>
+      </a>
+
+      <a href="#case-studies" class="glance-card">
+        <div class="glance-top"><span class="glance-icon">🗂️</span></div>
+        <h3>WordPress SEO Case Studies</h3>
+        <p>Two Filterbuy case studies: scaled WordPress content publishing and an independent content QA audit.</p>
+        <span class="glance-meta">Explore Case Studies <span class="arrow">→</span></span>
       </a>
 
       <a href="#featured-case" class="glance-card">
@@ -1186,6 +1263,113 @@ a:has(.cert-card):hover .cert-card {
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━
+     FEATURED CASE STUDIES (WordPress SEO publishing + Content QA)
+━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="case-studies" aria-labelledby="csx-heading">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-eyebrow">Featured Work</span>
+      <h2 class="section-title" id="csx-heading">WordPress SEO &amp; Content QA Case Studies</h2>
+    </div>
+    <p class="glance-note fade-up" style="margin-top:-2.4rem">Two real-world examples of how I support WordPress content publishing, on-page SEO and editorial quality control.</p>
+    <div class="csx-grid fade-up">
+      <article class="csx-card">
+        <img src="assets/images/filterbuy-seo-content-publishing-at-scale-cover.png" width="1200" height="900" alt="Cover card for the SEO Content Publishing at Scale case study: about 50 pieces per week, Filterbuy Inc., 2023 to 2026" loading="lazy"/>
+        <div class="csx-card-body">
+          <span class="csx-label">Case Study &middot; Content Operations</span>
+          <h3>WordPress SEO Content Publishing at Scale</h3>
+          <p>Supported high-volume WordPress SEO content operations for Filterbuy, a U.S. HVAC and air filtration company: briefs, publishing, metadata, internal linking, QA and SOP documentation.</p>
+          <div class="csx-tags"><span class="csx-tag">WordPress</span><span class="csx-tag">Content SEO</span><span class="csx-tag">On-Page SEO</span><span class="csx-tag">Content Publishing</span><span class="csx-tag">Editorial QA</span><span class="csx-tag">AI-Assisted Workflows</span></div>
+          <p class="csx-hl">~50 SEO content pieces per week, supported as part of a team workflow.</p>
+          <div class="csx-actions">
+            <button type="button" class="csx-btn csx-open" data-target="case-study-publishing" aria-expanded="false" aria-controls="case-study-publishing">Explore Case Study</button>
+            <a class="csx-btn alt" href="assets/pdfs/WordPress_SEO_Content_Publishing_Case_Study.pdf" target="_blank" rel="noopener">View PDF</a>
+          </div>
+        </div>
+      </article>
+      <article class="csx-card">
+        <img src="assets/images/filterbuy-content-qa-reoptimization-cover.png" width="1200" height="900" alt="Cover card for the Content Quality and Reoptimization case study: a live-page QA review of the Filterbuy HVAC Solutions AC maintenance guide" loading="lazy"/>
+        <div class="csx-card-body">
+          <span class="csx-label">Case Study &middot; Independent Audit</span>
+          <h3>WordPress Content QA &amp; On-Page SEO Reoptimization</h3>
+          <p>An independent content quality and on-page SEO assessment of a published HVAC maintenance article, with prioritized findings and a proposed WordPress publishing checklist.</p>
+          <div class="csx-tags"><span class="csx-tag">Content Audit</span><span class="csx-tag">On-Page SEO</span><span class="csx-tag">WordPress QA</span><span class="csx-tag">SEO Reoptimization</span><span class="csx-tag">Content Editing</span><span class="csx-tag">Search Intent</span></div>
+          <p class="csx-hl">6 prioritized QA findings: 3 high priority, 3 medium priority.</p>
+          <div class="csx-actions">
+            <button type="button" class="csx-btn csx-open" data-target="case-study-reoptimization" aria-expanded="false" aria-controls="case-study-reoptimization">Explore Case Study</button>
+            <a class="csx-btn alt" href="assets/pdfs/WordPress_Content_QA_OnPage_Reoptimization_Case_Study.pdf" target="_blank" rel="noopener">View PDF</a>
+            <a class="csx-btn alt" href="https://hvac.filterbuy.com/resources/maintenance/central-window-outdoor-ac-air-conditioning-unit-maintenance-service/" target="_blank" rel="noopener noreferrer">View Live Article</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Case Study 1 detail -->
+    <div class="csx-panel" id="case-study-publishing" role="region" aria-labelledby="cs1-title" tabindex="-1" hidden>
+      <span class="csx-label">Case Study &middot; Content Operations</span>
+      <h3 id="cs1-title">WordPress SEO Content Publishing at Scale</h3>
+      <p class="csx-lede">How I supported a repeatable, quality-first WordPress publishing process for Filterbuy, a U.S. HVAC and air filtration company.</p>
+      <div class="csx-meta"><div><strong>Client</strong><span>Filterbuy Inc.</span></div><div><strong>Industry</strong><span>HVAC / Air Filtration / Home Services</span></div><div><strong>Project period</strong><span>2023&ndash;2026</span></div><div><strong>My role</strong><span>SEO Specialist | WordPress Content Publishing &amp; QA</span></div></div>
+      <div class="csx-metric"><strong>~50 SEO content pieces per week</strong><p>Supported as part of a team publishing workflow. This reflects a team pipeline, not 50 articles written or published independently by me.</p></div>
+      <h4>Project overview</h4>
+      <p>I supported a recurring team pipeline covering WordPress content optimization and publication, quality checks and ongoing SEO reviews. My responsibilities included SEO content briefs, publishing, formatting, metadata optimization, internal linking, quality assurance, existing-page reoptimization and SOP documentation.</p>
+      <h4>The business challenge</h4>
+      <p>Filterbuy needed a repeatable way to prepare, publish and review high volumes of search-focused content across WordPress sites without losing consistency in formatting, on-page SEO or editorial quality.</p>
+      <h4>My role and responsibilities</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>1. Content planning &amp; briefs</h5><p style="margin:0">Keyword and intent inputs, page outlines, target headings and content structure.</p></div><div class="csx-box"><h5>2. WordPress publishing &amp; SEO</h5><p style="margin:0">Formatting, metadata, headings, image checks, internal links and page updates.</p></div><div class="csx-box"><h5>3. Editorial QA &amp; processes</h5><p style="margin:0">Draft checks, inconsistencies, link reviews, reoptimization and documented SOPs.</p></div></div>
+      <h4>Content publishing workflow</h4>
+      <p>The original client SOP used structured SEO briefs, Claude-supported drafts, brand voice checks, keyword-linked pages and editorial QA. This seven-step framework is a modernized illustration based on that SOP, not a claim that every improvement was implemented during the client engagement.</p>
+      <ol class="csx-steps" aria-label="Seven-step content publishing workflow"><li><strong>Research &amp; Search Intent</strong><span>Confirm the audience question, primary intent, existing coverage and page purpose.</span></li><li><strong>SEO Brief</strong><span>Build H1/H2 structure, topical subquestions, relevant entities and suitable sources.</span></li><li><strong>AI-Assisted Drafting</strong><span>Use AI for scaffolding and editing; follow the brand guide and add real subject value.</span></li><li><strong>Human Fact-Checking</strong><span>Check claims, statistics, quotes, sources, dates and sensitive advice.</span></li><li><strong>On-Page Optimization</strong><span>Write useful metadata, natural anchors, context links and scannable sections.</span></li><li><strong>WordPress QA</strong><span>Review blocks, visuals, alt text, responsive layout, links, URL and publish settings.</span></li><li><strong>Publish &amp; Improve</strong><span>Check the live page, then use Search Console insights for meaningful refreshes.</span></li></ol>
+      <h4>SEO optimization process &amp; WordPress quality assurance</h4>
+      <p>What a publish-ready page needs:</p>
+      <div class="csx-cols"><div class="csx-box"><h5>Content</h5><p style="margin:0">Intent answered directly; non-generic value added; claims, quotes and sources verified.</p></div><div class="csx-box"><h5>Structure</h5><p style="margin:0">One clear H1, descriptive H2/H3s, useful summaries, readable paragraphs and lists.</p></div><div class="csx-box"><h5>On-page SEO</h5><p style="margin:0">Title and description checked; links relevant; keywords natural; no forced anchor quotas.</p></div><div class="csx-box"><h5>WordPress</h5><p style="margin:0">Correct block styling, image alt text, responsive display, URL, categories and publish status.</p></div><div class="csx-box"><h5>Final review</h5><p style="margin:0">Preview checked on mobile and desktop; links tested; approvals and corrections tracked.</p></div><div class="csx-box"><h5>Post-publish</h5><p style="margin:0">Live page checked; revisit only when search data or changed facts justify updates.</p></div></div>
+      <h4>AI-assisted content workflow</h4>
+      <div class="csx-box"><h5>The 2026 editorial principle</h5><p style="margin:0">Human value first. AI accelerates the workflow; it does not replace evidence, originality or final accountability.</p></div>
+      <h4>Deliverables and operational impact</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>Verified from project history</h5><ul><li>SEO publishing and WordPress optimization</li><li>Content QA and reoptimization</li><li>SOP support</li><li>Support of a recurring ~50-piece/week team workflow</li></ul></div><div class="csx-box"><h5>Not claimed</h5><ul><li>Individual authorship of all 50 pieces</li><li>A measured traffic lift or ranking gain</li><li>Revenue impact or AI citation gains from this specific process</li></ul></div></div>
+      <h4>Key takeaways</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>A process protects quality</h5><p style="margin:0">A defined brief-to-QA flow keeps formatting and on-page SEO consistent at volume.</p></div><div class="csx-box"><h5>Check before publishing</h5><p style="margin:0">Fact-checks, link reviews and WordPress QA catch issues before pages go live.</p></div><div class="csx-box"><h5>Documented and repeatable</h5><p style="margin:0">SOPs let a team publish consistently and improve pages over time.</p></div></div>
+      <div class="csx-note"><p><strong>Scope note:</strong> The workflow is an updated example informed by the original SOP and current Google Search guidance. It describes work I performed and a process I would bring to similar projects; it is not a record of measured results.</p></div>
+      <div class="csx-cta"><p>Need dependable WordPress SEO content support? Let's talk about your publishing workflow.</p><div class="csx-actions"><a class="csx-btn" href="#contact">Discuss a similar project</a><a class="csx-btn alt" href="assets/pdfs/WordPress_SEO_Content_Publishing_Case_Study.pdf" target="_blank" rel="noopener">View PDF</a><button type="button" class="csx-btn alt csx-close">Back to Portfolio</button></div></div>
+    </div>
+
+    <!-- Case Study 2 detail -->
+    <div class="csx-panel" id="case-study-reoptimization" role="region" aria-labelledby="cs2-title" tabindex="-1" hidden>
+      <span class="csx-label">Case Study &middot; Independent Audit</span>
+      <h3 id="cs2-title">WordPress Content QA &amp; On-Page SEO Reoptimization</h3>
+      <p class="csx-lede">An independent review of a public Filterbuy HVAC maintenance article, with prioritized QA findings and a proposed WordPress release workflow.</p>
+      <div class="csx-meta"><div><strong>Client / website</strong><span>Filterbuy HVAC Solutions</span></div><div><strong>Project type</strong><span>Independent public-page audit and reoptimization recommendations</span></div><div><strong>Audit date</strong><span>October 2026</span></div><div><strong>My role</strong><span>SEO Specialist | Content QA &amp; On-Page SEO Optimization</span></div></div>
+      <div class="csx-note" style="margin-top:0"><p><strong>Please note:</strong> This is an independent portfolio assessment informed by my SEO work at Filterbuy (2023&ndash;2026). The suggestions are not represented as implemented or approved by Filterbuy, and no ranking or conversion improvements are claimed.</p></div>
+      <h4>Project overview</h4>
+      <p>The article, <em>Central, Window &amp; Outdoor AC Maintenance: Expert Tips to Keep Every System Running Smoothly</em> (published April 13, 2026), is a homeowner education piece that also supports Filterbuy HVAC Solutions service inquiries. <a href="https://hvac.filterbuy.com/resources/maintenance/central-window-outdoor-ac-air-conditioning-unit-maintenance-service/" target="_blank" rel="noopener noreferrer">View the live article</a>.</p>
+      <h4>Article and SEO objectives</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>QA objective</h5><p style="margin:0">Improve clarity, reduce repetition, verify claims and create a dependable WordPress release workflow.</p></div><div class="csx-box"><h5>What I prepared</h5><p style="margin:0">An evidence-based editorial review, sample on-page rewrites and a ready-to-use publishing QA checklist.</p></div><div class="csx-box"><h5>Search focus</h5><p style="margin:0">Answer the homeowner's maintenance questions directly, organized by AC type.</p></div></div>
+      <h4>Existing content strengths</h4>
+      <p>Separate guidance for each AC unit type, a seasonal checklist, useful government and trade sources, and an HVAC professional byline.</p>
+      <h4>Six prioritized QA findings</h4>
+      <p>Observations come from the public article. Priority is shown by label, not color alone.</p>
+      <div class="csx-cols"><article class="csx-box"><span class="csx-pri hi">High priority</span><h5>1. Repetitive content and overlapping sections</h5><p><strong>Observed:</strong> The article includes Quick Answers, Top Takeaways, Final Thought, Next Steps and FAQs with overlapping maintenance guidance.</p><p style="margin:0"><strong>Proposed:</strong> Consolidate repeated advice into one quick-answer panel, one seasonal checklist and a concise closing CTA.</p></article><article class="csx-box"><span class="csx-pri hi">High priority</span><h5>2. Factual claims requiring verification</h5><p><strong>Observed:</strong> Several quantified claims and service-call anecdotes are presented, including a 5-to-10-times repair-cost comparison.</p><p style="margin:0"><strong>Proposed:</strong> Verify against client records or primary sources; otherwise remove or qualify the exact claim.</p></article><article class="csx-box"><span class="csx-pri hi">High priority</span><h5>3. DIY maintenance safety clarity</h5><p><strong>Observed:</strong> Coil rinsing and drain-line flushing are discussed alongside professional-only refrigerant and electrical work.</p><p style="margin:0"><strong>Proposed:</strong> Add power-off and manufacturer-instruction safeguards; route uncertain tasks to a qualified technician.</p></article><article class="csx-box"><span class="csx-pri md">Medium priority</span><h5>4. Content navigation and heading hierarchy</h5><p><strong>Observed:</strong> Central, window and outdoor tasks are followed by lengthy resources, statistics, next steps and FAQs.</p><p style="margin:0"><strong>Proposed:</strong> Use scannable jump links and keep maintenance-by-system sections together.</p></article><article class="csx-box"><span class="csx-pri md">Medium priority</span><h5>5. Image accessibility and alt text</h5><p><strong>Observed:</strong> The hero image and infographic have descriptive but lengthy, title-like image labels.</p><p style="margin:0"><strong>Proposed:</strong> Review alt text and captions for accurate visual meaning rather than repeated search phrases.</p></article><article class="csx-box"><span class="csx-pri md">Medium priority</span><h5>6. CTA consistency and link review</h5><p><strong>Observed:</strong> Service forms and calls to action appear in several areas, alongside outbound and internal links.</p><p style="margin:0"><strong>Proposed:</strong> Prioritize one main booking action, keep contextual links useful and test each destination before release.</p></article></div>
+      <p style="margin-top:1rem;font-size:.88rem">Not independently verified: title tag, meta description, canonical, indexability, redirects, structured data, live link status and mobile behavior.</p>
+      <h4>Proposed SEO improvements</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>Proposed SEO title</h5><p style="margin:0;color:var(--espresso);font-weight:500">AC Maintenance: Central, Window &amp; Outdoor Guide | Filterbuy</p></div><div class="csx-box"><h5>Proposed meta description</h5><p style="margin:0">Maintain central, window and outdoor AC units with seasonal checklists, safe DIY tips and guidance on when to call an HVAC professional.</p></div></div>
+      <p style="margin-top:1rem">Keep the existing URL unless a redirect strategy is approved. Use keywords naturally and optimize for helpful answers, not a fixed word count or AI citation guarantee.</p>
+      <h4>Before-and-after content example</h4>
+      <div class="csx-cols"><div class="csx-existing"><span class="csx-pri md">Existing (observed)</span><p>The published article repeats maintenance guidance across five sections:</p><ul><li>Quick Answers</li><li>Top Takeaways</li><li>Final Thought</li><li>Next Steps</li><li>FAQs</li></ul></div><div class="csx-proposed"><span class="csx-pri hi">Proposed (not published)</span><h5>How do you maintain central, window and outdoor AC units?</h5><p style="margin:0">Start with the air filter, keep the condenser clear of debris, and monitor changes in cooling, noise and drainage. Window units also need clean reusable filters and tight seals. Follow the manufacturer&rsquo;s instructions, switch off power before permitted cleaning, and leave electrical or refrigerant work to an HVAC technician.</p></div></div>
+      <div class="csx-box" style="margin-top:1rem"><h5>Suggested article structure</h5><ul><li><strong>H1</strong> Central, Window &amp; Outdoor AC Maintenance Guide</li><li><strong>H2</strong> Quick maintenance answers by AC type</li><li><strong>H2</strong> Central AC: filters, coils &amp; drainage</li><li><strong>H2</strong> Window AC: filters, fins &amp; window seals</li><li><strong>H2</strong> Outdoor condenser: debris, clearance &amp; sound</li><li><strong>H2</strong> Seasonal checklist + when to call a pro</li><li><strong>H2</strong> Common questions + schedule service</li></ul></div>
+      <h4>WordPress publishing checklist</h4>
+      <p>A practical release checklist, adapted from hands-on content operations for a human-reviewed, AI-assisted editorial workflow.</p>
+      <div class="csx-cols"><div class="csx-box"><h5>Editorial &amp; fact check</h5><ul class="csx-checks"><li>Search intent and user questions answered directly</li><li>Stats and first-hand claims substantiated or softened</li><li>DIY guidance checked for safety and product nuance</li><li>Repeated sections trimmed; brand voice consistent</li></ul></div><div class="csx-box"><h5>On-page SEO</h5><ul class="csx-checks"><li>Page title and meta description reviewed in the SEO plugin</li><li>One logical H1 with accessible H2/H3 hierarchy</li><li>Contextual internal links and citations reviewed</li><li>Image alt text serves accessibility and page meaning</li></ul></div><div class="csx-box"><h5>WordPress pre-publish</h5><ul class="csx-checks"><li>Blocks, lists, tables and mobile preview checked</li><li>Jump links, buttons and booking forms tested</li><li>Featured image, slug, category and author verified</li><li>Canonical, indexability and relevant schema checked</li></ul></div><div class="csx-box"><h5>After publish</h5><ul class="csx-checks"><li>Live URL tested on desktop and mobile</li><li>Source links and internal link targets checked</li><li>Changes logged with date and reviewer</li><li>GSC metrics reviewed later if account access exists</li></ul></div></div>
+      <h4>Recommendations and expected benefits</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>Fewer repeated sections</h5><p style="margin:0">A tighter page that is quicker to scan and finish.</p></div><div class="csx-box"><h5>Safer, better-supported advice</h5><p style="margin:0">Verified claims and clear DIY boundaries build reader trust.</p></div><div class="csx-box"><h5>A reusable release process</h5><p style="margin:0">A checklist that makes future refreshes consistent.</p></div></div>
+      <p style="margin-top:1rem">These are expected benefits, not measured results.</p>
+      <h4>Key takeaways</h4>
+      <div class="csx-cols"><div class="csx-box"><h5>Demonstrated</h5><p style="margin:0">Prioritized public-page QA findings, sample metadata and outline, and a WordPress publication checklist.</p></div><div class="csx-box"><h5>Not claimed</h5><p style="margin:0">CMS access, published edits, a keyword ranking increase or a conversion lift from this illustrative audit.</p></div></div>
+      <div class="csx-cta"><p>Have existing content that needs a quality review? Let's talk about a reoptimization plan.</p><div class="csx-actions"><a class="csx-btn" href="#contact">Discuss a similar project</a><a class="csx-btn alt" href="assets/pdfs/WordPress_Content_QA_OnPage_Reoptimization_Case_Study.pdf" target="_blank" rel="noopener">View PDF</a><a class="csx-btn alt" href="https://hvac.filterbuy.com/resources/maintenance/central-window-outdoor-ac-air-conditioning-unit-maintenance-service/" target="_blank" rel="noopener noreferrer">View Live Article</a><button type="button" class="csx-btn alt csx-close">Back to Portfolio</button></div></div>
     </div>
   </div>
 </section>
@@ -1923,6 +2107,29 @@ a:has(.cert-card):hover .cert-card {
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Featured case studies: expandable detail panels
+  (function(){
+    const panels=[...document.querySelectorAll('.csx-panel')];
+    const openers=[...document.querySelectorAll('.csx-open')];
+    function show(id,focus){
+      panels.forEach(p=>{p.hidden=(p.id!==id)});
+      openers.forEach(b=>b.setAttribute('aria-expanded',String(b.dataset.target===id)));
+      const el=document.getElementById(id);
+      if(el&&focus){el.scrollIntoView({behavior:'smooth',block:'start'});el.focus({preventScroll:true})}
+    }
+    function hideAll(){
+      panels.forEach(p=>p.hidden=true);
+      openers.forEach(b=>b.setAttribute('aria-expanded','false'));
+      const g=document.querySelector('.csx-grid');if(g)g.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    openers.forEach(b=>b.addEventListener('click',()=>{
+      const open=b.getAttribute('aria-expanded')==='true';
+      if(open)hideAll();else show(b.dataset.target,true);
+    }));
+    document.querySelectorAll('.csx-close').forEach(b=>b.addEventListener('click',hideAll));
+    if(location.hash){const id=location.hash.slice(1);if(panels.some(p=>p.id===id))show(id,true)}
+  })();
 </script>
 </body>
 </html>
